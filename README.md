@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EXPLACE_RP_Website
+A shared repository for the team developing Regionport's website.
 
-## Getting Started
+# Setup Next.js Project:
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Install Next.js using:
+```
+npx create-next-app@latest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Navigate to the project directory with:
+```
+cd next-ts
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Initialize the project in the current directory with ..
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Project Configuration:
 
-## Learn More
+Choose **JavaScript**, **ESLint**, **Tailwind CSS**, and **App Router** when prompted.
 
-To learn more about Next.js, take a look at the following resources:
+#### Install additional dependencies:
+```
+npm install --save-dev prettier prettier-plugin-tailwindcss
+```
+#### Development Server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the development server with:
+```
+npm run dev
+```
+Access it at ***http://localhost:3000***.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Basic Setup:
 
-## Deploy on Vercel
+Modify ***page.js*** to include a simple functional component:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div className="container mx-auto p-4">
+  <h1 className="text-3xl font-bold">Next.js Starter</h1>
+</div>
+
+```
+
+Remove any unnecessary React imports.
+
+#### Tailwind CSS Configuration:
+
+Update **tailwind.config.js** to include custom container settings:
+js
+
+```
+module.exports = {
+  theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        md: '1.5rem',
+        lg: '2rem',
+      },
+    },
+  },
+};
+```
+
+#### Deployment to Vercel:
+
+Import the GitHub repository into Vercel and deploy.
+
+Deploy and Maintain:
+
+Continuously deploy updates to Vercel to ensure the project remains live and issues are identified early.
+
