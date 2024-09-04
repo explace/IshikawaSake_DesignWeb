@@ -6,6 +6,7 @@ import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import Story from "./Story/page";
+import News from "./News/page";
 // import vid from "../public/nature_vid2.mp4";
 export default function Home() {
   const vid1 = useRef(null);
@@ -263,7 +264,8 @@ export default function Home() {
         </div>
       </main>
 
-      <Story/>
+      {/* <Story/> */}
+      <News/>
 
       <p className="mt-[90vh] text-3xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illum
