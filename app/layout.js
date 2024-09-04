@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Zen_Old_Mincho } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+{/* <style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
+</style> */}
+const inter = Zen_Old_Mincho({ subsets: ["latin"],weight:'500' });
 
 export const metadata = {
   title: "Create Next App",
