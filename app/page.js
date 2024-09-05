@@ -15,22 +15,29 @@ export default function Home() {
   const vid4 = useRef(null);
   const vid5 = useRef(null);
   const vid6 = useRef(null);
-  const nav= useRef(null);
-  const navBtns= useRef(null);
+  const nav = useRef(null);
+  const navBtns = useRef(null);
 
-  window.addEventListener("scroll", (e) => {
-    const scrollTop = window.scrollY; // Current scroll position
-    const windowHeight = window.innerHeight;
-    const scrollPercentage = (scrollTop / windowHeight);
-    // console.log(scrollPercentage);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleScroll = (e) => {
+        const scrollTop = window.scrollY; // Current scroll position
+        const windowHeight = window.innerHeight;
+        const scrollPercentage = scrollTop / windowHeight;
 
-    if(scrollPercentage <= 1){
-      nav.current.style.filter = `invert(${scrollPercentage})`;
-      navBtns.current.style.opacity = scrollPercentage;
+        if (scrollPercentage <= 1) {
+          nav.current.style.filter = `invert(${scrollPercentage})`;
+          navBtns.current.style.opacity = scrollPercentage;
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll); // Cleanup on component unmount
+      };
     }
-
-  })
-
+  }, []);
   return (
     <>
       {/* <Video src={vid}/> */}
@@ -40,44 +47,47 @@ export default function Home() {
       >
         <div className="z-[20]">
           <video
-          loop
+            loop
             ref={vid1}
             src="/nature_vid.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
           />
           <video
-          loop
+            loop
             ref={vid2}
             src="/nature_vid2.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
           />
           <video
-          loop
+            loop
             ref={vid3}
             src="/nature_vid.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
           />
           <video
-          loop
+            loop
             ref={vid4}
             src="/nature_vid2.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
           />
           <video
-          loop
+            loop
             ref={vid5}
             src="/nature_vid.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
           />
           <video
-          loop
+            loop
             ref={vid6}
             src="/nature_vid2.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
           />
         </div>
 
-        <nav ref={nav} className="flex text-white z-[1000000] fixed top-0 w-[100%] items-center p-5 border-0 border-red-600">
+        <nav
+          ref={nav}
+          className="flex text-white z-[1000000] fixed top-0 w-[100%] items-center p-5 border-0 border-red-600"
+        >
           <div>
             <Image
               className="cursor-pointer logo"
@@ -133,7 +143,6 @@ export default function Home() {
               <p className="mr-5 cursor-pointer">ENJOY</p>
               <p className="mr-5 cursor-pointer">NEWS</p>
               <p className="mr-5 cursor-pointer">SHOP INFO</p>
-
             </div>
 
             <p className=" grid cursor-pointer place-items-center text-2xl mr-5">
@@ -152,14 +161,14 @@ export default function Home() {
             <p className="mr-2 text-xl">JP</p>
 
             {/* <div className="grid place-items-center"> */}
-              {/* <Image
+            {/* <Image
                 className="mr-6 cursor-pointer"
                 src={"/LANGUAGE_PULLDOWN_ELEMENT_WH.png"}
                 width={15}
                 height={10}
                 alt="logo"
               /> */}
-              <IoIosArrowDown className="text-2xl cursor-pointer" />
+            <IoIosArrowDown className="text-2xl cursor-pointer" />
             {/* </div> */}
           </div>
         </nav>
@@ -265,7 +274,7 @@ export default function Home() {
       </main>
 
       {/* <Story/> */}
-      <News/>
+      <News />
 
       <p className="mt-[90vh] text-3xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illum
