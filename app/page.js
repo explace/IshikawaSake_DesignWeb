@@ -19,6 +19,9 @@ export default function Home() {
   const navBtns = useRef(null);
 
   useEffect(() => {
+    if(navBtns.current){
+      navBtns.current.style.display = "none";
+    }
     if (typeof window !== 'undefined') {
       const handleScroll = (e) => {
         const scrollTop = window.scrollY; // Current scroll position
@@ -26,6 +29,12 @@ export default function Home() {
         const scrollPercentage = scrollTop / windowHeight;
 
         if (scrollPercentage <= 1) {
+          if(scrollPercentage>.75){
+            navBtns.current.style.display = "flex";
+          }
+          if(scrollPercentage<.75){
+            navBtns.current.style.display = "none";
+          }
           nav.current.style.filter = `invert(${scrollPercentage})`;
           navBtns.current.style.opacity = scrollPercentage;
         }
@@ -47,40 +56,46 @@ export default function Home() {
       >
         <div className="z-[20]">
           <video
+          muted
             loop
             ref={vid1}
             src="/nature_vid.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
+            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
+          muted
             loop
             ref={vid2}
             src="/nature_vid2.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
+            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
+          muted
             loop
             ref={vid3}
             src="/nature_vid.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
+            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
+          muted
             loop
             ref={vid4}
             src="/nature_vid2.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
+            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
+          muted
             loop
             ref={vid5}
             src="/nature_vid.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
+            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
+          muted
             loop
             ref={vid6}
             src="/nature_vid2.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-2 border-blue-400"
+            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
         </div>
 
@@ -263,8 +278,9 @@ export default function Home() {
         </div>
 
         <div className="absolute left-[50%] bottom-2">
-          <p className="en-vertical-text-scroll text-white">scroll</p>
+          <p className="en-vertical-text-scroll scroll-text text-white">scroll</p>
           <Image
+          className="scroll-img"
             src={"/SCROLL_DROP_ELEMENT.png"}
             width={20}
             height={100}
