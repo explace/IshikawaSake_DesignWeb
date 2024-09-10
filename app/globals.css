@@ -25,6 +25,34 @@
   /* background-color: rgb(85, 85, 85); */
 }
 
+.clouds{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cloudsimage{
+  position: absolute;
+  bottom: 0;
+  animation: animate calc(16s * var(--i)) linear infinite;
+}
+
+@keyframes animate 
+{
+  0% 
+  {
+    transform: translateX(-100%);
+  }
+  100%
+  {
+    transform: translateX(100%);
+  }
+
+}
 /* .topPageMain_noIMG{
   background-image:none;
 

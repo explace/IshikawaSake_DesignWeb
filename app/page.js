@@ -54,6 +54,61 @@ export default function Home() {
         id="main"
         className="topPageMain h-[100vh] relative overflow-hidden"
       >
+
+    <div className="clouds" style={{ height: '100vh', width: '100vw'}}>  
+  
+     {/* Cloud 1 - Slow Speed */}
+     <Image
+        className="cloudsimage"
+        src="/cloud1.png"
+        style={{ "--i": 1 }}
+        width={2100}
+        height={100}
+        alt="Picture of the cloud"
+      />
+
+      {/* Cloud 2 - Fast Speed */}
+      <Image
+        className="cloudsimage"
+        src="/cloud2.png"
+        style={{ "--i": 2 }}
+        width={2100}
+        height={100}
+        alt="Picture of the cloud"
+      />
+
+      {/* Cloud 3 - Medium Speed */}
+      <Image
+        className="cloudsimage"
+        src="/cloud3.png"
+        style={{ "--i": 3 }}
+        width={2100}
+        height={100}
+        alt="Picture of the cloud"
+      />
+
+      {/* Cloud 4 - Reverse Slow */}
+      <Image
+        className="cloudsimage"
+        src="/cloud4.png"
+        style={{ "--i": 4 }}
+        width={2100}
+        height={100}
+        alt="Picture of the cloud"
+      />
+
+      {/* Cloud 5 - Slow Speed */}
+      <Image
+        className="cloudsimage"
+        src="/cloud5.png"
+        style={{ "--i": 5 }}
+        width={2100}
+        height={100}
+        alt="Picture of the cloud"
+      />
+
+      </div>
+   
         <div className="z-[20]">
           <video
           muted
