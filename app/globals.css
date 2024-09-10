@@ -71,6 +71,7 @@
   opacity: 0;
   position: relative;
   top: 0vh;
+  filter: invert(1);
 }
 
 @keyframes scroll-img {
@@ -141,6 +142,44 @@
 .infoHover:hover::after,.infoHover:hover::before{
 opacity: 1;
 }
+
+.fadeInNews{
+  opacity: 0;
+  filter: blur(16px);
+  transform: scale(1.5);
+  }
+  
+  @keyframes fadeInNewsAni {
+  from{
+  opacity: 0;
+  filter: blur(16px);
+  transform: scale(1.5);
+  }
+  to{
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1);
+  }
+  }
+  
+  .fadeInNewsLine{
+  opacity: 0;
+  filter: blur(8px);
+  /* transform: scale(1.5); */
+  }
+  
+  @keyframes fadeInNewsLineAni {
+  from{
+  opacity: 0;
+  filter: blur(8px);
+  /* transform: scale(1.5); */
+  }
+  to{
+  opacity: 1;
+  filter: blur(0px);
+  /* transform: scale(1); */
+  }
+  }
 
 
 
