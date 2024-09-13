@@ -333,7 +333,7 @@ export default function Home() {
         </div>
 
         <div className="absolute left-[50%] bottom-2">
-          <p className="en-vertical-text-scroll scroll-text text-white">scroll</p>
+          <p className="en-vertical-text-scroll scroll-text text-black">scroll</p>
           <Image
           className="scroll-img"
             src={"/SCROLL_DROP_ELEMENT.png"}
