@@ -19,20 +19,20 @@ export default function Home() {
   const navBtns = useRef(null);
 
   useEffect(() => {
-    if(navBtns.current){
+    if (navBtns.current) {
       navBtns.current.style.display = "none";
     }
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const handleScroll = (e) => {
         const scrollTop = window.scrollY; // Current scroll position
         const windowHeight = window.innerHeight;
         const scrollPercentage = scrollTop / windowHeight;
 
         if (scrollPercentage <= 1) {
-          if(scrollPercentage>.75){
+          if (scrollPercentage > 0.75) {
             navBtns.current.style.display = "flex";
           }
-          if(scrollPercentage<.75){
+          if (scrollPercentage < 0.75) {
             navBtns.current.style.display = "none";
           }
           nav.current.style.filter = `invert(${scrollPercentage})`;
@@ -40,10 +40,10 @@ export default function Home() {
         }
       };
 
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
       return () => {
-        window.removeEventListener('scroll', handleScroll); // Cleanup on component unmount
+        window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
       };
     }
   }, []);
@@ -54,99 +54,96 @@ export default function Home() {
         id="main"
         className="topPageMain h-[100vh] relative overflow-hidden"
       >
+        <div className="clouds" style={{ height: "100vh", width: "100vw" }}>
+          {/* Cloud 1 - Slow Speed */}
+          <Image
+            className="cloudsimage"
+            src="/cloud1.png"
+            style={{ "--i": 1 }}
+            width={2100}
+            height={100}
+            alt="Picture of the cloud"
+          />
 
-    <div className="clouds" style={{ height: '100vh', width: '100vw'}}>  
-  
-     {/* Cloud 1 - Slow Speed */}
-     <Image
-        className="cloudsimage"
-        src="/cloud1.png"
-        style={{ "--i": 1 }}
-        width={2100}
-        height={100}
-        alt="Picture of the cloud"
-      />
+          {/* Cloud 2 - Fast Speed */}
+          <Image
+            className="cloudsimage"
+            src="/cloud2.png"
+            style={{ "--i": 2 }}
+            width={2100}
+            height={100}
+            alt="Picture of the cloud"
+          />
 
-      {/* Cloud 2 - Fast Speed */}
-      <Image
-        className="cloudsimage"
-        src="/cloud2.png"
-        style={{ "--i": 2 }}
-        width={2100}
-        height={100}
-        alt="Picture of the cloud"
-      />
+          {/* Cloud 3 - Medium Speed */}
+          <Image
+            className="cloudsimage"
+            src="/cloud3.png"
+            style={{ "--i": 3 }}
+            width={2100}
+            height={100}
+            alt="Picture of the cloud"
+          />
 
-      {/* Cloud 3 - Medium Speed */}
-      <Image
-        className="cloudsimage"
-        src="/cloud3.png"
-        style={{ "--i": 3 }}
-        width={2100}
-        height={100}
-        alt="Picture of the cloud"
-      />
+          {/* Cloud 4 - Reverse Slow */}
+          <Image
+            className="cloudsimage"
+            src="/cloud4.png"
+            style={{ "--i": 4 }}
+            width={2100}
+            height={100}
+            alt="Picture of the cloud"
+          />
 
-      {/* Cloud 4 - Reverse Slow */}
-      <Image
-        className="cloudsimage"
-        src="/cloud4.png"
-        style={{ "--i": 4 }}
-        width={2100}
-        height={100}
-        alt="Picture of the cloud"
-      />
+          {/* Cloud 5 - Slow Speed */}
+          <Image
+            className="cloudsimage"
+            src="/cloud5.png"
+            style={{ "--i": 5 }}
+            width={2100}
+            height={100}
+            alt="Picture of the cloud"
+          />
+        </div>
 
-      {/* Cloud 5 - Slow Speed */}
-      <Image
-        className="cloudsimage"
-        src="/cloud5.png"
-        style={{ "--i": 5 }}
-        width={2100}
-        height={100}
-        alt="Picture of the cloud"
-      />
-
-      </div>
-   
         <div className="z-[20]">
           <video
-          muted
+            muted
             loop
             ref={vid1}
             src="/nature_vid.mp4"
-            className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
+            className="w-[100vw] absolute opacity-0 object-cover vid"
           />
           <video
-          muted
+            muted
             loop
             ref={vid2}
             src="/nature_vid2.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
-          muted
+            muted
             loop
             ref={vid3}
             src="/nature_vid.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
-          muted
+            muted
             loop
             ref={vid4}
             src="/nature_vid2.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
-          muted
+            muted
             loop
             ref={vid5}
             src="/nature_vid.mp4"
             className="absolute vid opacity-0 inset-0 object-cover w-[100vw] border-0 border-blue-400"
           />
           <video
-          muted
+            muted
             loop
             ref={vid6}
             src="/nature_vid2.mp4"
@@ -243,7 +240,7 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="flex absolute top-0 w-[100%] items-center pt-52 mt-0 border-0 border-green-500">
+        <div className="flex z-[40] absolute top-0 w-[100%] items-center pt-52 mt-0 border-0 border-green-500">
           <div className="flex ml-44">
             <p
               className="vertical-text text-white mr-14 text-xl cursor-pointer infoHover"
@@ -333,9 +330,11 @@ export default function Home() {
         </div>
 
         <div className="absolute left-[50%] bottom-2">
-          <p className="en-vertical-text-scroll scroll-text text-black">scroll</p>
+          <p className="en-vertical-text-scroll scroll-text text-black">
+            scroll
+          </p>
           <Image
-          className="scroll-img"
+            className="scroll-img"
             src={"/SCROLL_DROP_ELEMENT.png"}
             width={20}
             height={100}
