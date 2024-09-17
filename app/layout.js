@@ -1,5 +1,6 @@
 import { Zen_Old_Mincho } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Navbar/page";
 {/* <style>
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
 </style> */}
@@ -13,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Nav/>
+        {children}</body>
     </html>
   );
 }
