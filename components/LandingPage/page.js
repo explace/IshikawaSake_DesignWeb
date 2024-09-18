@@ -1,6 +1,7 @@
 import React,{useRef} from 'react'
 import Image from "next/image";
 
+
 const LandingPage = () => {
     const vid1 = useRef(null);
   const vid2 = useRef(null);

@@ -1,6 +1,8 @@
 'use client'
 import React,{useEffect,useRef} from 'react'
 import Image from "next/image";
+import Link from 'next/link';
+
 
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -102,9 +104,15 @@ useEffect(() => {
       </div> */}
 
       <div ref={navBtns} className="opacity-0 flex items-center">
-        <p className="mr-5 cursor-pointer">STORY</p>
-        <p className="mr-5 cursor-pointer">LOCATION</p>
-        <p className="mr-5 cursor-pointer">PRODUCTS</p>
+        <Link href="/StoryPage" passHref>
+           <p className="mr-5 cursor-pointer">STORY</p>
+        </Link>
+        <Link href="/LocationPage" passHref>
+           <p className="mr-5 cursor-pointer">LOCATION</p>
+        </Link>
+        <Link href="/ProductsPage" passHref>
+           <p className="mr-5 cursor-pointer">PRODUCTS</p>
+        </Link>
         <p className="mr-5 cursor-pointer">ENJOY</p>
         <p className="mr-5 cursor-pointer">NEWS</p>
         <p className="mr-5 cursor-pointer">SHOP INFO</p>
