@@ -1,5 +1,6 @@
 import React,{useRef} from 'react'
 import Image from "next/image";
+import Link from 'next/link';
 
 
 const LandingPage = () => {
@@ -165,8 +166,10 @@ const LandingPage = () => {
               vid4.current.pause();
             }}
           >
+             <Link href="/ProductsPage" passHref>
             <span className="en-vertical-text">PRODUCTS</span>{" "}
             わたしたちのお酒
+            </Link>
           </p>
           <p
             className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
@@ -179,7 +182,9 @@ const LandingPage = () => {
               vid5.current.pause();
             }}
           >
+            <Link href="/LocationPage" passHref>
             <span className="en-vertical-text">LOCATION</span> 郷土
+            </Link>
           </p>
           <p
             className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
@@ -192,7 +197,9 @@ const LandingPage = () => {
               vid6.current.pause();
             }}
           >
+            <Link href="/StoryPage" passHref>
             <span className="en-vertical-text">STORY</span> ものがたり
+            </Link>
           </p>
         </div>
 
