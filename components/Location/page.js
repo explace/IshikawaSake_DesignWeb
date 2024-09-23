@@ -1,6 +1,36 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 const Location = () => {
+  const fadeInLocation = useRef(null);
+
+  useEffect(() => {
+    const target = fadeInLocation.current;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll(".locationHead").forEach((item, index) => {
+            item.style.animation = `fadeInAnimation .6s forwards ease-out ${
+              index / 9
+            }s`;
+          });
+        } else {
+          document.querySelectorAll(".locationHead").forEach((item, index) => {
+            item.style.animation = "none";
+          });
+        }
+      });
+    });
+
+    if (target) {
+      observer.observe(target);
+    }
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
   return (
     <div className="mt-6">
       <div className="relative overflow-hidden">
@@ -14,17 +44,24 @@ const Location = () => {
           />
         </div>
 
-        <div className="absolute grid place-items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div ref={fadeInLocation} className="absolute grid place-items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
           <Image
-            className="w-[2rem] sm:w-[4rem] lg:w-[6rem]"
+            className="locationHead opacity-0 w-[2rem] sm:w-[4rem] lg:w-[6rem]"
             src="/LOGO_2_BK.png"
             width={100}
             height={300}
             alt="nature video"
           />
-          <p className="en-vertical-text text-lg sm:text-3xl lg:text-6xl mt-3">
-            LOCATION
-          </p>
+          <div className="text-lg sm:text-3xl lg:text-5xl mt-3">
+            <p className="locationHead opacity-0 en-vertical-text">L</p>
+            <p className="locationHead opacity-0 en-vertical-text">O</p>
+            <p className="locationHead opacity-0 en-vertical-text">C</p>
+            <p className="locationHead opacity-0 en-vertical-text">A</p>
+            <p className="locationHead opacity-0 en-vertical-text">T</p>
+            <p className="locationHead opacity-0 en-vertical-text">I</p>
+            <p className="locationHead opacity-0 en-vertical-text">O</p>
+            <p className="locationHead opacity-0 en-vertical-text">N</p>
+          </div>
         </div>
       </div>
 

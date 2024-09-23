@@ -8,7 +8,7 @@ import LandingPage from "../components/LandingPage/page";
 import Location from "@/components/Location/page";
 import Enjoy from "@/components/Enjoy/page";
 import Products from "@/components/Products/page";
-
+import Footer from "@/components/Footer/page";
 
 
 // import vid from "../public/nature_vid2.mp4";
@@ -18,6 +18,8 @@ export default function Home() {
       <LandingPage />
 
       <News />
+
+      <Footer/>
       
       <Story/>
 

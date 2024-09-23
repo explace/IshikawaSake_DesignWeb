@@ -165,7 +165,7 @@ const LandingPage = () => {
                 vid4.current.pause();
               }}
             >
-              <Link href={"/ProductsPage"}>
+              <Link href={"/ProductsPage"} passHref>
                 <span className="en-vertical-text">PRODUCTS</span>{" "}
                 わたしたちのお酒
               </Link>
@@ -181,7 +181,7 @@ const LandingPage = () => {
                 vid5.current.pause();
               }}
             >
-              <Link href={"/LocationPage"}>
+              <Link href={"/LocationPage"} passHref>
                 <span className="en-vertical-text">LOCATION</span> 郷土
               </Link>
             </p>
@@ -196,7 +196,7 @@ const LandingPage = () => {
                 vid6.current.pause();
               }}
             >
-              <Link href={"/StoryPage"}>
+              <Link href={"/StoryPage"} passHref>
                 <span className="en-vertical-text">STORY</span> ものがたり
               </Link>
             </p>

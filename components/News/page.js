@@ -3,19 +3,18 @@ import React, { useEffect, useRef, useCallback, useState } from "react";
 import axios from "axios";
 
 const News = () => {
-  const fadeIn = useRef(null);
+  const fadeInNews = useRef(null);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    console.log("test");
-    const target = fadeIn.current;
+    const target = fadeInNews.current;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // target.classList.add("fadeIn");
           // target.classList.style.animation="fadeInNewsAni 3s forwards ease-out"
           document.querySelectorAll(".fadeInNews").forEach((item, index) => {
-            item.style.animation = `fadeInNewsAni .6s forwards ease-out ${
+            item.style.animation = `fadeInAnimation .6s forwards ease-out ${
               index / 10
             }s`;
           });
@@ -23,15 +22,15 @@ const News = () => {
             ".fadeInNewsLine"
           ).style.animation = `fadeInNewsLineAni .6s forwards ease-out 1.5s`;
         }
-        // else {
-        //   // Optionally, remove the class when it leaves the viewport
-        //   // target.classList.remove("fadeIn");
-        //   document.querySelectorAll(".fadeInNews").forEach((item, index) => {
-        //     item.style.animation = "none"
-        //   });
-        //   document.querySelector(".fadeInNewsLine").style.animation = "none";
+        else {
+          // Optionally, remove the class when it leaves the viewport
+          // target.classList.remove("fadeIn");
+          document.querySelectorAll(".fadeInNews").forEach((item, index) => {
+            item.style.animation = "none"
+          });
+          document.querySelector(".fadeInNewsLine").style.animation = "none";
 
-        // }
+        }
       });
     });
 
@@ -71,56 +70,39 @@ const News = () => {
 
   return (
     <div className="mt-10 grid place-items-center">
-      <div ref={fadeIn} className="flex items-center w-[95%] lg:w-[80%] mb-6">
-        <div className="text-2xl lg:text-4xl mr-3 flex items-center">
-          <p className="fadeInNews">N</p>
-          <p className="fadeInNews">E</p>
-          <p className="fadeInNews">W</p>
-          <p className="fadeInNews">S</p>
+      <div ref={fadeInNews} className="flex items-center w-[95%] lg:w-[80%] mb-6">
+        <div className="text-base lg:text-4xl mr-3 flex items-center">
+          <p className="fadeInNews opacity-0">N</p>
+          <p className="fadeInNews opacity-0">E</p>
+          <p className="fadeInNews opacity-0">W</p>
+          <p className="fadeInNews opacity-0">S</p>
         </div>
         <div className="text-base lg:text-lg mr-3 flex items-center">
-          <p className="fadeInNews">U</p>
-          <p className="fadeInNews">p</p>
-          <p className="fadeInNews">d</p>
-          <p className="fadeInNews">a</p>
-          <p className="fadeInNews">t</p>
-          <p className="fadeInNews">e</p>
+          <p className="fadeInNews opacity-0">U</p>
+          <p className="fadeInNews opacity-0">p</p>
+          <p className="fadeInNews opacity-0">d</p>
+          <p className="fadeInNews opacity-0">a</p>
+          <p className="fadeInNews opacity-0">t</p>
+          <p className="fadeInNews opacity-0">e</p>
         </div>
-        <p className="w-full h-[2px] bg-black fadeInNewsLine"></p>
+        <p className="w-full h-[2px] opacity-0 bg-black fadeInNewsLine"></p>
       </div>
 
-      {/* <div className="w-[100%] border-2 border-green-400"> */}
       <div className="w-[95%] lg:w-[80%]">
         {posts.map((post, index) => {
           return (
             <div key={index} className="mb-2">
-              <p className="text-xl lg:text-2xl mb-1">
-                <span className="text-xs lg:text-sm">
+              <p className="text-xl mb-1">
+                <span className="text-xs lg:text-sm mr-1">
                   {convertDate(post.date)}
-                </span>{" "}
+                </span>
                 - {post.title.rendered}
               </p>
               {/* <p className="text-xs">{post.title.rendered}</p> */}
             </div>
           );
         })}
-        {/* <p className="mb-2"><span className="text-xs">2025.12.10</span> – 年末年始の営業について</p>
-      <p className="mb-2">
-        <span className="text-xs">2025.8.20</span> – 「美しい味」の原点となる人 / MAISON［PARIS］オーナー・シェフ
-        渥美 創太さん
-      </p>
-      <p className="mb-2">
-        <span className="text-xs">2025.5.10</span> – 環境のために私たちができること /
-        山中産業［ティーバッグ製造・販売］白石 俊正さん
-      </p>
-      <p className="mb-2">
-        <span className="text-xs">2025.5.10</span> – 環境のために私たちができること /
-        山中産業［ティーバッグ製造・販売］白石 俊正さん
-      </p>
-      <p className="mb-2">
-        <span className="text-xs">2025.5.10</span> – 環境のために私たちができること /
-        山中産業［ティーバッグ製造・販売］白石 俊正さん
-      </p> */}
+
         <button className="border-2 mt-5 border-black px-3 py-1 text-xs">
           <a
             href="https://github.com/explace/IshikawaSake_DesignWeb/tree/main/app"
@@ -130,7 +112,6 @@ const News = () => {
           </a>
         </button>
       </div>
-      {/* </div> */}
     </div>
   );
 };

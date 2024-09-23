@@ -1,6 +1,36 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 const Enjoy = () => {
+  const fadeInEnjoy = useRef(null);
+
+  useEffect(() => {
+    const target = fadeInEnjoy.current;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll(".enjoyHead").forEach((item, index) => {
+            item.style.animation = `fadeInAnimation .6s forwards ease-out ${
+              index / 6
+            }s`;
+          });
+        } else {
+          document.querySelectorAll(".enjoyHead").forEach((item, index) => {
+            item.style.animation = "none";
+          });
+        }
+      });
+    });
+
+    if (target) {
+      observer.observe(target);
+    }
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
   return (
     <div className="mt-6">
       <div className="relative overflow-hidden">
@@ -14,17 +44,21 @@ const Enjoy = () => {
           />
         </div>
 
-        <div className="absolute grid place-items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div ref={fadeInEnjoy} className="absolute grid place-items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
           <Image
-            className="w-[2rem] sm:w-[4rem] lg:w-[6rem]"
+            className="enjoyHead opacity-0 w-[2rem] sm:w-[4rem] lg:w-[6rem]"
             src="/LOGO_2_BK.png"
             width={100}
             height={300}
             alt="nature video"
           />
-          <p className="en-vertical-text text-lg sm:text-3xl lg:text-6xl mt-3">
-            ENJOY
-          </p>
+           <div className="text-lg sm:text-3xl lg:text-5xl mt-3">
+            <p className="enjoyHead opacity-0 en-vertical-text">E</p>
+            <p className="enjoyHead opacity-0 en-vertical-text">N</p>
+            <p className="enjoyHead opacity-0 en-vertical-text">J</p>
+            <p className="enjoyHead opacity-0 en-vertical-text">O</p>
+            <p className="enjoyHead opacity-0 en-vertical-text">Y</p>
+          </div>
         </div>
       </div>
 
