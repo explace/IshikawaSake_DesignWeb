@@ -15,55 +15,52 @@ const LandingPage = () => {
       id="main"
       className="topPageMain h-[100vh] relative overflow-hidden border-0 border-red-500"
     >
-      <div className="clouds" style={{ height: "100vh", width: "100vw" }}>
+      <div className="clouds " style={{ height: "100vh", width: "100vw" }}>
         {/* Cloud 1 - Slow Speed */}
         <Image
-          className="cloudsimage"
-          src="/cloud1.png"
-          style={{ "--i": 1 }}
-          width={2100}
-          height={100}
-          alt="Picture of the cloud"
-        />
-
-        {/* Cloud 2 - Fast Speed */}
-        <Image
-          className="cloudsimage"
-          src="/cloud2.png"
-          style={{ "--i": 2 }}
-          width={2100}
-          height={100}
-          alt="Picture of the cloud"
-        />
-
-        {/* Cloud 3 - Medium Speed */}
-        <Image
-          className="cloudsimage"
-          src="/cloud3.png"
-          style={{ "--i": 3 }}
-          width={2100}
-          height={100}
-          alt="Picture of the cloud"
-        />
-
-        {/* Cloud 4 - Reverse Slow */}
-        <Image
-          className="cloudsimage"
-          src="/cloud4.png"
-          style={{ "--i": 4 }}
-          width={2100}
-          height={100}
-          alt="Picture of the cloud"
-        />
-        {/* Cloud 5 - Slow Speed */}
-        <Image
-          className="cloudsimage"
-          src="/cloud5.png"
-          style={{ "--i": 5 }}
-          width={2100}
-          height={100}
-          alt="Picture of the cloud"
-        />
+            className="cloudsimage mb-20 md:mb-0"
+            src="/cloud1.png"
+            style={{ "--i": 1 }}
+            width={2100}
+            height={100}
+            alt="Cloud 1"
+          />
+          {/* Cloud 2 - Fast Speed */}
+          <Image
+            className="cloudsimage mb-20 md:mb-0"
+            src="/cloud2.png"
+            style={{ "--i": 2 }}
+            width={2100}
+            height={100}
+            alt="Cloud 2"
+          />
+          {/* Cloud 3 - Medium Speed */}
+          <Image
+            className="cloudsimage mb-20 md:mb-0"
+            src="/cloud3.png"
+            style={{ "--i": 3 }}
+            width={2100}
+            height={100}
+            alt="Cloud 3"
+          />
+          {/* Cloud 4 - Reverse Slow */}
+          <Image
+            className="cloudsimage mb-20 md:mb-0"
+            src="/cloud4.png"
+            style={{ "--i": 4 }}
+            width={2100}
+            height={100}
+            alt="Cloud 4"
+          />
+          {/* Cloud 5 - Slow Speed */}
+          <Image
+            className="cloudsimage mb-20 md:mb-0"
+            src="/cloud5.png"
+            style={{ "--i": 5 }}
+            width={2100}
+            height={100}
+            alt="Cloud 5"
+          />
       </div>
 
       <div className="z-[20] border-0 border-blue-500">
@@ -202,7 +199,7 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="w-fit lg:ml-auto lg:mr-10 xl:mr-60 border-0 border-white">
+          <div className="w-[70%] md:w-fit lg:ml-auto lg:mr-10 xl:mr-60 border-0 border-white">
             <Image src={"/LOGO_WH.png"} width={350} height={100} alt="logo" />
           </div>
         </section>

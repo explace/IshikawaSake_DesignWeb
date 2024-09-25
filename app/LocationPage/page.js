@@ -21,7 +21,7 @@ const LocationPage = () => {
         <div className="clouds absolute top-10 left-0 h-[100%] w-[100%] z-[20]">
           {/* Cloud 1 - Slow Speed */}
           <Image
-            className="cloudsimage"
+            className="cloudsimage mb-20 md:mb-0"
             src="/cloud1.png"
             style={{ "--i": 1 }}
             width={2100}
@@ -30,7 +30,7 @@ const LocationPage = () => {
           />
           {/* Cloud 2 - Fast Speed */}
           <Image
-            className="cloudsimage"
+            className="cloudsimage mb-20 md:mb-0"
             src="/cloud2.png"
             style={{ "--i": 2 }}
             width={2100}
@@ -39,7 +39,7 @@ const LocationPage = () => {
           />
           {/* Cloud 3 - Medium Speed */}
           <Image
-            className="cloudsimage"
+            className="cloudsimage mb-20 md:mb-0"
             src="/cloud3.png"
             style={{ "--i": 3 }}
             width={2100}
@@ -48,7 +48,7 @@ const LocationPage = () => {
           />
           {/* Cloud 4 - Reverse Slow */}
           <Image
-            className="cloudsimage"
+            className="cloudsimage mb-20 md:mb-0"
             src="/cloud4.png"
             style={{ "--i": 4 }}
             width={2100}
@@ -57,7 +57,7 @@ const LocationPage = () => {
           />
           {/* Cloud 5 - Slow Speed */}
           <Image
-            className="cloudsimage"
+            className="cloudsimage mb-20 md:mb-0"
             src="/cloud5.png"
             style={{ "--i": 5 }}
             width={2100}
