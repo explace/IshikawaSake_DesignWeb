@@ -1,18 +1,19 @@
 "use client";
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const News = () => {
   const fadeInNews = useRef(null);
   const [posts, setPosts] = useState([]);
+  // const [lang, setLang] = useState("en");
+  const lang = useSelector((state) => state.reducer1.lang);
 
   useEffect(() => {
     const target = fadeInNews.current;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // target.classList.add("fadeIn");
-          // target.classList.style.animation="fadeInNewsAni 3s forwards ease-out"
           document.querySelectorAll(".fadeInNews").forEach((item, index) => {
             item.style.animation = `fadeInAnimation .6s forwards ease-out ${
               index / 10
@@ -21,15 +22,11 @@ const News = () => {
           document.querySelector(
             ".fadeInNewsLine"
           ).style.animation = `fadeInNewsLineAni .6s forwards ease-out 1.5s`;
-        }
-        else {
-          // Optionally, remove the class when it leaves the viewport
-          // target.classList.remove("fadeIn");
+        } else {
           document.querySelectorAll(".fadeInNews").forEach((item, index) => {
-            item.style.animation = "none"
+            item.style.animation = "none";
           });
           document.querySelector(".fadeInNewsLine").style.animation = "none";
-
         }
       });
     });
@@ -37,7 +34,6 @@ const News = () => {
     if (target) {
       observer.observe(target);
     }
-    // Cleanup observer when the component unmounts
     return () => {
       if (target) {
         observer.unobserve(target);
@@ -45,18 +41,55 @@ const News = () => {
     };
   }, []);
 
+  // const changeLang = async (jp_text) => {
+  //   const apiKey = ""; // Replace with your API key
+  //   const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+
+  //   try {
+  //     const data = {
+  //       q: jp_text,
+  //       target: "en",
+  //     };
+
+  //     const response = await axios.post(url, data);
+  //     return response.data.data.translations[0].translatedText;
+  //   } catch (e) {
+  //     return "error";
+  //   }
+  // };
+
   useEffect(() => {
-    axios
-      .get(
-        "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
-      )
-      .then((response) => {
-        setPosts(response.data);
-      })
-      .catch((error) => {
+    const getPosts = async () => {
+      try {
+        const response = await axios.get(
+          "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
+        );
+        const fetchedPosts = response.data;
+
+        // if (lang === "en") {
+        //   const updatedPosts = await Promise.all(
+        //     fetchedPosts.map(async (post) => {
+        //       const translatedTitle = await changeLang(post.title.rendered);
+        //       return {
+        //         ...post,
+        //         title: {
+        //           ...post.title,
+        //           rendered: translatedTitle, // Set the translated title
+        //         },
+        //       };
+        //     })
+        //   );
+        //   setPosts(updatedPosts); // Update the state with the translated posts
+        // } else {
+          setPosts(fetchedPosts); // Set original posts if no translation is needed
+        // }
+      } catch (error) {
         console.error("There was an error fetching the data!", error);
-      });
-  }, []);
+      }
+    };
+
+    getPosts();
+  }, [lang]);
 
   function convertDate(dateString) {
     const date = new Date(dateString);
@@ -70,7 +103,10 @@ const News = () => {
 
   return (
     <div className="mt-10 grid place-items-center">
-      <div ref={fadeInNews} className="flex items-center w-[95%] lg:w-[80%] mb-6">
+      <div
+        ref={fadeInNews}
+        className="flex items-center w-[95%] lg:w-[80%] mb-6"
+      >
         <div className="text-base lg:text-4xl mr-3 flex items-center">
           <p className="fadeInNews opacity-0">N</p>
           <p className="fadeInNews opacity-0">E</p>
@@ -91,14 +127,15 @@ const News = () => {
       <div className="w-[95%] lg:w-[80%]">
         {posts.map((post, index) => {
           return (
-            <div key={index} className="mb-2">
-              <p className="text-xl mb-1">
-                <span className="text-xs lg:text-sm mr-1">
-                  {convertDate(post.date)}
-                </span>
-                - {post.title.rendered}
+            <div key={index} className="mb-3 flex items-center">
+              <p className="text-xs lg:text-sm mr-1">
+                {convertDate(post.date)}
               </p>
-              {/* <p className="text-xs">{post.title.rendered}</p> */}
+              {lang === "en" ? (
+                <p className="text-base lg:text-lg">- {post.title.rendered}</p>
+              ) : (
+                <p className="text-base">- {post.title.rendered}</p>
+              )}
             </div>
           );
         })}

@@ -78,7 +78,7 @@ const LandingPage = () => {
           src="/nature_vid2.mp4"
           className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
         />
-        <video
+        {/* <video
           muted
           loop
           ref={vid3}
@@ -105,10 +105,14 @@ const LandingPage = () => {
           ref={vid6}
           src="/nature_vid2.mp4"
           className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
-        />
+        /> */}
+        <Image ref={vid3} src="/ENJOY_IMG_DUMMY.png" width={3000} height={300} className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid" />
+        <Image ref={vid4} src="/PRODUCTS_IMG_DUMMY.png" width={3000} height={300} className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid" />
+        <Image ref={vid5} src="/LOCATION_IMG_DUMMY.png" width={3000} height={300} className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid" />
+        <Image ref={vid6} src="/STORY_IMG_DUMMY.png" width={3000} height={300} className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid" />
       </div>
 
-      <div className="z-[40] absolute top-0 grid place-items-center w-[100%] h-[100%] border-0 border-yellow-300">
+      {/* <div className="z-[40] absolute top-0 grid place-items-center w-[100%] h-[100%] border-0 border-yellow-300">
         <section className="lg:flex grid place-items-center items-center w-[100%] border-0 border-cyan-300">
           <div className="flex justify-between w-[95%] sm:w-[70%] lg:w-[50%] xl:w-[30%]  lg:ml-10 xl:ml-44 mb-24 lg:mb-0 border-0 border-green-500">
             <p
@@ -141,11 +145,11 @@ const LandingPage = () => {
               className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
               onMouseEnter={() => {
                 vid3.current.style.opacity = 1;
-                vid3.current.play();
+                // vid3.current.play();
               }}
               onMouseLeave={() => {
                 vid3.current.style.opacity = 0;
-                vid3.current.pause();
+                // vid3.current.pause();
               }}
             >
               <span className="en-vertical-text">ENJOY</span>{" "}
@@ -155,11 +159,11 @@ const LandingPage = () => {
               className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
               onMouseEnter={() => {
                 vid4.current.style.opacity = 1;
-                vid4.current.play();
+                // vid4.current.play();
               }}
               onMouseLeave={() => {
                 vid4.current.style.opacity = 0;
-                vid4.current.pause();
+                // vid4.current.pause();
               }}
             >
               <Link href={"/ProductsPage"} passHref>
@@ -171,11 +175,11 @@ const LandingPage = () => {
               className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
               onMouseEnter={() => {
                 vid5.current.style.opacity = 1;
-                vid5.current.play();
+                // vid5.current.play();
               }}
               onMouseLeave={() => {
                 vid5.current.style.opacity = 0;
-                vid5.current.pause();
+                // vid5.current.pause();
               }}
             >
               <Link href={"/LocationPage"} passHref>
@@ -186,11 +190,11 @@ const LandingPage = () => {
               className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
               onMouseEnter={() => {
                 vid6.current.style.opacity = 1;
-                vid6.current.play();
+                // vid6.current.play();
               }}
               onMouseLeave={() => {
                 vid6.current.style.opacity = 0;
-                vid6.current.pause();
+                // vid6.current.pause();
               }}
             >
               <Link href={"/StoryPage"} passHref>
@@ -214,7 +218,7 @@ const LandingPage = () => {
           height={100}
           alt="logo"
         />
-      </div>
+      </div> */}
     </main>
   );
 };
