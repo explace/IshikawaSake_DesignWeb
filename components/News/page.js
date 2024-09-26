@@ -81,7 +81,7 @@ const News = () => {
         //   );
         //   setPosts(updatedPosts); // Update the state with the translated posts
         // } else {
-          setPosts(fetchedPosts); // Set original posts if no translation is needed
+        setPosts(fetchedPosts); // Set original posts if no translation is needed
         // }
       } catch (error) {
         console.error("There was an error fetching the data!", error);
@@ -125,20 +125,31 @@ const News = () => {
       </div>
 
       <div className="w-[95%] lg:w-[80%]">
-        {posts.map((post, index) => {
-          return (
-            <div key={index} className="mb-3 flex items-center">
-              <p className="text-xs lg:text-sm mr-1">
-                {convertDate(post.date)}
-              </p>
-              {lang === "en" ? (
-                <p className="text-base lg:text-lg">- {post.title.rendered}</p>
-              ) : (
-                <p className="text-base">- {post.title.rendered}</p>
-              )}
-            </div>
-          );
-        })}
+        {lang === "en"
+          ? posts
+              .filter((e) => e.class_list.includes("category-english"))
+              .map((post, index) => {
+                return (
+                  <div key={index} className="mb-3 flex items-center">
+                    <p className="text-xs lg:text-sm mr-1">
+                      {convertDate(post.date)}
+                    </p>
+                    <p className="text-base lg:text-lg">- {post.title.rendered}</p>
+                  </div>
+                );
+              })
+          : posts
+              .filter((e) => e.class_list.includes("category-5890"))
+              .map((post, index) => {
+                return (
+                  <div key={index} className="mb-3 flex items-center">
+                    <p className="text-xs lg:text-sm mr-1">
+                      {convertDate(post.date)}
+                    </p>
+                    <p className="text-base">- {post.title.rendered}</p>
+                  </div>
+                );
+              })}
 
         <button className="border-2 mt-5 border-black px-3 py-1 text-xs">
           <a
