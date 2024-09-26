@@ -44,8 +44,29 @@
   right: 0rem;
 } */
 
+.arrow{
+  transition: all linear 0.25s;
+  transform: rotate(0deg);
+}
+.dropdown{
+  transition: all linear 0.25s;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.langChangeAction .arrow{
+  transform: rotate(180deg);
+}
+.langChangeAction .dropdown{
+  transform: scaleY(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
 .topPageMain {
-  background-image: url("/FV_MAIN_IMG_DUMMY.png");
+  background-image: url("/TOP_PAGE_FV_FOR_OPEN.png");
   background-repeat: no-repeat;
   background-size: cover;
   /* background-position: center; */

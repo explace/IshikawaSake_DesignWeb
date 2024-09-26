@@ -21,13 +21,13 @@ export default function Home() {
 
       <Footer/>
       
-      <Story/>
+      {/* <Story/> */}
 
-      <Location/>
+      {/* <Location/> */}
 
-      <Products/>
+      {/* <Products/> */}
       
-      <Enjoy/>
+      {/* <Enjoy/> */}
 
 
       {/* <p className="mt-[90vh] text-3xl">

@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useDispatch } from "react-redux";
+import { changeLangFunc } from "@/redux/actions";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
@@ -13,58 +14,65 @@ const Nav = () => {
   const navBtns = useRef(null);
   const menuToggle = useRef(null);
   const menu = useRef(null);
+  const langChangeFunc = useRef(null);
+  const en = useRef(null);
+  const jp = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lang, setLang] = useState("jp");
 
-  useEffect(() => {
-    if (navBtns.current) {
-      navBtns.current.style.display = "none";
-    }
-    if (typeof window !== "undefined") {
-      if (window.scrollY / window.innerHeight > 1) {
-        navLogo.current.style.filter = `invert(1)`;
-        menuToggle.current.style.filter = `invert(1)`;
-        navPCMain.current.style.filter = `invert(1)`;
-        if (window.innerWidth > 1280) {
-          navBtns.current.style.display = "flex";
-          navBtns.current.style.opacity = 1;
-        }
-      }
+  const dispatch = useDispatch();
 
-      const handleScroll = (e) => {
-        const scrollTop = window.scrollY; // Current scroll position
-        const windowHeight = window.innerHeight;
-        const scrollPercentage = scrollTop / windowHeight;
+  // useEffect(() => {
+  //   if (navBtns.current) {
+  //     navBtns.current.style.display = "none";
+  //   }
+  //   if (typeof window !== "undefined") {
+  //     if (window.scrollY / window.innerHeight > 1) {
+  //       navLogo.current.style.filter = `invert(1)`;
+  //       menuToggle.current.style.filter = `invert(1)`;
+  //       navPCMain.current.style.filter = `invert(1)`;
+  //       if (window.innerWidth > 1280) {
+  //         navBtns.current.style.display = "flex";
+  //         navBtns.current.style.opacity = 1;
+  //       }
+  //     }
 
-        if (scrollPercentage <= 1) {
-          if (window.innerWidth > 1280) {
-            if (scrollPercentage > 0.75) {
-              navBtns.current.style.display = "flex";
-            }
-            if (scrollPercentage < 0.75) {
-              navBtns.current.style.display = "none";
-            }
-            navBtns.current.style.opacity = scrollPercentage;
-          }
-          navLogo.current.style.filter = `invert(${scrollPercentage})`;
-          navPCMain.current.style.filter = `invert(${scrollPercentage})`;
-          menuToggle.current.style.filter = `invert(${scrollPercentage})`;
-        }
-      };
+  //     const handleScroll = (e) => {
+  //       const scrollTop = window.scrollY; // Current scroll position
+  //       const windowHeight = window.innerHeight;
+  //       const scrollPercentage = scrollTop / windowHeight;
 
-      window.addEventListener("scroll", handleScroll);
+  //       if (scrollPercentage <= 1) {
+  //         if (window.innerWidth > 1280) {
+  //           if (scrollPercentage > 0.75) {
+  //             navBtns.current.style.display = "flex";
+  //           }
+  //           if (scrollPercentage < 0.75) {
+  //             navBtns.current.style.display = "none";
+  //           }
+  //           navBtns.current.style.opacity = scrollPercentage;
+  //         }
+  //         navLogo.current.style.filter = `invert(${scrollPercentage})`;
+  //         navPCMain.current.style.filter = `invert(${scrollPercentage})`;
+  //         menuToggle.current.style.filter = `invert(${scrollPercentage})`;
+  //       }
+  //     };
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
-      };
-    }
-  }, []);
+  //     window.addEventListener("scroll", handleScroll);
+
+  //     return () => {
+  //       window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
+  //     };
+  //   }
+  // }, []);
+
   return (
-    <nav className="fixed top-0 z-[1000000] text-white w-[100%]">
+    <nav className="fixed top-0 z-[1000000] text-black w-[100%]">
       <section className="z-[101] mt-2 flex items-center p-2 md:p-3 md:mt-4 w-[100%] md:w-[96%] relative left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md ">
         <Link href={"/"} passHref>
           <div ref={navLogo} className="border-0 border-white">
             <Image
-              className="cursor-pointer logo"
+              className="cursor-pointer invert"
               src={"/LOGOTYPE_WH.png"}
               width={250}
               height={100}
@@ -75,7 +83,7 @@ const Nav = () => {
 
         {/* desktop navbar */}
         <main ref={navPCMain} className="ml-auto relative hidden xl:flex">
-          <div ref={navBtns} className="opacity-0 flex items-center">
+          {/* <div ref={navBtns} className="opacity-0 flex items-center">
             <Link href={"/StoryPage"} passHref>
               <p className="mr-5 cursor-pointer">STORY</p>
             </Link>
@@ -88,7 +96,7 @@ const Nav = () => {
             <p className="mr-5 cursor-pointer">ENJOY</p>
             <p className="mr-5 cursor-pointer">NEWS</p>
             <p className="mr-5 cursor-pointer">SHOP INFO</p>
-          </div>
+         </div> */}
 
           <p className=" grid cursor-pointer place-items-center text-2xl mr-5">
             <FaInstagram />
@@ -103,8 +111,50 @@ const Nav = () => {
             <FaYoutube />
           </p>
 
-          <p className="mr-2 text-xl">JP</p>
-          <IoIosArrowDown className="text-2xl cursor-pointer" />
+          <div
+            onClick={() => {
+              langChangeFunc.current.classList.toggle("langChangeAction");
+            }}
+            ref={langChangeFunc}
+            className="relative cursor-pointer flex items-center"
+          >
+            <p className="mr-2 text-xl">{lang === "en" ? "EN" : "JP"}</p>
+            <IoIosArrowDown className="text-2xl arrow" />
+
+            <div className="dropdown border-2 border-gray-400 p-1 rounded-md absolute top-[100%] w-[100%]">
+              <p
+                onClick={() => {
+                  // langChangeFunc.current.classList.remove("langChangeAction");
+
+                  if (lang === "jp") {
+                    dispatch(changeLangFunc());
+                    setLang("en");
+                    en.current.classList.toggle("bg-gray-300");
+                    jp.current.classList.toggle("bg-gray-300");
+                  }
+                }}
+                ref={en}
+                className="text-center w-[100%] mb-2 rounded-md"
+              >
+                EN
+              </p>
+              <p
+                onClick={() => {
+                  // langChangeFunc.current.classList.remove("langChangeAction");
+                  if (lang === "en") {
+                    dispatch(changeLangFunc());
+                    setLang("jp");
+                    en.current.classList.toggle("bg-gray-300");
+                    jp.current.classList.toggle("bg-gray-300");
+                  }
+                }}
+                ref={jp}
+                className="text-center bg-gray-300 w-[100%] rounded-md"
+              >
+                JP
+              </p>
+            </div>
+          </div>
         </main>
 
         {/* mobile navbar */}
@@ -125,9 +175,9 @@ const Nav = () => {
           ref={menuToggle}
           className="block xl:hidden ml-auto relative w-fit cursor-pointer menuNormal"
         >
-          <p className="line1 w-[2.5rem] h-[2px] bg-white rounded-lg"></p>
-          <p className="line2 w-[2.5rem] h-[2px] bg-white rounded-lg mb-2 mt-2"></p>
-          <p className="line3 w-[2.5rem] h-[2px] bg-white rounded-lg"></p>
+          <p className="line1 w-[2.5rem] h-[2px] bg-black rounded-lg"></p>
+          <p className="line2 w-[2.5rem] h-[2px] bg-black rounded-lg mb-2 mt-2"></p>
+          <p className="line3 w-[2.5rem] h-[2px] bg-black rounded-lg"></p>
         </div>
       </section>
 
@@ -136,15 +186,17 @@ const Nav = () => {
         className="menu grid xl:hidden absolute place-items-center z-[100] top-0 right-0 w-[100vw] h-[100vh] opacity-[0] pointer-events-none"
       >
         <div>
-        <Link href={"/StoryPage"} passHref>
-          <p className="mb-[6vh] text-xl cursor-pointer text-center">STORY</p>
-        </Link>
-        <Link href={"/LocationPage"} passHref>
-          <p className="mb-[6vh] text-xl cursor-pointer text-center">LOCATION</p>
-        </Link>
-        <Link href={"/ProductsPage"} passHref>
-          <p className="text-xl cursor-pointer text-center">PRODUCTS</p>
-        </Link>
+          <Link href={"/StoryPage"} passHref>
+            <p className="mb-[6vh] text-xl cursor-pointer text-center">STORY</p>
+          </Link>
+          <Link href={"/LocationPage"} passHref>
+            <p className="mb-[6vh] text-xl cursor-pointer text-center">
+              LOCATION
+            </p>
+          </Link>
+          <Link href={"/ProductsPage"} passHref>
+            <p className="text-xl cursor-pointer text-center">PRODUCTS</p>
+          </Link>
         </div>
       </div>
     </nav>
