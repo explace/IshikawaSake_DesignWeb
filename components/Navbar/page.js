@@ -14,9 +14,12 @@ const Nav = () => {
   const navBtns = useRef(null);
   const menuToggle = useRef(null);
   const menu = useRef(null);
-  const langChangeFunc = useRef(null);
-  const en = useRef(null);
-  const jp = useRef(null);
+  const langChangeFuncPC = useRef(null);
+  const enPC = useRef(null);
+  const jpPC = useRef(null);
+  const langChangeFuncMb = useRef(null);
+  const enMb = useRef(null);
+  const jpMb = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState("jp");
 
@@ -113,9 +116,9 @@ const Nav = () => {
 
           <div
             onClick={() => {
-              langChangeFunc.current.classList.toggle("langChangeAction");
+              langChangeFuncPC.current.classList.toggle("langChangeAction");
             }}
-            ref={langChangeFunc}
+            ref={langChangeFuncPC}
             className="relative cursor-pointer flex items-center"
           >
             <p className="mr-2 text-xl">{lang === "en" ? "EN" : "JP"}</p>
@@ -124,16 +127,16 @@ const Nav = () => {
             <div className="dropdown border-2 border-gray-400 p-1 rounded-md absolute top-[100%] w-[100%]">
               <p
                 onClick={() => {
-                  // langChangeFunc.current.classList.remove("langChangeAction");
+                  // langChangeFuncPC.current.classList.remove("langChangeAction");
 
                   if (lang === "jp") {
                     dispatch(changeLangFunc());
                     setLang("en");
-                    en.current.classList.toggle("bg-gray-300");
-                    jp.current.classList.toggle("bg-gray-300");
+                    enPC.current.classList.toggle("bg-gray-300");
+                    jpPC.current.classList.toggle("bg-gray-300");
                   }
                 }}
-                ref={en}
+                ref={enPC}
                 className="text-center w-[100%] mb-2 rounded-md"
               >
                 EN
@@ -144,11 +147,11 @@ const Nav = () => {
                   if (lang === "en") {
                     dispatch(changeLangFunc());
                     setLang("jp");
-                    en.current.classList.toggle("bg-gray-300");
-                    jp.current.classList.toggle("bg-gray-300");
+                    enPC.current.classList.toggle("bg-gray-300");
+                    jpPC.current.classList.toggle("bg-gray-300");
                   }
                 }}
-                ref={jp}
+                ref={jpPC}
                 className="text-center bg-gray-300 w-[100%] rounded-md"
               >
                 JP
@@ -187,16 +190,81 @@ const Nav = () => {
       >
         <div>
           <Link href={"/StoryPage"} passHref>
-            <p className="mb-[6vh] text-xl cursor-pointer text-center">STORY</p>
+            <p className="mb-[4vh] text-xl cursor-pointer text-center">STORY</p>
           </Link>
           <Link href={"/LocationPage"} passHref>
-            <p className="mb-[6vh] text-xl cursor-pointer text-center">
+            <p className="mb-[4vh] text-xl cursor-pointer text-center">
               LOCATION
             </p>
           </Link>
           <Link href={"/ProductsPage"} passHref>
-            <p className="text-xl cursor-pointer text-center">PRODUCTS</p>
+            <p className="mb-[4vh] text-xl cursor-pointer text-center">
+              PRODUCTS
+            </p>
           </Link>
+
+          <div className="mb-[4vh] flex justify-evenly items-center">
+            <p className=" grid cursor-pointer place-items-center text-3xl">
+              <FaInstagram />
+            </p>
+            <p className=" grid cursor-pointer place-items-center text-3xl">
+              <FaXTwitter />
+            </p>
+          </div>
+
+          <div className="mb-[4vh] flex justify-evenly items-center">
+            <p className=" grid cursor-pointer place-items-center text-3xl">
+              <FaFacebook />
+            </p>
+            <p className="grid cursor-pointer place-items-center text-3xl">
+              <FaYoutube />
+            </p>
+          </div>
+
+          <div
+            onClick={() => {
+              langChangeFuncMb.current.classList.toggle("langChangeAction");
+            }}
+            ref={langChangeFuncMb}
+            className="relative cursor-pointer flex justify-center items-center text-center"
+          >
+            <p className="mr-2 text-2xl">{lang === "en" ? "EN" : "JP"}</p>
+            <IoIosArrowDown className="text-3xl arrow" />
+
+            <div className="dropdown border-2 border-gray-800 p-1 rounded-md absolute top-[100%] w-[100%]">
+              <p
+                onClick={() => {
+                  // langChangeFuncMb.current.classList.remove("langChangeAction");
+
+                  if (lang === "jp") {
+                    dispatch(changeLangFunc());
+                    setLang("en");
+                    enMb.current.classList.toggle("bg-gray-300");
+                    jpMb.current.classList.toggle("bg-gray-300");
+                  }
+                }}
+                ref={enMb}
+                className="text-center text-xl w-[100%] mb-2 rounded-md"
+              >
+                EN
+              </p>
+              <p
+                onClick={() => {
+                  // langChangeFunc.current.classList.remove("langChangeAction");
+                  if (lang === "en") {
+                    dispatch(changeLangFunc());
+                    setLang("jp");
+                    enMb.current.classList.toggle("bg-gray-300");
+                    jpMb.current.classList.toggle("bg-gray-300");
+                  }
+                }}
+                ref={jpMb}
+                className="text-center text-xl bg-gray-300 w-[100%] rounded-md"
+              >
+                JP
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

@@ -13,8 +13,15 @@ const LandingPage = () => {
   return (
     <main
       id="main"
-      className="topPageMain h-[100vh] relative overflow-hidden border-0 border-red-500"
+      className="topPageMain relative overflow-hidden"
     >
+      <Image
+        src="/TOP_PAGE_FV_FOR_OPEN.png"
+        width={3000}
+        height={100}
+        alt="logo"
+        className="w-[100vw] mt-10 md:mt-0"
+      />
       <div className="clouds " style={{ height: "100vh", width: "100vw" }}>
         {/* Cloud 1 - Slow Speed */}
         <Image

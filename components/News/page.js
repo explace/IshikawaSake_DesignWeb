@@ -19,14 +19,22 @@ const News = () => {
               index / 10
             }s`;
           });
-          document.querySelector(
-            ".fadeInNewsLine"
-          ).style.animation = `fadeInNewsLineAni .6s forwards ease-out 1.5s`;
+
+          document
+            .querySelectorAll(".fadeInNewsLine")
+            .forEach((item, index) => {
+              item.style.animation =
+                "fadeInNewsLineAni .6s forwards ease-out 1.5s";
+            });
         } else {
           document.querySelectorAll(".fadeInNews").forEach((item, index) => {
             item.style.animation = "none";
           });
-          document.querySelector(".fadeInNewsLine").style.animation = "none";
+          document
+            .querySelectorAll(".fadeInNewsLine")
+            .forEach((item, index) => {
+              item.style.animation = "none";
+            });
         }
       });
     });
@@ -107,7 +115,7 @@ const News = () => {
         ref={fadeInNews}
         className="flex items-center w-[95%] lg:w-[80%] mb-6"
       >
-        <div className="text-base lg:text-4xl mr-3 flex items-center">
+        <div className="text-xl lg:text-4xl mr-3 flex items-center">
           <p className="fadeInNews opacity-0">N</p>
           <p className="fadeInNews opacity-0">E</p>
           <p className="fadeInNews opacity-0">W</p>
@@ -134,7 +142,9 @@ const News = () => {
                     <p className="text-xs lg:text-sm mr-1">
                       {convertDate(post.date)}
                     </p>
-                    <p className="text-base lg:text-lg">- {post.title.rendered}</p>
+                    <p className="text-base lg:text-lg">
+                      - {post.title.rendered}
+                    </p>
                   </div>
                 );
               })
@@ -146,7 +156,9 @@ const News = () => {
                     <p className="text-xs lg:text-sm mr-1">
                       {convertDate(post.date)}
                     </p>
-                    <p className="text-base">- {post.title.rendered}</p>
+                    <p className="text-sm lg:text-base">
+                      - {post.title.rendered}
+                    </p>
                   </div>
                 );
               })}

@@ -65,14 +65,12 @@
   pointer-events: all;
 }
 
-.topPageMain {
+/* .topPageMain {
   background-image: url("/TOP_PAGE_FV_FOR_OPEN.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: center; */
-  background-position: bottom;
-  /* background-color: rgb(85, 85, 85); */
-}
+  background-position: center;
+} */
 
 .clouds {
   position: absolute;
