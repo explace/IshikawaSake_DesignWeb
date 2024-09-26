@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex basis-1/3 mt-14 md:mt-20 ml-[5.5%] w-[90%] py-2 md:ml-[0] justify-center"> 
         <Image
           className=" md:w-[100%] md:h-[100%] md:-mr-12"
-          src="/TOP_PAGE_FV_FOR_OPEN.png"
+          src="/SEt_LOGO_BK.png"
           width={300}
           height={100}
           alt="Cloud 3"
@@ -19,53 +19,53 @@ const Footer = () => {
 
         <div className=" relative flex basis-1/3 mt-12 justify-center ml-[5.5%] w-[90%] py-2 md:ml-[0]">
           <p className="vertical-text text-[11px] md:text-sm mr-3 ml-1 md:ml-3 mt-6 text-stone-400">
-            見飽きることはありません︒
+            サイトマップ
+          </p>
+          <p className="vertical-text text-[11px] md:text-sm mr-3 ml-1 md:ml-3 mt-6 text-stone-400">
+            プライバシーポリシー
           </p>
           <p className="vertical-text text-[11px] md:text-sm mr-3 mt-6 text-stone-400">
-            毎日眺めていても
+            ご利用規約
           </p>
           <p className="vertical-text text-[11px] md:text-sm mr-3 mt-6 text-stone-400">
-            東側から望む富士の稜線はたおやかで︑
+            特定商取引法に基づく表示
           </p>
           <p className="vertical-text text-[11px] md:text-sm mr-3 mt-6 text-stone-400">
-            富士山をつねに見上げる御殿場︒
+            お問い合わせ
           </p>
           <p className="vertical-text text-[11px] md:text-sm mr-5 mt-6 text-stone-400">
-            酒造りを
+            会社概要
           </p>
 
           <p className="vertical-text text-black mr-6 mt-2 md:mr-9  text-sm md:text-xl font-semibold ">
-            <span className="en-vertical-text">ABOUT US</span>
+            <span className="en-vertical-text text-stone-400">ABOUT US</span>
           </p>
 
           <p className="vertical-text text-[11px] md:text-sm -ml-3 md:-ml-2 mr-5 md:mr-4 mt-6 text-stone-400">
-            酒造りを
+            取扱店舗
           </p>
-          <span className="en-vertical-text text-[11px] md:text-sm -ml-3 mr-5 md:mr-3 mt-6 text-stone-400">
-            ONLINE STORE
-          </span>
           <p className="vertical-text text-[11px] md:text-sm -ml-3 mr-3 md:-ml-2 md:-mr-16 mt-6 text-stone-400">
-            毎日眺めていても
+            御厨栄蔵
           </p>
 
         </div>
 
 
         <div className="flex basis-1/3 mt-12 md:mt-14 justify-center ml-[11.5%] w-[90%] py-2 md:ml-[0] md:mr-4">
-          <p className="vertical-text text-black mr-6 md:mr-8 text-sm md:text-xl -ml-10 font-semibold ">
-            <span className="en-vertical-text">SHOP INFO</span> 御厨榮蔵
+          <p className="vertical-text text-stone-400 mr-6 md:mr-8 text-sm md:text-xl -ml-10 font-semibold ">
+            <span className="en-vertical-text text-stone-400">SHOP INFO</span> 御厨榮蔵
           </p>
           <p className="vertical-text text-black mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
             <span className="en-vertical-text">NEWS</span> お知らせ
           </p>
-          <p className="vertical-text text-black mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
-            <span className="en-vertical-text">ENJOY</span> お酒を楽しく美味しく
+          <p className="vertical-text text-stone-400 mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
+            <span className="en-vertical-text text-stone-400">ENJOY</span> お酒を楽しく美味しく
           </p>
-          <p className="vertical-text text-black mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
-            <span className="en-vertical-text">PRODUCTS</span> わたしたちのお酒
+          <p className="vertical-text text-stone-400 mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
+            <span className="en-vertical-text text-stone-400">PRODUCTS</span> わたしたちのお酒
           </p>
-          <p className="vertical-text text-black mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
-            <span className="en-vertical-text">LOCATION</span> 郷土
+          <p className="vertical-text text-stone-400 mr-6 md:mr-8 text-sm md:text-xl font-semibold ">
+            <span className="en-vertical-text text-stone-400">LOCATION</span> 郷土
           </p>
           <p className="vertical-text text-black mr-0 md:mr-0 text-sm md:text-xl font-semibold ">
             <span className="en-vertical-text">STORY</span> ものがたり
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         {/* Right Section (Social Icons or Additional Info) */}
-        <div className=" absolute basis-1/3  flex flex-row gap-8 ml-[18%] mt-[280%] md:mt-[22%] md:ml-[32.5%]">
+        <div className=" absolute basis-1/3  flex flex-row gap-8 ml-[19%] mt-[285%] md:mt-[22%] md:ml-[32.5%]">
           <p className=" grid cursor-pointer place-items-center text-2xl mr-0">
             <FaInstagram />
           </p>
