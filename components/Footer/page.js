@@ -2,8 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
+import { useSelector } from "react-redux";
 const Footer = () => {
+  const lang = useSelector((state) => state.reducer1.lang);
+
   return (
     <div className="w-full mt-20 p-2 sm:p-6 lg:p-12 2xl:p-24 grid lg:flex justify-evenly relative">
       {/* Left Logo Section */}
@@ -20,31 +22,32 @@ const Footer = () => {
       {/* First Section */}
       <div className="flex order-2 justify-center mb-10 lg:mb-0">
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          サイトマップ
+          {lang === "en" ? <span className="en-vertical-text">Sitemap</span> : "サイトマップ"}
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          プライバシーポリシー
+        {lang === "en" ? <span className="en-vertical-text">Privacy Policy</span> : "プライバシーポリシー"}
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          ご利用規約
+        {lang === "en" ?<span className="en-vertical-text">Terms of Use</span>  : "ご利用規約"}
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          特定商取引法に基づく表示
+        {lang === "en" ?<span className="en-vertical-text">Commercial Transactions Disclosure</span> : "特定商取引法に基づく表示"}
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          お問い合わせ
+        {lang === "en" ?<span className="en-vertical-text">Inquiry</span> : "お問い合わせ"}
         </p>
         <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-stone-400">
-          会社概要
+        {lang === "en" ?<span className="en-vertical-text">Company Profile</span>  : "会社概要"}
         </p>
         <p className="en-vertical-text mr-6 2xl:mr-10 text-black text-xl lg:text-2xl font-medium">
           ABOUT US
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
+        {lang === "en" ?<span className="en-vertical-text">Available at:</span>  : "取扱店舗"}
           取扱店舗
         </p>
         <p className="vertical-text relative top-4 text-base lg:text-lg text-stone-400">
-          御厨栄蔵
+        {lang === "en" ?<span className="en-vertical-text">Eizo Mikuriya</span>  : "御厨栄蔵"}
         </p>
       </div>
 
