@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="w-full mt-20 p-2 sm:p-6 lg:p-12 2xl:p-24 grid lg:flex justify-evenly relative">
       {/* Left Logo Section */}
-      <div className="mb-10 lg:mb-0 grid place-items-center mr-0 lg:mr-2 2xl:mr-32">
+      <div className="mb-32 lg:mb-0 order-3 lg:order-1 grid place-items-center mr-0 lg:mr-2 2xl:mr-32">
         <Image
           className="w-[70%] md:w-[50%] lg:w-72"
           src="/SEt_LOGO_BK.png"
@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
 
       {/* First Section */}
-      <div className="flex justify-center mb-10 lg:mb-0">
+      <div className="flex order-2 justify-center mb-10 lg:mb-0">
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
           サイトマップ
         </p>
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
 
       {/* Second Section */}
-      <div className="flex justify-center mb-32 lg:mb-0">
+      <div className="flex order-1 lg:order-3 justify-center mb-10 lg:mb-0">
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">SHOP INFO</span>{" "}
           御厨榮蔵

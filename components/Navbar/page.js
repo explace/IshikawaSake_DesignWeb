@@ -85,7 +85,7 @@ const Nav = () => {
         </Link>
 
         {/* desktop navbar */}
-        <main ref={navPCMain} className="ml-auto relative hidden xl:flex">
+        <main ref={navPCMain} className="ml-auto relative flex">
           {/* <div ref={navBtns} className="opacity-0 flex items-center">
             <Link href={"/StoryPage"} passHref>
               <p className="mr-5 cursor-pointer">STORY</p>
@@ -101,16 +101,16 @@ const Nav = () => {
             <p className="mr-5 cursor-pointer">SHOP INFO</p>
          </div> */}
 
-          <p className=" grid cursor-pointer place-items-center text-2xl mr-5">
+          <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaInstagram />
           </p>
-          <p className=" grid cursor-pointer place-items-center text-2xl mr-5">
+          <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaXTwitter />
           </p>
-          <p className=" grid cursor-pointer place-items-center text-2xl mr-5">
+          <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaFacebook />
           </p>
-          <p className="grid cursor-pointer place-items-center text-2xl mr-5">
+          <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaYoutube />
           </p>
 
@@ -162,7 +162,7 @@ const Nav = () => {
 
         {/* mobile navbar */}
 
-        <div
+        {/* <div
           onClick={() => {
             menuToggle.current.classList.toggle("menuToggle");
             menu.current.classList.toggle("menu_action");
@@ -181,10 +181,10 @@ const Nav = () => {
           <p className="line1 w-[2.5rem] h-[2px] bg-black rounded-lg"></p>
           <p className="line2 w-[2.5rem] h-[2px] bg-black rounded-lg mb-2 mt-2"></p>
           <p className="line3 w-[2.5rem] h-[2px] bg-black rounded-lg"></p>
-        </div>
+        </div> */}
       </section>
 
-      <div
+      {/* <div
         ref={menu}
         className="menu grid xl:hidden absolute place-items-center z-[100] top-0 right-0 w-[100vw] h-[100vh] opacity-[0] pointer-events-none"
       >
@@ -265,8 +265,8 @@ const Nav = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div>*/}
     </nav>
   );
 };
