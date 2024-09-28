@@ -87,7 +87,9 @@ const Footer = () => {
 <div
   className={`absolute lg:-bottom-[15%] ${
     lang === "en" ? "-bottom-[27%]" : "-bottom-[19%]"
-  } left-1/2 lg:-bottom-[27%] -translate-x-1/2 text-white text-base lg:text-lg flex justify-center items-center p-4 lg:p-6 mt-20 w-[90%] lg:w-[60%]`}
+  } ${
+    lang === "en" ? "lg:-bottom-[29%]" : "lg:-bottom-[23%]"
+  } left-1/2 -translate-x-1/2 text-white text-base lg:text-lg flex justify-center items-center p-4 lg:p-6 mt-20 w-[90%] lg:w-[60%]`}
 >
   <p className="text-center text-stone-400 leading-relaxed lg:leading-loose">
     {lang === "en" ? (
