@@ -84,7 +84,7 @@ const Footer = () => {
       </div>
 
      {/* Last Section */}
-<div
+{/* <div
   className={`absolute lg:-bottom-[15%] ${
     lang === "en" ? "-bottom-[27%]" : "-bottom-[19%]"
   } ${
@@ -106,7 +106,7 @@ const Footer = () => {
       </>
     )}
   </p>
-</div>
+</div> */}
 
 
     </div>
