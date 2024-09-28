@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
@@ -84,7 +85,7 @@ const Footer = () => {
       </div>
 
      {/* Last Section */}
-{/* <div
+<div
   className={`absolute lg:-bottom-[15%] ${
     lang === "en" ? "-bottom-[27%]" : "-bottom-[19%]"
   } ${
@@ -106,7 +107,7 @@ const Footer = () => {
       </>
     )}
   </p>
-</div> */}
+</div>
 
 
     </div>
