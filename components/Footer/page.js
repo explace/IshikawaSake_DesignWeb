@@ -1,9 +1,10 @@
-'use client'
+"use client";
 import React from "react";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Footer = () => {
   const lang = useSelector((state) => state.reducer1.lang);
@@ -24,47 +25,87 @@ const Footer = () => {
       {/* First Section */}
       <div className="flex order-2 justify-center mb-10 lg:mb-0">
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? <span className="en-vertical-text">Sitemap</span> : "サイトマップ"}
+          {lang === "en" ? (
+            <span className="en-vertical-text">Sitemap</span>
+          ) : (
+            "サイトマップ"
+          )}
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? <span className="en-vertical-text">Privacy Policy</span> : "プライバシーポリシー"}
+          {lang === "en" ? (
+            <span className="en-vertical-text">Privacy Policy</span>
+          ) : (
+            "プライバシーポリシー"
+          )}
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? <span className="en-vertical-text">Inquiry</span> : "お問い合わせ"}
+          {lang === "en" ? (
+            <span className="en-vertical-text">Inquiries</span>
+          ) : (
+            "お問い合わせ"
+          )}
         </p>
-        <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? <span className="en-vertical-text">Company Profile</span> : "会社概要"}
-        </p>
+        <Link href={"/Profile"}>
+          <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-stone-400">
+            {lang === "en" ? (
+              <span className="en-vertical-text">Company Profile</span>
+            ) : (
+              "会社概要"
+            )}
+          </p>
+        </Link>
         <p className="en-vertical-text mr-6 2xl:mr-10 text-black text-xl lg:text-2xl font-medium">
           ABOUT US
         </p>
         <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? <span className="en-vertical-text">Available at:</span> : "取扱店舗"}
+          {lang === "en" ? (
+            <span className="en-vertical-text">Stores</span>
+          ) : (
+            "取扱店舗"
+          )}
         </p>
         <p className="vertical-text relative top-4 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? <span className="en-vertical-text">Eizo Mikuriya</span> : "御厨栄蔵"}
+          {lang === "en" ? (
+            <span className="en-vertical-text">Mikuriya sakaegura</span>
+          ) : (
+            "御厨栄蔵"
+          )}
         </p>
       </div>
 
       {/* Second Section */}
       <div className="flex order-1 lg:order-3 justify-center mb-10 lg:mb-0">
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">SHOP INFO</span> 御厨榮蔵
+          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
+            SHOP INFO
+          </span>{" "}
+          御厨榮蔵
         </p>
         <p className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span> お知らせ
+          <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
+          お知らせ
         </p>
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">ENJOY</span> お酒を楽しく美味しく
+          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
+            ENJOY
+          </span>{" "}
+          お酒を楽しく美味しく
         </p>
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">PRODUCTS</span> わたしたちのお酒
+          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
+            PRODUCTS
+          </span>{" "}
+          わたしたちのお酒
         </p>
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">LOCATION</span> 郷土
+          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
+            LOCATION
+          </span>{" "}
+          郷土
         </p>
         <p className="vertical-text text-black text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-xl lg:text-2xl">STORY</span> ものがたり
+          <span className="en-vertical-text text-xl lg:text-2xl">STORY</span>{" "}
+          ものがたり
         </p>
       </div>
 
@@ -84,32 +125,35 @@ const Footer = () => {
         </p>
       </div>
 
-     {/* Last Section */}
-<div
-  className={`absolute lg:-bottom-[15%] ${
-    lang === "en" ? "-bottom-[27%]" : "-bottom-[19%]"
-  } ${
-    lang === "en" ? "lg:-bottom-[29%]" : "lg:-bottom-[23%]"
-  } left-1/2 -translate-x-1/2 text-white text-base lg:text-lg flex justify-center items-center p-4 lg:p-6 mt-20 w-[90%] lg:w-[60%]`}
->
-  <p className="text-center text-stone-400 leading-relaxed lg:leading-loose">
-    {lang === "en" ? (
-      <>
-        You must be 20 years of age to drink alcohol.<br />
-        Drinking and driving is prohibited by law. Never do this.<br />
-        Drinking alcohol during pregnancy or while breastfeeding may have a negative impact on the development of the fetus or infant.
-      </>
-    ) : (
-      <>
-        飲酒は20歳になってから。<br />
-        飲酒運転は法律で禁止されています。絶対にやめましょう。<br />
-        妊娠中や授乳期の飲酒は、胎児・乳児の発育に悪影響を与える恐れがあります。
-      </>
-    )}
-  </p>
-</div>
-
-
+      {/* Last Section */}
+      <div
+        className={`absolute lg:-bottom-[15%] ${
+          lang === "en" ? "-bottom-[27%]" : "-bottom-[19%]"
+        } ${
+          lang === "en" ? "lg:-bottom-[29%]" : "lg:-bottom-[23%]"
+        } left-1/2 -translate-x-1/2 text-white text-base lg:text-lg flex justify-center items-center p-4 lg:p-6 mt-20 w-[90%] lg:w-[60%]`}
+      >
+        <p className="text-center text-stone-400 leading-relaxed lg:leading-loose">
+          {lang === "en" ? (
+            <>
+              You must be 20 years of age to drink alcohol.
+              <br />
+              Drinking and driving is prohibited by law. Never do this.
+              <br />
+              Drinking alcohol during pregnancy or while breastfeeding may have
+              a negative impact on the development of the fetus or infant.
+            </>
+          ) : (
+            <>
+              飲酒は20歳になってから。
+              <br />
+              飲酒運転は法律で禁止されています。絶対にやめましょう。
+              <br />
+              妊娠中や授乳期の飲酒は、胎児・乳児の発育に悪影響を与える恐れがあります。
+            </>
+          )}
+        </p>
+      </div>
     </div>
   );
 };

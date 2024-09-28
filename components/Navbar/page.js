@@ -72,7 +72,7 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 z-[1000000] text-black w-[100%]">
       <section className="z-[101] mt-2 flex items-center p-2 md:p-3 md:mt-4 w-[100%] md:w-[96%] relative left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md ">
-        <Link href={"/"} passHref>
+        <Link href={"/"}>
           <div ref={navLogo} className="border-0 border-white">
             <Image
               className="cursor-pointer invert"
