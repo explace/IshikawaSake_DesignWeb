@@ -2,43 +2,15 @@
 import React, { useEffect, useState } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { useSelector } from "react-redux";
-// useState
-// useEffect
-const profile = () => {
+const Profile = () => {
   const containerStyle = {
     width: "100%",
     height: "35rem",
   };
   const center = {
-    lat: 35.29487128008948, // Default Tokyo center
+    lat: 35.29487128008948,
     lng: 138.86749319008837,
   };
-      // const [center, setCenter] = useState(initialCenter);
-    // const address = "1388-37 Inno, Gotemba City, Shizuoka Prefecture, 412-0008"; // Replace with your address
-  
-    // useEffect(() => {
-    //   const geocodeAddress = async () => {
-    //     const geocoder = new window.google.maps.Geocoder();
-        
-    //     geocoder.geocode({ address }, (results, status) => {
-    //       if (status === 'OK') {
-    //         const location = results[0].geometry.location;
-    //         setCenter({
-    //           lat: location.lat(),
-    //           lng: location.lng(),
-    //         });
-    //         alert("Geocode was successful!");
-    //       } else {
-    //         console.error('Geocode was not successful for the following reason: ' + status);
-    //       }
-    //     });
-    //   };
-  
-    //   if (window.google && window.google.maps) {
-    //     geocodeAddress(); // Geocode the address when the component mounts
-    //   }
-    // }, [address]);
-
 
   const lang = useSelector((state) => state.reducer1.lang);
   const mapLanguage = lang === "jp" ? "ja" : "en";
@@ -74,15 +46,14 @@ const profile = () => {
 
       <div className="grid place-items-center mt-20 mb-20">
         <LoadScript
-          googleMapsApiKey="AIzaSyDq8q3YcsgGWmZOty9F5zgmceAocbBtItA" // Replace with your API key
-          language={mapLanguage} // Japanese language
+          googleMapsApiKey="AIzaSyDq8q3YcsgGWmZOty9F5zgmceAocbBtItA"
+          language={mapLanguage}
         >
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
             zoom={18}
           >
-            {/* Additional map features */}
           </GoogleMap>
         </LoadScript>
       </div>
@@ -90,4 +61,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
