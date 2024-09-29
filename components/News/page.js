@@ -164,12 +164,12 @@ const News = () => {
               })}
 
         <button className="border-2 mt-5 border-black px-3 py-1 text-xs">
-          <a
+          {/* <a
             href="https://github.com/explace/IshikawaSake_DesignWeb/tree/main/app"
             target="_blank"
-          >
+          > */}
             READ ALL
-          </a>
+          {/* </a> */}
         </button>
       </div>
     </div>
