@@ -46,7 +46,7 @@ const Footer = () => {
           )}
         </p>
         <Link href={"/Profile"}>
-          <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-stone-400">
+          <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-black">
             {lang === "en" ? (
               <span className="en-vertical-text">Company Profile</span>
             ) : (
