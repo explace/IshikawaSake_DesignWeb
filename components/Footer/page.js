@@ -103,7 +103,7 @@ const Footer = () => {
           </span>{" "}
           郷土
         </p>
-        <p className="vertical-text text-black text-base lg:text-lg font-medium">
+        <p className="vertical-text text-stone-400 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-xl lg:text-2xl">STORY</span>{" "}
           ものがたり
         </p>
@@ -111,18 +111,26 @@ const Footer = () => {
 
       {/* Right Section (Social Icons or Additional Info) */}
       <div className="absolute bottom-14 left-1/2 -translate-x-1/2 text-3xl flex">
+       <Link href={"https://www.instagram.com/gotembaishikawashuzo/"} target="_blank">
         <p className="grid cursor-pointer place-items-center mr-6">
           <FaInstagram />
         </p>
+       </Link>
+       <Link href={"https://x.com/gotembaishikawa"} target="_blank"> 
         <p className="grid cursor-pointer place-items-center mr-6">
           <FaXTwitter />
         </p>
+       </Link>
+       <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank">  
         <p className="grid cursor-pointer place-items-center mr-6">
           <FaFacebook />
         </p>
-        <p className="grid cursor-pointer place-items-center mr-0">
+       </Link> 
+       <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank"> 
+        <p className="grid cursor-pointer text-stone-400 place-items-center mr-0">
           <FaYoutube />
         </p>
+       </Link>
       </div>
 
       {/* Last Section */}

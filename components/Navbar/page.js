@@ -100,19 +100,26 @@ const Nav = () => {
             <p className="mr-5 cursor-pointer">NEWS</p>
             <p className="mr-5 cursor-pointer">SHOP INFO</p>
          </div> */}
-
+          <Link href={"https://www.instagram.com/gotembaishikawashuzo/"} target="_blank"> 
           <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaInstagram />
           </p>
+          </Link>
+          <Link href={"https://x.com/gotembaishikawa"} target="_blank"> 
           <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaXTwitter />
           </p>
+          </Link>
+          <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank"> 
           <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaFacebook />
           </p>
-          <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
+          </Link>
+          <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank"> 
+          <p className="hidden xl:grid cursor-pointer text-stone-400 place-items-center text-2xl mr-5">
             <FaYoutube />
           </p>
+          </Link>
 
           <div
             onClick={() => {
