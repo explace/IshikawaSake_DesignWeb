@@ -115,7 +115,7 @@ const Nav = () => {
             <FaFacebook />
           </p>
           </Link>
-          <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank"> 
+          <Link href={"http://www.youtube.com/@gotembaishikawashuzo  "} target="_blank"> 
           <p className="hidden xl:grid cursor-pointer text-stone-400 place-items-center text-2xl mr-5">
             <FaYoutube />
           </p>
