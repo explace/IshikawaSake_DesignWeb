@@ -9,13 +9,12 @@ import LandingPage from "../components/LandingPage/page";
 // import Enjoy from "@/components/Enjoy/page";
 // import Products from "@/components/Products/page";
 import Footer from "@/components/Footer/page";
+
 export default function Home() {
   return (
     <>
       <LandingPage />
-
       <News />
-
       <Footer/>
       
       {/* <Story/> */}

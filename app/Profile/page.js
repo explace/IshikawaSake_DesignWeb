@@ -22,7 +22,7 @@ const Profile = () => {
         <div className="text-base lg:text-lg">
           <p className="font-bold mb-2">会社概要</p>
           <p className="mb-2">会社名：御殿場石川酒蔵株式会社</p>
-          <p className="mb-2">蔵　名：御厨榮酒造（みくりやさかえしゅぞう）</p>
+          <p className="mb-2">御厨榮蔵（みくりやさかえぐら）</p>
           <p className="mb-2">住　所：〒412-0008　静岡県御殿場市印野1388-37</p>
           <p className="mb-2">TEL/FAX</p>
           <p>MAIL：info@gotembaishikawashuzo.com</p>
