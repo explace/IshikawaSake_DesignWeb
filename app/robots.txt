@@ -1,0 +1,3 @@
+# https://www.gotembaishikawashuzo.com
+User-agent: *
+Disallow:
