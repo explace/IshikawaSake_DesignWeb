@@ -106,7 +106,7 @@ const Nav = () => {
           </p>
           </Link>
           <Link href={"https://x.com/gotembaishikawa"} target="_blank"> 
-          <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
+          <p className="hidden xlnpm:grid cursor-pointer place-items-center text-2xl mr-5">
             <FaXTwitter />
           </p>
           </Link>

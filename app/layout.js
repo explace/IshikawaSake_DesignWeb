@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <title>Title</title>
-        {/* <meta name="description" content="desc" /> */}
+        <title>石川酒造 - 御殿場市の歴史ある酒蔵で地元を活かしたこだわりの日本酒を堪能</title>
+        <meta name="description" content="石川酒造は、東京都で150年以上の伝統を誇る酒蔵です。こだわりの日本酒を製造し、歴史と自然に囲まれた環境で、酒造見学や試飲が楽しめます。"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={inter.className}>
