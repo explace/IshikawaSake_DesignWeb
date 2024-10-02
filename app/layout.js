@@ -55,11 +55,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="main1.png" type="image/x-icon" />
         <link rel="icon" href="favicon.ico" />
       </head> */}
-
-  
+      
       <Head>
-        <link rel="icon" href="/icon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       </Head>
+
   
       <body className={inter.className}>
         {/* <Provider store={store}> */}
