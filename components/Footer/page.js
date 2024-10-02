@@ -123,7 +123,7 @@ const Footer = () => {
           </span>{" "}
           御厨榮蔵
         </p>
-        <p onClick={handleScrollToElement} className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
+        <p onClick={handleScrollToElement} className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg cursor-pointer font-medium">
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
         </p>
@@ -153,26 +153,26 @@ const Footer = () => {
 
       {/* Right Section (Social Icons or Additional Info) */}
       <div className="absolute bottom-14 left-1/2 -translate-x-1/2 text-3xl flex">
+        <p className="grid cursor-pointer place-items-center mr-6">
        <Link href={"https://www.instagram.com/gotembaishikawashuzo/"} target="_blank">
-        <p className="grid cursor-pointer place-items-center mr-6">
           <FaInstagram />
-        </p>
        </Link>
+        </p>
+        <p className="grid cursor-pointer place-items-center mr-6">
        <Link href={"https://x.com/gotembaishikawa"} target="_blank"> 
-        <p className="grid cursor-pointer place-items-center mr-6">
           <FaXTwitter />
-        </p>
        </Link>
-       <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank">  
+        </p>
         <p className="grid cursor-pointer place-items-center mr-6">
+       <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank">  
           <FaFacebook />
-        </p>
        </Link> 
-       <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank"> 
-        <p className="grid cursor-pointer text-stone-400 place-items-center mr-0">
-          <FaYoutube />
         </p>
+        <p className="grid cursor-pointer text-stone-400 place-items-center mr-0">
+       <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank"> 
+          <FaYoutube />
        </Link>
+        </p>
       </div>
 
       {/* Last Section */}

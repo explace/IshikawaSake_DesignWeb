@@ -3,7 +3,7 @@ export default async function robots(){
         rules:[
             {
                 userAgent: '*',
-                allow: ['/','/Profile'],
+                allow: ['/','/Profile','/favicon.ico'],
                 disallow: []
             }
         ],
