@@ -9,6 +9,48 @@ import Link from "next/link";
 const Footer = () => {
   const lang = useSelector((state) => state.reducer1.lang);
 
+  const easeOutQuad = (t) => t * (2 - t);
+
+  const handleScrollToElement = (event) => {
+  const targetElement = event.target.closest("p"); 
+  if (targetElement) {
+    const elementPosition = targetElement.getBoundingClientRect().bottom + window.scrollY;
+    const offset = -10;
+    const targetScrollPosition = elementPosition - offset;
+    const oppositeScrollPosition = targetScrollPosition - (window.innerHeight - 2 * offset);
+
+   
+    const start = window.scrollY;
+    const distance = oppositeScrollPosition - start;
+    const duration = 1000; 
+    let startTime = null;
+
+  
+    const animateScroll = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1); 
+
+      
+      const ease = easeOutQuad(progress);
+
+  
+      window.scrollTo(0, start + distance * ease);
+
+    
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+   
+    requestAnimationFrame(animateScroll);
+  }
+  };
+
+  
+
+
   return (
     <div className="w-full mt-20 p-2 sm:p-6 lg:p-12 2xl:p-24 grid lg:flex justify-evenly relative">
       {/* Left Logo Section */}
@@ -81,7 +123,7 @@ const Footer = () => {
           </span>{" "}
           御厨榮蔵
         </p>
-        <p className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
+        <p onClick={handleScrollToElement} className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
         </p>
