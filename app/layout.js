@@ -55,9 +55,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="favicon.ico" />
       </head> */}
 
-      {/* <Head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Head>
 
       <body className={inter.className}>
         {/* <Provider store={store}> */}
