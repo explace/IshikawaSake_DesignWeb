@@ -12,6 +12,12 @@ export default function sitemap(){
             lastModified: new Date().toISOString(),
             changeFrequency: 'daily',
             priority: 0.7
+        },
+        {
+            url: 'https://www.gotembaishikawashuzo.com/StoryPage',
+            lastModified: new Date().toISOString(),
+            changeFrequency: 'daily',
+            priority: 0.7
         }
     ]
 } 
