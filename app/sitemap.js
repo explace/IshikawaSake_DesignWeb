@@ -5,19 +5,19 @@ export default function sitemap(){
             url: 'https://www.gotembaishikawashuzo.com',
             lastModified: new Date().toISOString(),
             changeFrequency: 'daily',
-            priority: 0.9
+            priority: 1.0
         },
-        {
-            url: 'https://www.gotembaishikawashuzo.com/Profile',
-            lastModified: new Date().toISOString(),
-            changeFrequency: 'daily',
-            priority: 0.7
-        },
-        {
-            url: 'https://www.gotembaishikawashuzo.com/StoryPage',
-            lastModified: new Date().toISOString(),
-            changeFrequency: 'daily',
-            priority: 0.7
-        }
+        // {
+        //     url: 'https://www.gotembaishikawashuzo.com/Profile',
+        //     lastModified: new Date().toISOString(),
+        //     changeFrequency: 'daily',
+        //     priority: 0.7
+        // },
+        // {
+        //     url: 'https://www.gotembaishikawashuzo.com/StoryPage',
+        //     lastModified: new Date().toISOString(),
+        //     changeFrequency: 'daily',
+        //     priority: 0.7
+        // }
     ]
 } 

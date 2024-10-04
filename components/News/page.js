@@ -5,7 +5,12 @@ import { useSelector } from "react-redux";
 
 const News = () => {
   const fadeInNews = useRef(null);
+  const newsDescRef = useRef(null);
+  const newsSection = useRef(null);
   const [posts, setPosts] = useState([]);
+  const [newsTitle, setNewsTitle] = useState("");
+  const [newsDesc, setNewsDesc] = useState("");
+  const [newsPopup, setNewsPopup] = useState(false);
   // const [lang, setLang] = useState("en");
   const lang = useSelector((state) => state.reducer1.lang);
 
@@ -109,8 +114,48 @@ const News = () => {
     return `${year}.${month}.${day}`;
   }
 
+  // useEffect(()=>{
+  //   if(newsDescRef.current){
+  //     newsDescRef.current.innerHTML = "<p>2025年初春<br>御殿場に新たな酒蔵が誕生します</p>"
+  //   }
+
+  //   if(newsSection.current && newsPopup){
+  //     alert("newsPopup")
+  //     newsSection.current.style.display="block"
+  //   }
+  //   else if(newsSection.current && !newsPopup){
+  //     newsSection.current.style.display="none"
+  //   }
+
+  // },[setNewsPopup])
+
   return (
-    <div className="mt-10 grid place-items-center">
+    <div className="mt-10 grid place-items-center relative">
+      {newsPopup && (
+        <section ref={newsSection} className="fixed inset-0 overflow-y-auto z-[10000] bg-white">
+          <div
+            onClick={() => {
+              setNewsPopup(false);
+            }}
+            className="w-fit ml-auto mr-32 text-4xl cursor-pointer mt-32 mb-8"
+          >
+            X
+          </div>
+
+          <div className="grid place-items-center">
+            <div>
+              <p className="text-5xl">{newsTitle}</p>
+              {/* <p ref={newsDescRef}></p> */}
+              <div
+                className="text-xl mt-10"
+                dangerouslySetInnerHTML={{ __html: newsDesc }}
+              />
+              
+            </div>
+          </div>
+        </section>
+      )}
+
       <div
         ref={fadeInNews}
         className="flex items-center w-[95%] lg:w-[80%] mb-6"
@@ -152,7 +197,16 @@ const News = () => {
               .filter((e) => e.class_list.includes("category-5890"))
               .map((post, index) => {
                 return (
-                  <div key={index} className="mb-3 flex items-center">
+                  <div
+                    onClick={() => {
+                      setNewsPopup(true);
+                      setNewsTitle(post.title.rendered);
+                      setNewsDesc(post.content.rendered);
+                      // newsDescRef.current.innerHTML = "<p>2025年初春<br>御殿場に新たな酒蔵が誕生します</p>"
+                    }}
+                    key={index}
+                    className="mb-3 flex items-center cursor-pointer"
+                  >
                     <p className="text-xs lg:text-sm mr-1">
                       {convertDate(post.date)}
                     </p>
@@ -168,7 +222,7 @@ const News = () => {
             href="https://github.com/explace/IshikawaSake_DesignWeb/tree/main/app"
             target="_blank"
           > */}
-            READ ALL
+          READ ALL
           {/* </a> */}
         </button>
       </div>
