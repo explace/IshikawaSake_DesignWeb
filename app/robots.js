@@ -3,8 +3,8 @@ export default async function robots(){
         rules:[
             {
                 userAgent: '*',
-                allow: ['/','/Profile'],
-                disallow: []
+                allow: ['/','/favicon.ico'],
+                disallow: ['/Profile','/StoryPage']
             }
         ],
         sitemap: 'https://www.gotembaishikawashuzo.com/sitemap.xml'
