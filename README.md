@@ -3,19 +3,17 @@ A shared repository for the team developing Regionport's website.
 
 # Setup Next.js Project( From Scratch ):
 
-### Install Next.js using command ( on Command Prompt or Terminal ):
+### 1: Install Next.js using command ( on Command Prompt or Terminal ):
 ```
 npx create-next-app@latest
-
 ```
 
-### Navigate to the project directory created with:
+### 2: Navigate to the project directory created with:
 ```
 cd next-js
-
 ```
 
-### Initialize the project in the current directory with following default configurations ( as per choice of technologies ) ..
+### 3: Initialize the project in the current directory with following default configurations ( as per choice of technologies ):
 
 #### Project Configuration:
 
@@ -24,42 +22,36 @@ Choose **JavaScript**, **ESLint**, **Tailwind CSS**, and **App Router** when pro
 #### Install additional dependencies ( Optional - to use this to structure your code ):
 ```
 npm install --save-dev prettier prettier-plugin-tailwindcss
-
 ```
-#### Development Server:
+#### 4: Development Server:
 
 Start the development server with:
 ```
 npm run dev
-
 ```
 Access it at ***http://localhost:3000***.
 
 # Setup Next.js Project( Existing Repository ):
 
-Clone the repository from GitHub:
+1: Clone the repository from GitHub:
 
 ```
 git clone https://github.com/explace/IshikawaSake_DesignWeb
-
 ```
-Navigate to the project directory:
+2: Navigate to the project directory:
 
 ```
 cd your-repo-name
-
 ```
-Install dependencies:
+3: Install dependencies:
 
 ```
 npm install
-
 ```
-To run the application in development mode:
+4: To run the application in development mode:
 
 ```
 npm run dev
-
 ```
 
 # To make changes in the project:
@@ -68,14 +60,14 @@ npm run dev
 
 ### Component Overview:
 
-***Bilingual Support:*** The content toggles between English and Japanese based on the lang state from the Redux store (state.reducer1.lang).
-***Smooth Scroll***: The handleScrollToElement function scrolls smoothly to a specific section when clicking on an element.
-***Social Media Links***: Includes icons for Instagram, X (formerly Twitter), Facebook, and YouTube, with links to external profiles.
-***Responsiveness***: The footer adjusts based on screen size, with specific bottom offsets and styles applied dynamically based on the language and screen size.
-***Content Structure***: Includes sections for sitemap links, store info, product info, and a disclaimer about alcohol consumption.
+***Bilingual Support:*** The content toggles between English and Japanese based on the lang state from the Redux store (state.reducer1.lang).<br/>
+***Smooth Scroll***: The handleScrollToElement function scrolls smoothly to a specific section when clicking on an element.<br/>
+***Social Media Links***: Includes icons for Instagram, X (formerly Twitter), Facebook, and YouTube, with links to external profiles.<br/>
+***Responsiveness***: The footer adjusts based on screen size, with specific bottom offsets and styles applied dynamically based on the language and screen size.<br/>
+***Content Structure***: Includes sections for sitemap links, store info, product info, and a disclaimer about alcohol consumption.<br/>
 
 ### Steps to Modify the Footer:
-1. Modify Language Content (Bilingual Support)
+1. Modify Language Content (Bilingual Support):
 If you need to update any text that appears in both languages:
 
 Locate the sections where the content is wrapped with a ternary operator (lang === "en" ?).
@@ -88,7 +80,6 @@ For example, if you want to change the "Sitemap" text in both languages:
     "サイトマップ"
   )}
 </p>
-
 ```
 
 Modify the English and Japanese text inside the ternary condition.
@@ -101,7 +92,6 @@ Locate the <Link> components:
 <Link href={"https://www.instagram.com/gotembaishikawashuzo/"} target="_blank">
   <FaInstagram />
 </Link>
-
 ```
 Simply replace the URL inside the href attribute with the new link.
 
@@ -124,7 +114,6 @@ For example:
 To change the padding of the whole footer:
 ```
 <div className="w-full mt-20 p-2 sm:p-6 lg:p-12 2xl:p-24 grid lg:flex justify-evenly relative">
-
 ```
 Here you can adjust the p-2 sm:p-6 lg:p-12 2xl:p-24 values.
 
@@ -140,7 +129,6 @@ Locate the block of code where the links are:
     "取扱店舗"
   )}
 </p>
-
 ```
 To add a new link, copy one of the existing <p> blocks and modify the text inside. To remove, simply delete the relevant <p> block.
 
@@ -160,7 +148,6 @@ Stage the changes:
 
 ```
 git add .
-
 ```
 
 Commit the changes:
@@ -170,7 +157,6 @@ git commit -m "Update footer component with new links and styling"
 Push the changes to the repository:
 ```
 git push origin your-branch-name
-
 ```
 
 
