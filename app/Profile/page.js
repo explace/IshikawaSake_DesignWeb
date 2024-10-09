@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { useSelector } from "react-redux";
+import Head from "next/head";
 const Profile = () => {
   const containerStyle = {
     width: "100%",
@@ -16,6 +17,11 @@ const Profile = () => {
   const mapLanguage = lang === "jp" ? "ja" : "en";
 
   return (
+    <>
+     <Head>
+        <meta name="robots" content="noindex" />
+        <title>御殿場石川酒造株式会社｜御厨榮蔵</title>
+      </Head>
     <div className="pt-32 px-2 md:px-14 lg:px-32 xl:px-52">
       {/* <section className="grid md:flex justify-evenly items-center"> */}
       {lang === "jp" ? (
@@ -48,16 +54,17 @@ const Profile = () => {
         <LoadScript
           googleMapsApiKey="AIzaSyDq8q3YcsgGWmZOty9F5zgmceAocbBtItA"
           language={mapLanguage}
-        >
+          >
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
             zoom={18}
-          >
+            >
           </GoogleMap>
         </LoadScript>
       </div>
     </div>
+            </>
   );
 };
 

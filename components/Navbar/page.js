@@ -76,7 +76,7 @@ const Nav = () => {
         <Link href={"/"}>
           <div ref={navLogo} className="border-0 border-white">
             <Image
-              className="cursor-pointer invert"
+              className="cursor-pointer invert lll"
               src={"/LOGOTYPE_WH.png"}
               width={250}
               height={100}
@@ -84,6 +84,7 @@ const Nav = () => {
             />
           </div>
         </Link>
+        
 
         {/* desktop navbar */}
         <main ref={navPCMain} className="ml-auto relative flex">

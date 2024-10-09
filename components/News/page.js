@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { MdOutlineCancel } from "react-icons/md";
 
 const News = () => {
   const fadeInNews = useRef(null);
@@ -137,9 +138,9 @@ const News = () => {
             onClick={() => {
               setNewsPopup(false);
             }}
-            className="w-fit ml-auto mr-32 text-4xl cursor-pointer mt-32 mb-8"
+            className="w-fit ml-auto mr-32 text-6xl cursor-pointer mt-32 mb-8"
           >
-            X
+            <MdOutlineCancel/>
           </div>
 
           <div className="grid place-items-center">
@@ -194,7 +195,7 @@ const News = () => {
                 );
               })
           : posts
-              .filter((e) => e.class_list.includes("category-5890"))
+              .filter((e) => e.class_list.includes("category-news"))
               .map((post, index) => {
                 return (
                   <div

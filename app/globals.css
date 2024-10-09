@@ -142,6 +142,7 @@
   }
 }
 
+
 .vertical-text {
   writing-mode: vertical-rl; /* vertical text with right-to-left flow */
   text-orientation: upright; /* keeps characters upright instead of rotated */
