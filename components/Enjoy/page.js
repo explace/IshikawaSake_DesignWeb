@@ -1,8 +1,11 @@
-"use client"
-import React, { useEffect, useRef } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import axios from "axios";
+
 const Enjoy = () => {
   const fadeInEnjoy = useRef(null);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const target = fadeInEnjoy.current;
@@ -31,6 +34,28 @@ const Enjoy = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    console.log("Fetching data...");
+    const getPosts = async () => {
+      try {
+        const response = await axios.get(
+          "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
+          // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
+        );
+        const fetchedPosts = response.data;
+        setPosts(fetchedPosts); // Set original posts if no translation is needed
+        // }
+      } catch (error) {
+        console.error("There was an error fetching the data!", error);
+      }
+    };
+
+    getPosts();
+  }, []);
+
+  console.log('ppp',posts);
+
   return (
     <div className="mt-6">
       <div className="relative overflow-hidden">
@@ -44,7 +69,10 @@ const Enjoy = () => {
           />
         </div>
 
-        <div ref={fadeInEnjoy} className="absolute grid place-items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div
+          ref={fadeInEnjoy}
+          className="absolute grid place-items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+        >
           <Image
             className="enjoyHead opacity-0 w-[2rem] sm:w-[4rem] lg:w-[6rem]"
             src="/LOGO_2_BK.png"
@@ -52,7 +80,7 @@ const Enjoy = () => {
             height={300}
             alt="nature video"
           />
-           <div className="text-lg sm:text-3xl lg:text-5xl mt-3">
+          <div className="text-lg sm:text-3xl lg:text-5xl mt-3">
             <p className="enjoyHead opacity-0 en-vertical-text">E</p>
             <p className="enjoyHead opacity-0 en-vertical-text">N</p>
             <p className="enjoyHead opacity-0 en-vertical-text">J</p>
@@ -106,32 +134,46 @@ const Enjoy = () => {
       </div>
 
       <section className="grid place-items-center lg:flex w-[90%] lg:w-[80%] xl:w-[70%] relative left-1/2 -translate-x-1/2 items-center lg:justify-between">
-        <div className="">
-          <div className="textImage relative text-red-600">
-            <Image
-              className="w-[30rem] mt-6"
-              src="/ENJOY_IMG_DUMMY_2.png"
-              width={500}
-              height={300}
-              alt="nature video"
-            />
-          </div>
+        {posts
+          .filter((e) => e.class_list.includes("category-enjoy"))
+          .map((post, index) => {
+            return (
+              <div key={index}>
+                <div className="border-0 border-red-600">
+                  <div className="textImage relative text-red-600">
+                    <Image
+                      className="w-[30rem] mt-6"
+                      src="/ENJOY_IMG_DUMMY_2.png"
+                      width={500}
+                      height={300}
+                      alt="nature video"
+                    />
+                  </div>
 
-          <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              ---- Appropriate Temperature
-            </p>
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              READ MORE
-              <Image
-                className="inline-block relative left-[10%] mt-3"
-                src="/READMORE_DROP.png"
-                width={15}
-                height={50}
-                alt="nature video"
-              />
-            </p>
-            <p className="text-red-600 vertical-text text-base lg:text-2xl mr-0">
+                  <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
+                    <p className="en-vertical-text mr-4 text-sm lg:text-base">
+                      {
+                      post.class_list.find(item => item.startsWith("tag-"))&&(
+                        <p>
+                          ----{post.class_list.find(item => item.startsWith("tag-")).substring(4)}
+                        </p>
+                      )
+                      }
+                    </p>
+                    <p className="en-vertical-text cursor-pointer h-fit mr-4 text-sm lg:text-base">
+                      READ MORE
+                      <Image
+                        className="inline-block relative left-[10%] mt-3"
+                        src="/READMORE_DROP.png"
+                        width={15}
+                        height={50}
+                        alt="nature video"
+                      />
+                    </p>
+
+                    <p className="vertical-text-enjoy text-red-600 text-base lg:text-2xl" dangerouslySetInnerHTML={{ __html: post.content.rendered }}/>
+
+                    {/* <p className="text-red-600 vertical-text text-base lg:text-2xl mr-0">
               見飽きることはありません︒
             </p>
             <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
@@ -145,11 +187,14 @@ const Enjoy = () => {
             </p>
             <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
               酒造りを
-            </p>
-          </div>
-        </div>
+            </p> */}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
 
-        <div>
+        {/* <div>
           <div className="textImage relative text-red-600">
             <Image
               className="w-[30rem] mt-6"
@@ -190,7 +235,7 @@ const Enjoy = () => {
               酒造りを
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

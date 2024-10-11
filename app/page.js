@@ -6,7 +6,7 @@ import News from "../components/News/page";
 // import Nav from "../components/Navbar/page";
 import LandingPage from "../components/LandingPage/page";
 // import Location from "@/components/Location/page";
-// import Enjoy from "@/components/Enjoy/page";
+import Enjoy from "@/components/Enjoy/page";
 // import Products from "@/components/Products/page";
 import Footer from "@/components/Footer/page";
 
@@ -15,7 +15,6 @@ export default function Home() {
     <>
       <LandingPage />
       <News />
-      <Footer/>
       
       {/* <Story/> */}
 
@@ -23,8 +22,9 @@ export default function Home() {
 
       {/* <Products/> */}
       
-      {/* <Enjoy/> */}
+      <Enjoy/>
 
+      <Footer/>
 
       {/* <p className="mt-[90vh] text-3xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illum
