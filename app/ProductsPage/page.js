@@ -1,9 +1,29 @@
-import React from "react";
+'use client'
+import React, {useRef} from "react";
 import Image from "next/image";
 
 import Footer from "@/components/Footer/page";
 import ProductCard from "@/components/ProductCard/page";
 const ProductPage = () => {
+
+  const vidRef = useRef(null);
+  const imgRef = useRef(null);
+
+  // Function to play the video
+  const handleMouseEnter = () => {
+    vidRef.current.style.opacity = 1;
+    imgRef.current.style.opacity = 0;
+
+    vidRef.current.play();
+  };
+
+  // Function to pause the video
+  const handleMouseLeave = () => {
+    vidRef.current.style.opacity = 0;
+    imgRef.current.style.opacity = 1;
+    vidRef.current.pause();
+  };
+
   return (
     <div>
       {/* Main Story Section */}
@@ -11,12 +31,28 @@ const ProductPage = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-[10]">
           <Image
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
+            ref={imgRef}
             src={"/PRODUCTS_IMG_DUMMY.png"}
             width={1700}
             height={1000}
             alt="Background Image"
+            style={{ opacity: 1 }} // Initial opacity for the image
           />
+
+           {/* Video */}
+
+           <div className="absolute inset-0 z-[0]">
+           <video
+              muted
+              loop
+              ref={vidRef}
+              src="/PRODUCTS.mp4"
+              className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out" // Add transition to the video
+              style={{ opacity: 0 }} // Initial opacity for the video
+            />
+           </div>
+
         </div>
 
         {/* Clouds */}
@@ -73,7 +109,10 @@ const ProductPage = () => {
           <div className="w-fit basis-1/2">
             <Image src={"/LOGO_WH.png"} width={150} height={30} alt="logo" />
           </div>
-          <p className="text-6xl text-slate-50 basis-1/2 ml-3">PRODUCTS</p>
+          <p
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="text-6xl text-slate-50 basis-1/2 ml-3 cursor-pointer">PRODUCTS</p>
         </div>
 
         {/* Scroll Indicator */}

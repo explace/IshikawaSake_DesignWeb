@@ -1,22 +1,64 @@
-import React from "react";
+'use client'
+import React, { useRef } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer/page";
 
 const StoryPage = () => {
+
+  const vidRef = useRef(null);
+  const imgRef = useRef(null);
+
+  // Function to play the video
+  const handleMouseEnter = () => {
+    vidRef.current.style.opacity = 1;
+    imgRef.current.style.opacity = 0;
+
+    vidRef.current.play();
+  };
+
+  // Function to pause the video
+  const handleMouseLeave = () => {
+    vidRef.current.style.opacity = 0;
+    imgRef.current.style.opacity = 1;
+    vidRef.current.pause();
+  };
+
   return (
     <div className="">
       {/* Main Story Section */}
       <div className="relative h-[100vh] w-[100%] bg-neutral-600 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-[10]">
-          <Image
-            className="object-cover w-full h-full"
+        <Image
+            className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
+            ref={imgRef}
             src={"/LOCATION_IMG_DUMMY.png"}
             width={1700}
             height={1000}
             alt="Background Image"
+            style={{ opacity: 1 }} // Initial opacity for the image
           />
+
+           {/* Video */}
+
+          <div className="absolute inset-0 z-[0]">
+
+          <video
+              muted
+              loop
+              ref={vidRef}
+              src="/LOCATION.mp4"
+              className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out" // Add transition to the video
+              style={{ opacity: 0 }} // Initial opacity for the video
+            />
+
+          </div>
+
         </div>
+
+        
+        
+       
 
         {/* Clouds */}
         <div className="clouds absolute top-10 left-0 h-[100%] w-[100%] z-[20]">
@@ -72,7 +114,10 @@ const StoryPage = () => {
           <div className="w-fit basis-1/2">
             <Image src={"/LOGO_WH.png"} width={150} height={30} alt="logo" />
           </div>
-          <p className="text-6xl text-slate-50 basis-1/2 ml-3">LOCATION</p>
+          <p
+           onMouseEnter={handleMouseEnter}
+           onMouseLeave={handleMouseLeave}
+           className="text-6xl text-slate-50 basis-1/2 ml-3 cursor-pointer">LOCATION</p>
         </div>
 
         {/* Scroll Indicator */}
