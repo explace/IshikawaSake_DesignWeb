@@ -76,7 +76,8 @@ const News = () => {
     const getPosts = async () => {
       try {
         const response = await axios.get(
-          "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
+          "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
+          // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
         );
         const fetchedPosts = response.data;
 
@@ -184,7 +185,14 @@ const News = () => {
               .filter((e) => e.class_list.includes("category-english"))
               .map((post, index) => {
                 return (
-                  <div key={index} className="mb-3 flex items-center">
+                  <div
+                  onClick={() => {
+                    setNewsPopup(true);
+                    setNewsTitle(post.title.rendered);
+                    setNewsDesc(post.content.rendered);
+                    // newsDescRef.current.innerHTML = "<p>2025年初春<br>御殿場に新たな酒蔵が誕生します</p>"
+                  }}
+                  key={index} className="mb-3 flex items-center cursor-pointer">
                     <p className="text-xs lg:text-sm mr-1">
                       {convertDate(post.date)}
                     </p>
@@ -195,7 +203,7 @@ const News = () => {
                 );
               })
           : posts
-              .filter((e) => e.class_list.includes("category-news"))
+              .filter((e) => e.class_list.includes("category-6"))
               .map((post, index) => {
                 return (
                   <div

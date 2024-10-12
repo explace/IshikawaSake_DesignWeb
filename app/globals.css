@@ -160,6 +160,12 @@
   letter-spacing: 3px;
 }
 
+.vertical-text-enjoy {
+  writing-mode: vertical-lr; /* vertical text with right-to-left flow */
+  text-orientation: upright; /* keeps characters upright instead of rotated */
+  line-height: 1.5; /* adjust line height if needed */
+}
+
 .infoHover::after {
   content: "";
   position: absolute;
