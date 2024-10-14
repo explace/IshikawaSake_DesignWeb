@@ -127,12 +127,14 @@ const Footer = () => {
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
         </p>
-        <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
+        <Link href={"/EnjoyPage"}>
+        <p className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium cursor-pointer">
+          <span className="en-vertical-text text-xl lg:text-2xl">
             ENJOY
           </span>{" "}
           お酒を楽しく美味しく
         </p>
+        </Link>
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
             PRODUCTS
@@ -142,7 +144,7 @@ const Footer = () => {
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
             LOCATION
-          </span>{" "}
+          </span>
           郷土
         </p>
         <p className="vertical-text text-stone-400 text-base lg:text-lg font-medium">

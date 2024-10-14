@@ -4,7 +4,7 @@ export default async function robots(){
             {
                 userAgent: '*',
                 allow: ['/','/favicon.ico'],
-                disallow: ['/Profile','/StoryPage','/ProductsPage','/LocationPage']
+                disallow: ['/Profile','/StoryPage','/ProductsPage','/LocationPage','/EnjoyPage']
             }
         ],
         sitemap: 'https://www.gotembaishikawashuzo.com/sitemap.xml'

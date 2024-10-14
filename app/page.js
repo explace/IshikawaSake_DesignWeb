@@ -1,12 +1,12 @@
 "use client";
 // import Video from 'next-video';
 // import { useEffect, useRef, useState } from "react";
-// import Story from "../components/Story/page";
+import Story from "../components/Story/page";
 import News from "../components/News/page";
 // import Nav from "../components/Navbar/page";
 import LandingPage from "../components/LandingPage/page";
 // import Location from "@/components/Location/page";
-import Enjoy from "@/components/Enjoy/page";
+// import Enjoy from "@/components/Enjoy/page";
 // import Products from "@/components/Products/page";
 import Footer from "@/components/Footer/page";
 

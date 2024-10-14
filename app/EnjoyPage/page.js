@@ -2,11 +2,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import Footer from "@/components/Footer/page";
+import { MdOutlineCancel } from "react-icons/md";
 
-const Enjoy = () => {
+const EnjoyPage = () => {
   const fadeInEnjoy = useRef(null);
   const [posts, setPosts] = useState([]);
-  // const [postsImages, setPostsImages] = useState([]);
+  const [enjoyPopup, setEnjoyPopup] = useState(false);
+  const [enjoyTitle, setEnjoyTitle] = useState("");
+  const [enjoyDesc, setEnjoyDesc] = useState("");
+  const [enjoyImage, setEnjoyImage] = useState("");
 
   useEffect(() => {
     const target = fadeInEnjoy.current;
@@ -44,19 +49,24 @@ const Enjoy = () => {
           "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
           // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
         );
-        const fetchedPosts = response.data;
+        let fetchedPosts = response.data;
 
-        fetchedPosts.forEach(async (post) => {
-          const imageId = post.featured_media;
-          console.log("imageId", imageId);
-          await axios
-            .get(
-              `https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/media/${imageId}`
-            )
-            .then((res) => {
-              post.featured_media = res.guid.rendered;
-            });
-        });
+        const updatedPosts = await Promise.all(
+          fetchedPosts
+            .filter((e) => e.class_list.includes("category-enjoy"))
+            .map(async (post) => {
+              const imageId = post.featured_media;
+              try {
+                const mediaResponse = await axios.get(
+                  `https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/media/${imageId}`
+                );
+                post.featured_media = mediaResponse.data.link;
+              } catch (error) {
+                console.error(`Error fetching media for post ${post.id}:`, error);
+              }
+              return post;  // Ensure post is returned after modification
+            })
+        );
 
         setPosts(fetchedPosts); // Set original posts if no translation is needed
         // }
@@ -68,7 +78,7 @@ const Enjoy = () => {
     getPosts();
   }, []);
 
-  // console.log("ppp", posts[0].featured_media);
+  console.log('ppp',posts.map((e)=>e.featured_media));
 
   return (
     <div className="mt-6">
@@ -147,6 +157,40 @@ const Enjoy = () => {
         {/* </p> */}
       </div>
 
+
+      {enjoyPopup && (
+        <section className="fixed inset-0 overflow-y-auto z-[10000] bg-white">
+          <div
+            onClick={() => {
+              setEnjoyPopup(false);
+            }}
+            className="w-fit ml-auto mr-32 text-6xl cursor-pointer mt-32 mb-8"
+          >
+            <MdOutlineCancel/>
+          </div>
+
+          <div className="grid place-items-center">
+            <div>
+              <p className="text-5xl">{enjoyTitle}</p>
+              {/* <p ref={EnjoyDescRef}></p> */}
+              <div
+                className="text-xl mt-10"
+                dangerouslySetInnerHTML={{ __html: enjoyDesc }}
+              />
+
+              <Image
+                className="w-[30rem] my-6"
+                src={enjoyImage}
+                width={3000}
+                height={300}
+                alt="enjoy image"
+              />
+              
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="grid place-items-center lg:flex w-[90%] lg:w-[80%] xl:w-[70%] relative left-1/2 -translate-x-1/2 items-center lg:justify-between">
         {posts
           .filter((e) => e.class_list.includes("category-enjoy"))
@@ -157,6 +201,8 @@ const Enjoy = () => {
                   <div className="textImage relative text-red-600">
                     <Image
                       className="w-[30rem] mt-6"
+                      // src='https://admin.gotembaishikawashuzo.com/wp-content/uploads/2024/10/ENJOY_IMG_DUMMY_3.png'
+                      // src='http://admin.gotembaishikawashuzo.com/wp-content/uploads/2024/10/ENJOY_IMG_DUMMY_3.png'
                       src={post.featured_media}
                       width={500}
                       height={300}
@@ -166,18 +212,23 @@ const Enjoy = () => {
 
                   <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
                     <div className="en-vertical-text mr-4 text-sm lg:text-base">
-                      {post.class_list.find((item) =>
-                        item.startsWith("tag-")
-                      ) && (
+                      {
+                      post.class_list.find(item => item.startsWith("tag-"))&&(
                         <p>
-                          ----
-                          {post.class_list
-                            .find((item) => item.startsWith("tag-"))
-                            .substring(4)}
+                          ----{post.class_list.find(item => item.startsWith("tag-")).substring(4)}
                         </p>
-                      )}
+                      )
+                      } 
                     </div>
-                    <p className="en-vertical-text cursor-pointer h-fit mr-4 text-sm lg:text-base">
+                    <p
+                    onClick={() => {
+                      setEnjoyPopup(true);
+                      setEnjoyTitle(post.title.rendered);
+                      setEnjoyDesc(post.content.rendered);
+                      setEnjoyImage(post.featured_media);
+                    }
+                    }
+                    className="en-vertical-text cursor-pointer h-fit mr-4 text-sm lg:text-base">
                       READ MORE
                       <Image
                         className="inline-block relative left-[10%] mt-3"
@@ -188,12 +239,7 @@ const Enjoy = () => {
                       />
                     </p>
 
-                    <p
-                      className="vertical-text-enjoy text-red-600 text-base lg:text-2xl"
-                      dangerouslySetInnerHTML={{
-                        __html: post.content.rendered,
-                      }}
-                    />
+                    <p className="vertical-text-enjoy text-red-600 text-base lg:text-2xl" dangerouslySetInnerHTML={{ __html: post.content.rendered }}/>
 
                     {/* <p className="text-red-600 vertical-text text-base lg:text-2xl mr-0">
               見飽きることはありません︒
@@ -259,8 +305,10 @@ const Enjoy = () => {
           </div>
         </div> */}
       </section>
+
+        {/* <Footer /> */}
     </div>
   );
 };
 
-export default Enjoy;
+export default EnjoyPage;
