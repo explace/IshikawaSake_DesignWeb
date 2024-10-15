@@ -128,7 +128,7 @@ const Footer = () => {
           お知らせ
         </p>
         
-        <p className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium cursor-pointer">
+        <p className="vertical-text text-black mr-4 2xl:mr-10 text-base  text-stone-400 lg:text-lg font-medium cursor-pointer">
           <span className="en-vertical-text text-xl lg:text-2xl">
             ENJOY
           </span>{" "}
