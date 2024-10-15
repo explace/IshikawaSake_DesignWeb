@@ -87,15 +87,17 @@ const Footer = () => {
             "お問い合わせ"
           )}
         </p>
-        <Link href={"/Profile"}>
+     
           <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-black">
+          <Link href={"/Profile"}>
             {lang === "en" ? (
               <span className="en-vertical-text">Company Profile</span>
             ) : (
               "会社概要"
             )}
+              </Link>
           </p>
-        </Link>
+      
         <p className="en-vertical-text mr-6 2xl:mr-10 text-black text-xl lg:text-2xl font-medium">
           ABOUT US
         </p>
