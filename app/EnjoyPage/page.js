@@ -164,22 +164,22 @@ const EnjoyPage = () => {
             onClick={() => {
               setEnjoyPopup(false);
             }}
-            className="w-fit ml-auto mr-32 text-6xl cursor-pointer mt-32 mb-8"
+            className="w-fit ml-auto mr-2 lg:mr-32 text-4xl lg:text-6xl cursor-pointer mt-32 mb-8"
           >
             <MdOutlineCancel/>
           </div>
 
           <div className="grid place-items-center">
             <div>
-              <p className="text-5xl">{enjoyTitle}</p>
+              <p className="text-4xl mx-2 lg:text-5xl">{enjoyTitle}</p>
               {/* <p ref={EnjoyDescRef}></p> */}
               <div
-                className="text-xl mt-10"
+                className="text-lg mx-2 lg:text-xl mt-10"
                 dangerouslySetInnerHTML={{ __html: enjoyDesc }}
               />
 
               <Image
-                className="w-[30rem] my-6"
+                className="w-[20rem] relative left-1/2 lg:left-0 -translate-x-1/2 lg:-translate-x-0 lg:w-[30rem] my-6"
                 src={enjoyImage}
                 width={3000}
                 height={300}

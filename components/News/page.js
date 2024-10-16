@@ -51,6 +51,8 @@ const News = () => {
       try {
         const response = await axios.get(
           "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
+          // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
+
         );
         setPosts(response.data);
       } catch (error) {
