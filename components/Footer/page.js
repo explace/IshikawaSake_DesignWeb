@@ -108,13 +108,13 @@ const Footer = () => {
             "取扱店舗"
           )}
         </p>
-        <p className="vertical-text relative top-4 text-base lg:text-lg text-stone-400">
+        {/* <p className="vertical-text relative top-4 text-base lg:text-lg text-stone-400">
           {lang === "en" ? (
             <span className="en-vertical-text">Mikuriya sakaegura</span>
           ) : (
             "御厨栄蔵"
           )}
-        </p>
+        </p> */}
       </div>
 
       {/* Second Section */}

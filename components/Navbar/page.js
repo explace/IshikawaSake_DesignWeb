@@ -9,6 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Nav = () => {
+  const nav = useRef(null);
   const navLogo = useRef(null);
   const navPCMain = useRef(null);
   // const navMobileMain = useRef(null);
@@ -25,6 +26,19 @@ const Nav = () => {
   const [lang, setLang] = useState("jp");
 
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+
+    // detect the current url
+    const currentUrl = window.location.href;
+    const lastPart = currentUrl.split('/').pop();
+    if(lastPart === "TopPage"){
+      navLogo.current.classList.remove("invert");
+      nav.current.classList.remove("text-black");
+      nav.current.classList.add("text-white");
+    }
+
+  },[])
 
   // useEffect(() => {
   //   if (navBtns.current) {
@@ -71,12 +85,12 @@ const Nav = () => {
   // }, []);
 
   return (
-    <nav className="fixed top-0 z-[1000000] text-black w-[100%]">
+    <nav ref={nav} className="fixed top-0 z-[1000000] text-black w-[100%]">
       <section className="z-[101] mt-2 flex items-center p-2 md:p-3 md:mt-4 w-[100%] md:w-[96%] relative left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md ">
         <Link href={"/"}>
-          <div ref={navLogo} className="border-0 border-white">
+          <div ref={navLogo} className="border-0 border-white invert">
             <Image
-              className="cursor-pointer invert lll"
+              className="cursor-pointer lll"
               src={"/LOGOTYPE_WH.png"}
               width={250}
               height={100}
