@@ -3,10 +3,10 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const page = () => {
-  const vid1 = useRef(null);
-  const vid2 = useRef(null);
-  const vid3 = useRef(null);
+const TopPage = () => {
+  // const vid1 = useRef(null);
+  // const vid2 = useRef(null);
+  // const vid3 = useRef(null);
   const vid4 = useRef(null);
   const vid5 = useRef(null);
   const vid6 = useRef(null);
@@ -230,4 +230,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default TopPage;
