@@ -1,36 +1,6 @@
 # EXPLACE_RP_Website
 A shared repository for the team developing Regionport's website.
 
-# Setup Next.js Project( From Scratch ):
-
-### 1: Install Next.js using command ( on Command Prompt or Terminal ):
-```
-npx create-next-app@latest
-```
-
-### 2: Navigate to the project directory created with:
-```
-cd next-js
-```
-
-### 3: Initialize the project in the current directory with following default configurations ( as per choice of technologies ):
-
-#### Project Configuration:
-
-Choose **JavaScript**, **ESLint**, **Tailwind CSS**, and **App Router** when prompted.
-
-#### Install additional dependencies ( Optional - to use this to structure your code ):
-```
-npm install --save-dev prettier prettier-plugin-tailwindcss
-```
-#### 4: Development Server:
-
-Start the development server with:
-```
-npm run dev
-```
-Access it at ***http://localhost:3000***.
-
 # Setup Next.js Project( Existing Repository ):
 
 1: Clone the repository from GitHub:
@@ -170,4 +140,35 @@ Import the GitHub repository into Vercel and deploy.
 Deploy and Maintain:
 
 Continuously deploy updates to Vercel to ensure the project remains live and issues are identified early.
+
+
+# Setup Next.js Project( From Scratch without Github Repositry):
+
+### 1: Install Next.js using command ( on Command Prompt or Terminal ):
+```
+npx create-next-app@latest
+```
+
+### 2: Navigate to the project directory created with:
+```
+cd next-js
+```
+
+### 3: Initialize the project in the current directory with following default configurations ( as per choice of technologies ):
+
+#### Project Configuration:
+
+Choose **JavaScript**, **ESLint**, **Tailwind CSS**, and **App Router** when prompted.
+
+#### Install additional dependencies ( Optional - to use this to structure your code ):
+```
+npm install --save-dev prettier prettier-plugin-tailwindcss
+```
+#### 4: Development Server:
+
+Start the development server with:
+```
+npm run dev
+```
+Access it at ***http://localhost:3000***.
 
