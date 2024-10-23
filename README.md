@@ -142,6 +142,9 @@ Deploy and Maintain:
 Continuously deploy updates to Vercel to ensure the project remains live and issues are identified early.
 
 
+![image](https://github.com/user-attachments/assets/89696b50-a0b6-457c-9c08-92ee1b8a4fd3)
+
+
 # Setup Next.js Project( From Scratch without Github Repositry):
 
 ### 1: Install Next.js using command ( on Command Prompt or Terminal ):
