@@ -156,10 +156,12 @@ git commit -m "Update footer component with new links and styling"
 ```
 Push the changes to the repository:
 ```
-git push origin your-branch-name
+git push origin your-branch-name 
 ```
-
-
+or
+```
+ git push -u origin main (to main branch)
+```
 
 #### Deployment to Vercel:
 
