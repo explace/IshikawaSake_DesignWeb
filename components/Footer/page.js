@@ -12,43 +12,43 @@ const Footer = () => {
   const easeOutQuad = (t) => t * (2 - t);
 
   const handleScrollToElement = (event) => {
-  const targetElement = event.target.closest("p"); 
+  const targetElement = event.target.closest("p");
   if (targetElement) {
     const elementPosition = targetElement.getBoundingClientRect().bottom + window.scrollY;
     const offset = -10;
     const targetScrollPosition = elementPosition - offset;
     const oppositeScrollPosition = targetScrollPosition - (window.innerHeight - 2 * offset);
 
-   
+
     const start = window.scrollY;
     const distance = oppositeScrollPosition - start;
-    const duration = 1000; 
+    const duration = 1000;
     let startTime = null;
 
-  
+
     const animateScroll = (currentTime) => {
       if (!startTime) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1); 
+      const progress = Math.min(timeElapsed / duration, 1);
 
-      
+
       const ease = easeOutQuad(progress);
 
-  
+
       window.scrollTo(0, start + distance * ease);
 
-    
+
       if (timeElapsed < duration) {
         requestAnimationFrame(animateScroll);
       }
     };
 
-   
+
     requestAnimationFrame(animateScroll);
   }
   };
 
-  
+
 
 
   return (
@@ -87,7 +87,7 @@ const Footer = () => {
             "お問い合わせ"
           )}
         </p>
-     
+
           <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-black">
           <Link href={"/Profile"}>
             {lang === "en" ? (
@@ -97,7 +97,7 @@ const Footer = () => {
             )}
               </Link>
           </p>
-      
+
         <p className="en-vertical-text mr-6 2xl:mr-10 text-black text-xl lg:text-2xl font-medium">
           ABOUT US
         </p>
@@ -129,14 +129,14 @@ const Footer = () => {
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
         </p>
-        
+
         <p className="vertical-text text-black mr-4 2xl:mr-10 text-base  text-stone-400 lg:text-lg font-medium cursor-pointer">
           <span className="en-vertical-text text-xl lg:text-2xl">
             ENJOY
           </span>{" "}
           お酒を楽しく美味しく
         </p>
-      
+
         <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
             PRODUCTS
@@ -163,17 +163,17 @@ const Footer = () => {
        </Link>
         </p>
         <p className="grid cursor-pointer place-items-center mr-6">
-       <Link href={"https://x.com/gotembaishikawa"} target="_blank"> 
+       <Link href={"https://x.com/gotembaishikawa"} target="_blank">
           <FaXTwitter />
        </Link>
         </p>
         <p className="grid cursor-pointer place-items-center mr-6">
-       <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank">  
+       <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank">
           <FaFacebook />
-       </Link> 
+       </Link>
         </p>
         <p className="grid cursor-pointer text-stone-400 place-items-center mr-0">
-       <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank"> 
+       <Link href={"http://www.youtube.com/@gotembaishikawashuzo"} target="_blank">
           <FaYoutube />
        </Link>
         </p>
@@ -199,7 +199,7 @@ const Footer = () => {
             </>
           ) : (
             <>
-              飲酒は20歳になってから。
+              飲酒は20歳になってからです。
               <br />
               飲酒運転は法律で禁止されています。絶対にやめましょう。
               <br />
