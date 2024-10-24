@@ -14,6 +14,7 @@ git clone https://github.com/explace/IshikawaSake_DesignWeb
 cd your-repo-name
 ```
 3: Install dependencies:
+*If not install Node.js please install from [here](https://kinsta.com/jp/blog/how-to-install-node-js/#macosnodejs)
 
 ```
 npm install
