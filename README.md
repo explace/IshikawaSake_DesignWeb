@@ -129,9 +129,9 @@ Push the changes to the repository:
 ```
 git push origin your-branch-name 
 ```
-or
+or (to main branch)
 ```
- git push -u origin main (to main branch)
+ git push -u origin main 
 ```
 
 #### Deployment to Vercel:
