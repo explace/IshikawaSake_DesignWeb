@@ -1,8 +1,12 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+
 const Story = () => {
   const fadeInStory = useRef(null);
+
+  const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
 
   useEffect(() => {
     const target = fadeInStory.current;
@@ -80,6 +84,9 @@ const Story = () => {
       </div>
 
       <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
+
+        { lang === 'jp' ? (
+        <>
         <p className="en-vertical-text mr-4 text-sm lg:text-base">
           ---- Message / History / Region
         </p>
@@ -93,20 +100,90 @@ const Story = () => {
             alt="nature video"
           />
         </p>
-        <p className="vertical-text text-base lg:text-2xl mr-0">
-          見飽きることはありません︒
+        <p className="vertical-text text-base lg:text-md mr-0">
+        つねづね考えていました。
         </p>
-        <p className="vertical-text text-base lg:text-2xl mr-0">
-          毎日眺めていても
+        <p className="vertical-text text-base lg:text-md mr-0">
+        もっと広く伝えたいと、
         </p>
-        <p className="vertical-text text-base lg:text-2xl mr-0">
-          東側から望む富士の稜線はたおやかで︑
+        <p className="vertical-text text-base lg:text-md mr-0">
+        この素晴らしい自然の恵みを、
+        </p>
+        <p className="vertical-text text-base lg:text-md mr-4">
+        湧出る豊かな伏流水。
+        </p>
+        <p className="vertical-text text-base lg:text-md mr-0 -ml-3">富士山の雪解け水が長い歳月を経て地中でろ過され、</p>
+
+
+        <p className="vertical-text text-base lg:text-2xl mr-1 ml-4">
+        酒造りを
+        </p>
+        <p className="vertical-text text-base lg:text-2xl mr-1">
+        100年先の未来にも紡ぐ
+        </p>
+        <p className="vertical-text text-base lg:text-2xl mr-1">
+        この地に根ざす人びとと共に
         </p>
         <p className="vertical-text text-base lg:text-2xl mr-4">
-          富士山をつねに見上げる御殿場︒
+        選りすぐりの米
         </p>
-        <p className="vertical-text text-base lg:text-2xl mr-0">酒造りを</p>
-        {/* </p> */}
+        <p className="vertical-text text-base lg:text-2xl mr-0 -ml-3">富士山から湧く神の水と</p>
+      </>  
+      ):(
+      
+        <>
+        <p className="en-vertical-text mr-4 text-sm lg:text-base -ml-[25%] mt-2">
+          ---- Message / History / Region
+        </p>
+        <p className="en-vertical-text mr-4 text-sm lg:text-base mt-2 mr-12">
+          READ MORE
+          <Image
+            className="inline-block relative left-[10%] mt-5"
+            src="/READMORE_DROP.png"
+            width={16}
+            height={50}
+            alt="nature video"
+          />
+        </p>
+        <div className="grid grid-cols-1 absolute mt-[13%] ml-[15%]">
+        <p className=" text-base text-left lg:text-md mr-0">
+        The rich underground water that emerges after being
+        </p>
+        <p className=" text-base text-left lg:text-md mr-0">
+        filtered through long years from the
+        </p>
+        <p className=" text-base text-left lg:text-md mr-0">
+        melted snow of Mt.Fuji. We have always been thinking
+        </p>
+        <p className=" text-base text-left lg:text-md mr-0">
+        about how to convey this wonderful 
+        </p>
+        <p className=" text-base text-left lg:text-md mr-0">
+        gift of nature more widely and how to give back to the region in a better way.
+        </p>
+        </div>
+
+        
+        <div className="grid grid-cols-1 absolute ml-[20%]">
+        <p className=" text-base lg:text-2xl mr-0 tracking-tighter">
+        Sake brewing that will be spun
+        </p>
+        <p className=" text-base lg:text-2xl mr-0 tracking-tighter">
+        with the people rooted in this 
+        </p>
+        <p className=" text-base lg:text-2xl mr-0 tracking-tighter">
+        land for 100 years into
+        </p>
+        <p className=" text-base lg:text-2xl mr-0 tracking-tighter">
+        the future
+        </p>
+        <p className=" text-base lg:text-2xl mr-4 tracking-tighter">
+        Divine water springing from Mt. Fuji and carefully selected rice
+        </p>
+        </div>
+      </>    
+
+      )}
       </div>
     </div>
   );

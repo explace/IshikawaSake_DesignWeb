@@ -6,7 +6,6 @@ import axios from "axios";
 const Enjoy = () => {
   const fadeInEnjoy = useRef(null);
   const [posts, setPosts] = useState([]);
-  // const [postsImages, setPostsImages] = useState([]);
 
   useEffect(() => {
     const target = fadeInEnjoy.current;
@@ -14,9 +13,7 @@ const Enjoy = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           document.querySelectorAll(".enjoyHead").forEach((item, index) => {
-            item.style.animation = `fadeInAnimation .6s forwards ease-out ${
-              index / 6
-            }s`;
+            item.style.animation = `fadeInAnimation .6s forwards ease-out ${index / 6}s`;
           });
         } else {
           document.querySelectorAll(".enjoyHead").forEach((item, index) => {
@@ -42,40 +39,42 @@ const Enjoy = () => {
       try {
         const response = await axios.get(
           "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
-          // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
         );
         const fetchedPosts = response.data;
 
-        fetchedPosts.forEach(async (post) => {
+        for (const post of fetchedPosts) {
           const imageId = post.featured_media;
           console.log("imageId", imageId);
-          await axios
-            .get(
+          try {
+            const res = await axios.get(
               `https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/media/${imageId}`
-            )
-            .then((res) => {
-              post.featured_media = res.guid.rendered;
-            });
-        });
+            );
+            if (res && res.data && res.data.guid && res.data.guid.rendered) {
+              post.featured_media = res.data.guid.rendered;
+            } else {
+              console.warn("Media response does not contain 'guid.rendered'", res);
+              post.featured_media = "/default_image.png"; // Default image in case of missing data
+            }
+          } catch (error) {
+            console.error("Error fetching media:", error);
+            post.featured_media = "/default_image.png"; // Default image in case of error
+          }
+        }
 
-        setPosts(fetchedPosts); // Set original posts if no translation is needed
-        // }
+        setPosts(fetchedPosts);
       } catch (error) {
-        console.error("There was an error fetching the data!", error);
+        console.error("There was an error fetching the posts!", error);
       }
     };
 
     getPosts();
   }, []);
 
-  // console.log("ppp", posts[0].featured_media);
-
   return (
     <div className="mt-6">
       <div className="relative overflow-hidden">
         <div className="w-[150%] lg:w-[100%] -translate-x-[15%] lg:translate-x-0">
           <Image
-            // className="w-[100%] border-4 border-black"
             src="/MELT_SNOW_ILLUSTRATION_SET.png"
             width={3000}
             height={300}
@@ -104,7 +103,7 @@ const Enjoy = () => {
         </div>
       </div>
 
-      <div className=" relative grid place-items-center">
+      <div className="relative grid place-items-center">
         <Image
           className="w-[90%] lg:w-[80%]"
           src="/ENJOY_IMG_DUMMY.png"
@@ -118,19 +117,6 @@ const Enjoy = () => {
       </div>
 
       <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16 text-red-600">
-        {/* <p className="en-vertical-text mr-4 text-sm lg:text-base">
-          ---- Message / History / Region
-        </p>
-        <p className="en-vertical-text mr-4 text-sm lg:text-base">
-          READ MORE
-          <Image
-            className="inline-block relative left-[10%] mt-5"
-            src="/READMORE_DROP.png"
-            width={16}
-            height={50}
-            alt="nature video"
-          />
-        </p> */}
         <p className="vertical-text text-base lg:text-2xl mr-0">
           見飽きることはありません︒
         </p>
@@ -144,120 +130,56 @@ const Enjoy = () => {
           富士山をつねに見上げる御殿場︒
         </p>
         <p className="vertical-text text-base lg:text-2xl mr-0">酒造りを</p>
-        {/* </p> */}
       </div>
 
       <section className="grid place-items-center lg:flex w-[90%] lg:w-[80%] xl:w-[70%] relative left-1/2 -translate-x-1/2 items-center lg:justify-between">
         {posts
           .filter((e) => e.class_list.includes("category-enjoy"))
-          .map((post, index) => {
-            return (
-              <div key={index}>
-                <div className="border-0 border-red-600">
-                  <div className="textImage relative text-red-600">
+          .map((post, index) => (
+            <div key={index}>
+              <div className="border-0 border-red-600">
+                <div className="textImage relative text-red-600">
+                  <Image
+                    className="w-[30rem] mt-6"
+                    src={post.featured_media}
+                    width={500}
+                    height={300}
+                    alt="nature video"
+                  />
+                </div>
+
+                <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
+                  <div className="en-vertical-text mr-4 text-sm lg:text-base">
+                    {post.class_list.find((item) => item.startsWith("tag-")) && (
+                      <p>
+                        ----
+                        {post.class_list
+                          .find((item) => item.startsWith("tag-"))
+                          .substring(4)}
+                      </p>
+                    )}
+                  </div>
+                  <p className="en-vertical-text cursor-pointer h-fit mr-4 text-sm lg:text-base">
+                    READ MORE
                     <Image
-                      className="w-[30rem] mt-6"
-                      src={post.featured_media}
-                      width={500}
-                      height={300}
+                      className="inline-block relative left-[10%] mt-3"
+                      src="/READMORE_DROP.png"
+                      width={15}
+                      height={50}
                       alt="nature video"
                     />
-                  </div>
+                  </p>
 
-                  <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-                    <div className="en-vertical-text mr-4 text-sm lg:text-base">
-                      {post.class_list.find((item) =>
-                        item.startsWith("tag-")
-                      ) && (
-                        <p>
-                          ----
-                          {post.class_list
-                            .find((item) => item.startsWith("tag-"))
-                            .substring(4)}
-                        </p>
-                      )}
-                    </div>
-                    <p className="en-vertical-text cursor-pointer h-fit mr-4 text-sm lg:text-base">
-                      READ MORE
-                      <Image
-                        className="inline-block relative left-[10%] mt-3"
-                        src="/READMORE_DROP.png"
-                        width={15}
-                        height={50}
-                        alt="nature video"
-                      />
-                    </p>
-
-                    <p
-                      className="vertical-text-enjoy text-red-600 text-base lg:text-2xl"
-                      dangerouslySetInnerHTML={{
-                        __html: post.content.rendered,
-                      }}
-                    />
-
-                    {/* <p className="text-red-600 vertical-text text-base lg:text-2xl mr-0">
-              見飽きることはありません︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              毎日眺めていても
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              東側から望む富士の稜線はたおやかで︑
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-4 text-red-600">
-              富士山をつねに見上げる御殿場︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              酒造りを
-            </p> */}
-                  </div>
+                  <p
+                    className="vertical-text-enjoy text-red-600 text-base lg:text-2xl"
+                    dangerouslySetInnerHTML={{
+                      __html: post.content.rendered,
+                    }}
+                  />
                 </div>
               </div>
-            );
-          })}
-
-        {/* <div>
-          <div className="textImage relative text-red-600">
-            <Image
-              className="w-[30rem] mt-6"
-              src="/ENJOY_IMG_DUMMY_3.png"
-              width={500}
-              height={300}
-              alt="nature video"
-            />
-          </div>
-
-          <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              ---- Pairing
-            </p>
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              VIEW ALL
-              <Image
-                className="inline-block relative left-[10%] mt-3"
-                src="/READMORE_DROP.png"
-                width={15}
-                height={50}
-                alt="nature video"
-              />
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              見飽きることはありません︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              毎日眺めていても
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              東側から望む富士の稜線はたおやかで︑
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-4 text-red-600">
-              富士山をつねに見上げる御殿場︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              酒造りを
-            </p>
-          </div>
-        </div> */}
+            </div>
+          ))}
       </section>
     </div>
   );

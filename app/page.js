@@ -5,9 +5,9 @@ import Story from "../components/Story/page";
 import News from "../components/News/page";
 // import Nav from "../components/Navbar/page";
 import LandingPage from "../components/LandingPage/page";
-// import Location from "@/components/Location/page";
-// import Enjoy from "@/components/Enjoy/page";
-// import Products from "@/components/Products/page";
+import Location from "@/components/Location/page";
+import Enjoy from "@/components/Enjoy/page";
+import Products from "@/components/Products/page";
 import Footer from "@/components/Footer/page";
 
 export default function Home() {
@@ -17,13 +17,13 @@ export default function Home() {
       
       <News />
       
-      {/* <Story/> */}
+      <Story/>
 
-      {/* <Location/> */}
+      <Location/>
 
-      {/* <Products/> */}
+      <Products/>
       
-      {/* <Enjoy/> */}
+      <Enjoy/>
 
       <Footer/>
 
