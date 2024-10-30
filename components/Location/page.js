@@ -257,7 +257,7 @@ const Location = () => {
             where offerings for the gods were prepared.
             </p>
             <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            "Kuriya" means kitchen, referring to a building
+            &quot;Kuriya&quot; means kitchen, referring to a building
 
             </p>
 
