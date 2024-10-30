@@ -333,7 +333,7 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          The snowmelt from Mt. Fuji is filtered through the ground over decades, emerging as underground water. Gotemba's underground water is soft water characterized by a mild taste. Soft water is widely consumed in Japan and has contributed to the development of Japanese cuisine that brings out the best in ingredients.
+          The snowmelt from Mt. Fuji is filtered through the ground over decades, emerging as underground water. Gotemba&apos;s underground water is soft water characterized by a mild taste. Soft water is widely consumed in Japan and has contributed to the development of Japanese cuisine that brings out the best in ingredients.
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
@@ -408,11 +408,11 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          Rice is another crucial element. Gotemba-grown rice, cultivated using the temperature difference between day and night and Mt.Fuji's underground water, has become a prefectural specialty. "Gotemba Koshihikari" is a premium rice that has won numerous awards in contests. Gotemba is indeed a rice-producing region.
+          Rice is another crucial element. Gotemba-grown rice, cultivated using the temperature difference between day and night and Mt.Fuji&apos;s underground water, has become a prefectural specialty. &quot;Gotemba Koshihikari&quot; is a premium rice that has won numerous awards in contests. Gotemba is indeed a rice-producing region.
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2 mb-[15%]">
-          In this environment suitable for rice cultivation, we have also begun growing sake rice. Mikuriya Sakaegura primarily uses sake rice from Shizuoka Prefecture, including the newly introduced "Reiwa Homare Fuji" from 2023. Our goal is to eventually produce all the ingredients for our sake using Shizuoka-grown sake rice.
+          In this environment suitable for rice cultivation, we have also begun growing sake rice. Mikuriya Sakaegura primarily uses sake rice from Shizuoka Prefecture, including the newly introduced &quot;Reiwa Homare Fuji&quot; from 2023. Our goal is to eventually produce all the ingredients for our sake using Shizuoka-grown sake rice.
           </p>
           
           </>)} 
@@ -485,14 +485,14 @@ const StoryPage = () => {
           </>):(<>
 
           <p className="text-center text-black text-2xl lg:text-3xl mt-20">
-          The word “kuriya” in the name “Mikuriya” means “kitchen for the gods”.
+          The word &quot;kuriya&quot; in the name &quot;Mikuriya&quot; means &quot;kitchen for the gods&quot;.
           </p>
           <p className="text-center text-black text-2xl lg:text-3xl mt-2">
           This area was once called Mikuriya
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          The area now comprising Gotemba City, Oyama Town, and Susono City was formerly known as Mikuriya. "Kuriya" means kitchen, referring to a building where offerings for the gods were prepared. During the Heian period, this land became a manor of Ise Shrine, supplying food. Manors called Mikuriya existed throughout Japan, and Gotemba was one of them.
+          The area now comprising Gotemba City, Oyama Town, and Susono City was formerly known as Mikuriya. &quot;Kuriya&quot; means kitchen, referring to a building where offerings for the gods were prepared. During the Heian period, this land became a manor of Ise Shrine, supplying food. Manors called Mikuriya existed throughout Japan, and Gotemba was one of them.
           </p>
           
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
@@ -504,7 +504,7 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          The history of Mikuriya and the episode of our local deity also being the god of sake - it seems that Mikuriya Sakaegura's environment is drawn to a magical connection.
+          The history of Mikuriya and the episode of our local deity also being the god of sake - it seems that Mikuriya Sakaegura&apos;s environment is drawn to a magical connection.
           </p>
           
           
@@ -599,7 +599,7 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          The symbol at Mikuriya Sakaegura embodies various connections or "en". People are undoubtedly the most essential element in sake brewing. When considering the future of our hometown Gotemba, people are indispensable. We have a strong desire for local sake to become one of the things young people, who will lead the future, can be proud of in their hometown.
+          The symbol at Mikuriya Sakaegura embodies various connections or &quot;en&quot;. People are undoubtedly the most essential element in sake brewing. When considering the future of our hometown Gotemba, people are indispensable. We have a strong desire for local sake to become one of the things young people, who will lead the future, can be proud of in their hometown.
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
@@ -612,11 +612,11 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          Utilizing rich resources, we aim to produce Japanese sake that is "All Gotemba" from ingredient production to delivery to customers.
+          Utilizing rich resources, we aim to produce Japanese sake that is &quot;All Gotemba&quot; from ingredient production to delivery to customers.
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
-          We strive for Mikuriya Sakaegura's local sake to become a new Gotemba specialty that brings happiness to many people and, above all, to be an entity that brings excitement.
+          We strive for Mikuriya Sakaegura&apos;s local sake to become a new Gotemba specialty that brings happiness to many people and, above all, to be an entity that brings excitement.
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">

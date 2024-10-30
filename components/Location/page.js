@@ -352,7 +352,7 @@ const Location = () => {
             People are undoubtedly the most
             </p>
             <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            various connections or "en".
+            various connections or &quot;en&quot;.
             </p>
             <p className="en-vertical-text text-base lg:text-2xl mr-2">
             The symbol at Mikuriya Sakaegura embodies
