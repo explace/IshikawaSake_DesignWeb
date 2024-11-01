@@ -377,7 +377,7 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
-          Then, we encountered Ishikawa Sake Brewery Co., Ltd., which was founded in Omaezaki City, Shizuoka Prefecture in 1882 and had since become a dormant brewery. With the cooperation of the brewery owner, Mr. Masanori Ishikawa, we took over the sake brewing business and were reborn as "Gotemba Ishikawa Shuzo Co., Ltd." We were able to establish a sake brewery in Inno, Gotemba City
+          Then, we encountered Ishikawa Sake Brewery Co., Ltd., which was founded in Omaezaki City, Shizuoka Prefecture in 1882 and had since become a dormant brewery. With the cooperation of the brewery owner, Mr. Masanori Ishikawa, we took over the sake brewing business and were reborn as &quot;Gotemba Ishikawa Shuzo Co., Ltd.&quot; We were able to establish a sake brewery in Inno, Gotemba City
           </p>
 
           <p className="text-lg lg:text-xl mt-14 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
@@ -385,7 +385,7 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-14 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
-          Another essential element for sake is rice. We have also started growing sake rice.Gotemba's main crop is rice. While Gotemba Koshihikari is highly evaluated nationwide, the environment surrounding agriculture faces various unavoidable challenges such as a shortage of agricultural workers and an aging population.
+          Another essential element for sake is rice. We have also started growing sake rice.Gotemba&apos;s main crop is rice. While Gotemba Koshihikari is highly evaluated nationwide, the environment surrounding agriculture faces various unavoidable challenges such as a shortage of agricultural workers and an aging population.
           </p>
 
           <p className="text-lg lg:text-xl mt-14 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
