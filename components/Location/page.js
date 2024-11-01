@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Location = () => {
   const fadeInLocation = useRef(null);
 
-  const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
+  const lang = useSelector((state) => state.reducer1.lang); // Get language type from Redux
 
   useEffect(() => {
     const target = fadeInLocation.current;
