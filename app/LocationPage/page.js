@@ -203,14 +203,12 @@ const StoryPage = () => {
        { lang === 'jp' ? (
         <>
         <div className="absolute top-0 left-[2vw]">
-          <p className="en-vertical-text text-2xl lg:text-3xl">恵まれた自然環境がオンリーワンの日本酒を生み </p>
-          <p className="en-vertical-text text-2xl lg:text-3xl">出します </p>
+          <p className="en-vertical-text text-2xl lg:text-3xl">Mt.Fuji Benefit</p>
           <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p>
         </div>
         </>):(<>
           <div className="absolute top-0 left-[2vw]">
-          <p className="en-vertical-text text-2xl lg:text-3xl ml-1 mb-2">The blessed natural environment creates a unique</p>
-          <p className="en-vertical-text text-2xl lg:text-3xl ml-1"> Japanese sake</p>
+          <p className="en-vertical-text text-2xl lg:text-3xl ml-1 mb-2">Mt.Fuji Benefit</p>
           <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p>
         </div>
         </>)}
@@ -270,11 +268,145 @@ const StoryPage = () => {
   
         </main>
         <p></p>
+
+        { lang === 'jp' ? (
+        <>
+        </>):(<>
+        </>)}
+
+        <main className="w-[75%]">
+
+        { lang === 'jp' ? (
+        <>
+
+          <Image
+            className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
+            src="/MtFUJI_BENEFIT_PICT_3.png"
+            width={3000}
+            height={1000}
+            alt="Story Image"
+          />
+
+          <p className="text-center text-black text-2xl lg:text-3xl mt-20">
+          こんこんと
+          </p>
+          <p className="text-center text-black text-2xl lg:text-3xl mt-2">
+          絶えず湧き出る清涼な水
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
+          富士山の雪解け水が数十年という歳月をかけて地中でろ過され、湧出したものが伏流水です。御殿場の伏流水は軟水でまろやかな味わいが特徴。日本で多く飲まれているのも軟水ですが、素材を活かす日本食が生み出されたのもこの軟水あってのことです。
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
+          日本酒の成分のほとんどは水。洗米や醸造など、日本酒造りの過程でも良質かつ大量の水を必要とします。絶えずこんこんと湧き出る良質な水が、日本酒の素となります。
+          </p> 
+        </>):(<>
+
+          <Image
+            className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
+            src="/MtFUJI_BENEFIT_PICT_3.png"
+            width={3000}
+            height={1000}
+            alt="Story Image"
+          />
+
+          
+          <p className="text-center text-black text-2xl lg:text-3xl mt-12">
+          Continuously flowing pure spring water
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
+          The snowmelt from Mt. Fuji is filtered through the ground over decades, emerging as underground water. Gotemba&apos;s underground water is soft water characterized by a mild taste. Soft water is widely consumed in Japan and has contributed to the development of Japanese cuisine that brings out the best in ingredients.
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
+          Water makes up most of the components in sake. High-quality water in large quantities is also needed throughout the sake-making process, from washing rice to brewing. The constantly flowing, high-quality water becomes the basis for sake.
+          </p> 
+        
+        
+        </>)}
+
+          
+  
+        </main>
+        <p></p>
+
+
+        { lang === 'jp' ? (
+        <>
+        {/* <div className="absolute top-[10%] left-[2vw]">
+          <p className="en-vertical-text text-2xl lg:text-3xl">選りすぐりの米、伏流水で育てた米を目指して
+          </p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[700vh] bg-black"></p>
+        </div> */}
+        </>):(<>
+
+        {/* <div className="absolute top-[7%] left-[2vw]">
+          <p className="en-vertical-text text-2xl lg:text-3xl ml-1 mb-2">Aiming to grow rice using carefully selected</p>
+          <p className="en-vertical-text text-2xl lg:text-3xl ml-1">varieties and underground water </p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p>
+        </div> */}
+        
+        
+        </>)}
+
+        <main className="w-[75%]">
+          
+          <Image
+            className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
+            src="/MtFUJI_BENEFIT_PICT_4.png"
+            width={3000}
+            height={1000}
+            alt="Story Image"
+          />
+
+         { lang === 'jp' ? (
+          <>
+
+          <p className="text-center text-black text-2xl lg:text-3xl mt-20">
+          選りすぐりの米、
+          </p>
+          <p className="text-center text-black text-2xl lg:text-3xl mt-2">
+          伏流水で育てた米を目指して
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
+          そして、米。昼夜の寒暖差と富士山の伏流水を活かして栽培された御殿場産の米は県の特産品にもなっています。ごてんばこしひかりはコンテストで数々の賞に輝くほどの極上米。御殿場はいわゆる米どころでもあります。
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2 mb-[1%]">
+          そんな稲作に適した環境のなかで、酒米（酒造好適米）作りも始めました。静岡県内で令和５年産から新たに登場した「令和誉富士（れいわほまれふじ）」など、御厨榮蔵では主に静岡県産の酒米を使用します。ゆくゆくは、御厨榮蔵の日本酒の素となる全てを静岡県産の酒米で生み出すことを目指しています。
+          </p>
+
+          </>):(<>
+          
+          <p className="text-center text-black text-2xl lg:text-3xl mt-20">
+          Aiming to grow rice using carefully selected
+          </p>
+          <p className="text-center text-black text-2xl lg:text-3xl mt-2">
+          varieties and underground water
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2">
+          Rice is another crucial element. Gotemba-grown rice, cultivated using the temperature difference between day and night and Mt.Fuji&apos;s underground water, has become a prefectural specialty. &quot;Gotemba Koshihikari&quot; is a premium rice that has won numerous awards in contests. Gotemba is indeed a rice-producing region.
+          </p>
+
+          <p className="text-lg lg:text-xl mt-16 w-[100%] lg:w-[54%] relative left-[52%] -translate-x-1/2 mb-[1%]">
+          In this environment suitable for rice cultivation, we have also begun growing sake rice. Mikuriya Sakaegura primarily uses sake rice from Shizuoka Prefecture, including the newly introduced &quot;Reiwa Homare Fuji&quot; from 2023. Our goal is to eventually produce all the ingredients for our sake using Shizuoka-grown sake rice.
+          </p>
+          
+          </>)} 
+  
+        </main>
+        <p></p>
+
+
       </section>
 
       {/* Part 2 Benefit */}
 
-      <section className="grid place-items-center overflow-hidden relative mt-[10%]">
+      {/* <section className="grid place-items-center overflow-hidden relative mt-[10%]">
       { lang === 'jp' ? (
         <>
         <div className="absolute top-[10%] left-[2vw]">
@@ -347,11 +479,11 @@ const StoryPage = () => {
   
         </main>
         <p></p>
-      </section>
+      </section> */}
 
       {/* Part 3 Benefit */}
 
-      <section className="grid place-items-center overflow-hidden relative mt-[10%]">
+      {/* <section className="grid place-items-center overflow-hidden relative mt-[10%]">
       { lang === 'jp' ? (
         <>
         <div className="absolute top-[10%] left-[2vw]">
@@ -419,7 +551,7 @@ const StoryPage = () => {
   
         </main>
         <p></p>
-      </section>
+      </section> */}
 
 
       <section className="w-[100%] my-16 grid place-items-center mt-30">

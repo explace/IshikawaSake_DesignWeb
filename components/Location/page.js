@@ -233,37 +233,38 @@ const Location = () => {
           </div>
         
 
-          <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              ---- Shuzo
-            </p>
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              READ MORE
-              <Image
-                className="inline-block relative left-[10%] mt-3"
-                src="/READMORE_DROP.png"
-                width={15}
-                height={50}
-                alt="nature video"
-              />
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            became a manor of Ise Shrine, supplying food.
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            During the Heian period, this land
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            where offerings for the gods were prepared.
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            &quot;Kuriya&quot; means kitchen, referring to a building
+          <div className="flex flex-col items-center ml-9 relative w-full mt-6 lg:mt-7">
+  {/* side part */}
+  <div className="flex flex-row items-center absolute left-2 top-4 transform -translate-x-full">
+    <p className="en-vertical-text text-sm lg:text-base mr-2 mb-16">---- Shuzo</p>
+    <p className="en-vertical-text text-sm lg:text-base">
+      READ MORE
+      <Image
+        className="inline-block relative left-2 mt-3"
+        src="/READMORE_DROP.png"
+        width={15}
+        height={50}
+        alt="nature video"
+      />
+    </p>
+  </div>
 
-            </p>
+  {/* top text */}
+  <div className="text-center mt-2 lg:mt-1 -ml-11">
+    <p className="text-base lg:text-2xl whitespace-nowrap">This area was once called Mikuriya</p>
+  </div>
 
-            <p className="en-vertical-text text-base lg:text-2xl mr-0 absolute ml-[65%] -mt-[28%]">This area was once called Mikuriya</p>
+  {/* bottom text */}
+  <div className="flex flex-col-reverse items-start mt-6 lg:mt-8">
+    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">became a manor of Ise Shrine, supplying food.</p>
+    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">During the Heian period, this land</p>
+    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">where offerings for the gods were prepared.</p>
+    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">
+      &quot;Kuriya&quot; means kitchen, referring to a building
+    </p>
+  </div>
+</div>
 
-          </div>
           
         
         
@@ -331,43 +332,40 @@ const Location = () => {
             />
           </div>
 
-          <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              ---- Team Gotemba
-            </p>
-            <p className="en-vertical-text mr-4 text-sm lg:text-base">
-              READ MORE
-              <Image
-                className="inline-block relative left-[10%] mt-3"
-                src="/READMORE_DROP.png"
-                width={15}
-                height={50}
-                alt="nature video"
-              />
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            essential element in sake brewing.
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            People are undoubtedly the most
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            various connections or &quot;en&quot;.
-            </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-2">
-            The symbol at Mikuriya Sakaegura embodies
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-2">
-            シンボルマークは、
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-[15%]">わたしたち御厨榮蔵の</p>
+          <div className="flex flex-col items-center relative w-full mt-6 lg:mt-16">
+  {/* Side part */}
+  <div className="flex flex-row items-center absolute left-12 transform -translate-x-full -bottom-6">
+    <p className="en-vertical-text text-sm lg:text-base mr-2 mb-16">---- Team Gotemba</p>
+    <p className="en-vertical-text text-sm lg:text-base mb-14">
+      READ MORE
+      <Image
+        className="inline-block relative left-2 mt-3"
+        src="/READMORE_DROP.png"
+        width={15}
+        height={50}
+        alt="nature video"
+      />
+    </p>
+  </div>
 
-            <p className="en-vertical-text text-base lg:text-2xl mr-0 absolute ml-[65%] -mt-[28%]">Sake brewing that has taken root in the Gotemba area </p>
-            <p className="en-vertical-text text-base lg:text-2xl mr-0 absolute ml-[80%] -mt-[28%]">and is being spun towards the future
-            </p>
+  {/* Center text */}
+  <div className="flex flex-col-reverse items-start ml-14 mt-4 lg:mt-9">
+    <p className=" text-base lg:text-xl whitespace-nowrap">essential element in sake brewing.</p>
+    <p className=" text-base lg:text-xl whitespace-nowrap">People are undoubtedly the most</p>
+    <p className=" text-base lg:text-xl whitespace-nowrap">various connections or &quot;en&quot;.</p>
+    <p className=" text-base lg:text-xl whitespace-nowrap">The symbol at Mikuriya Sakaegura embodies</p>
+  </div>
 
-            
-          </div>
+  {/* Right text */}
+  <div className="absolute top-0 -right-[20%] flex flex-col items-start mt-4 lg:-mt-9 ">
+    <p className=" text-base lg:text-2xl whitespace-nowrap">Sake brewing that has taken root in the Gotemba</p>
+    <p className=" text-base lg:text-2xl whitespace-nowrap"> area and is being spun towards the future</p>
+  </div>
+</div>
+
+
+          
+          
         </div>
       
       </>)}  
