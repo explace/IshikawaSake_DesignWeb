@@ -1,5 +1,13 @@
 "use client";
 import React, { useRef } from "react";
+
+import Story from "@/components/Story/page";
+import News from "@/components/News/page";
+import Location from "@/components/Location/page";
+import Enjoy from "@/components/Enjoy/page";
+import Products from "@/components/Products/page";
+import Footer from "@/components/Footer/page";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +19,7 @@ const TopPage = () => {
   const vid5 = useRef(null);
   const vid6 = useRef(null);
   return (
+    <>
     <main
       id="main"
       className="topPageBg w-[100vw] h-[100vh] relative overflow-hidden border-0 border-purple-600"
@@ -227,6 +236,18 @@ const TopPage = () => {
         />
       </div>
     </main>
+      <News />
+      
+      <Story/>
+
+      <Location/>
+
+      <Products/>
+      
+      <Enjoy/>
+
+      <Footer/>
+    </>
   );
 };
 
