@@ -132,10 +132,10 @@ const Story = () => {
       ):(
       
         <>
-        <p className="en-vertical-text mr-4 text-sm lg:text-base -ml-[25%] mt-2">
+        <p className="en-vertical-text md:mr-4 mr-2 text-sm lg:text-base md:-ml-[25%] -ml-[73%] md:mt-2 mt-6">
           ---- Message / History / Region
         </p>
-        <p className="en-vertical-text mr-4 text-sm lg:text-base mt-2 mr-12">
+        <p className="en-vertical-text md:mr-4 mr-8 text-sm lg:text-base md:mt-2 mt-6 mr-12">
           READ MORE
           <Image
             className="inline-block relative left-[10%] mt-5"
@@ -145,26 +145,26 @@ const Story = () => {
             alt="nature video"
           />
         </p>
-        <div className="grid grid-cols-1 absolute mt-[13%] ml-[15%]">
-        <p className=" text-base text-left lg:text-md mr-0">
+        <div className="grid grid-cols-1 absolute md:mt-[13%] mt-[35%] md:ml-[15%] ml-[18%]">
+        <p className=" md:text-base text-sm text-left md:text-md mr-0">
         The rich underground water that emerges after being
         </p>
-        <p className=" text-base text-left lg:text-md mr-0">
+        <p className=" md:text-base text-sm text-left md:text-md mr-0">
         filtered through long years from the
         </p>
-        <p className=" text-base text-left lg:text-md mr-0">
+        <p className=" md:text-base text-sm text-left md:text-md mr-0">
         melted snow of Mt.Fuji. We have always been thinking
         </p>
-        <p className=" text-base text-left lg:text-md mr-0">
+        <p className=" md:text-base text-sm text-left md:text-md mr-0">
         about how to convey this wonderful 
         </p>
-        <p className=" text-base text-left lg:text-md mr-0">
+        <p className=" md:text-base text-sm text-left md:text-md mr-0">
         gift of nature more widely and how to give back to the region in a better way.
         </p>
         </div>
 
         
-        <div className="grid grid-cols-1 absolute ml-[20%]">
+        <div className="grid grid-cols-1 absolute md:ml-[20%] ml-[18%] mt-4 md:mt-0">
         <p className=" text-base lg:text-2xl mr-0 tracking-tighter">
         Sake brewing that will be spun
         </p>

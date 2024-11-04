@@ -184,9 +184,9 @@ const StoryPage = () => {
           />
 
           
-          <div className="justify-center mt-12 -ml-[150%]">
-            <p className="text-2xl font-medium whitespace-nowrap">A magical bond brought about by the blessings of Mt.</p>
-            <p className="text-2xl font-medium whitespace-nowrap ml-[45%]"> Fuji and the god of sake</p>
+          <div className="justify-center mt-10 ml-[41%]">
+            <p className="md:text-2xl text-xl en-vertical-text font-medium whitespace-nowrap">A magical bond brought about by the blessings of Mt.</p>
+            <p className="md:text-2xl text-xl en-vertical-text font-medium whitespace-nowrap ml-[0%]"> Fuji and the god of sake</p>
           </div>
         </div>
         <p className="absolute top-0 vertical-text text-2xl font-medium right-2 lg:right-24">

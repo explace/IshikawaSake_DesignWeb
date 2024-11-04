@@ -128,10 +128,10 @@ const Location = () => {
       ):(
 
         <>
-        <p className="en-vertical-text mr-4 text-sm lg:text-base -ml-[11%] mt-2">
+        <p className="en-vertical-text md:mr-4 mr-2 text-sm md:text-base md:-ml-[25%] -ml-[73%] md:mt-2 mt-6">
           ---- Message / History / Region
         </p>
-        <p className="en-vertical-text mr-4 text-sm lg:text-base mt-2 mr-12">
+        <p className="en-vertical-text md:mr-4 mr-8 text-sm md:text-base md:mt-2 mt-6 mr-12">
           READ MORE
           <Image
             className="inline-block relative left-[10%] mt-5"
@@ -141,20 +141,20 @@ const Location = () => {
             alt="nature video"
           />
         </p>
-        <div className="grid grid-cols-1 absolute mt-[9%] ml-[12%] mb-1">
-        <p className=" text-base text-left lg:text-md mr-0">
+        <div className="grid grid-cols-1 absolute md:mt-[11%] mt-[30%] md:ml-[2%] -ml-[15%]">
+        <p className=" md:text-base text-sm text-left md:text-md mr-0">
         Abundant, high-quality water and rice
         </p>
-        <p className=" text-base text-left lg:text-md mr-0">
+        <p className="  md:text-base text-sm text-left md:text-md mr-0">
         are essential for sake brewing,
         </p>
-        <p className=" text-base text-left lg:text-md mr-0">
+        <p className="  md:text-base text-sm text-left md:text-md mr-0">
         and Gotemba has the foundation for both.
         </p>
         </div>
 
         
-        <div className="grid grid-cols-1 absolute ml-[12%]">
+        <div className="grid grid-cols-1 absolute md:ml-[2%] -ml-[27%] mt-4 md:mt-0">
         <p className=" text-base lg:text-2xl mr-0 tracking-tighter">
         A magical bond brought about
         </p>
@@ -250,16 +250,16 @@ const Location = () => {
   </div>
 
   {/* top text */}
-  <div className="text-center mt-2 lg:mt-1 -ml-11">
-    <p className="text-base lg:text-2xl whitespace-nowrap">This area was once called Mikuriya</p>
+  <div className="text-center mt-2 md:mt-1 md:-ml-11 -ml-[29%]">
+    <p className="text-base md:text-2xl whitespace-nowrap">This area was once called Mikuriya</p>
   </div>
 
   {/* bottom text */}
-  <div className="flex flex-col-reverse items-start mt-6 lg:mt-8">
-    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">became a manor of Ise Shrine, supplying food.</p>
-    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">During the Heian period, this land</p>
-    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">where offerings for the gods were prepared.</p>
-    <p className="text-base lg:text-xl mr-2 whitespace-nowrap">
+  <div className="flex flex-col-reverse items-start mt-8 md:mt-8 md:-ml-[16%] -ml-[18%]">
+    <p className="md:text-base text-sm mr-2 whitespace-nowrap">became a manor of Ise Shrine, supplying food.</p>
+    <p className="md:text-base text-sm mr-2 whitespace-nowrap">During the Heian period, this land</p>
+    <p className="md:text-base text-sm mr-2 whitespace-nowrap">where offerings for the gods were prepared.</p>
+    <p className="md:text-base text-sm mr-2 whitespace-nowrap">
       &quot;Kuriya&quot; means kitchen, referring to a building
     </p>
   </div>
@@ -332,11 +332,11 @@ const Location = () => {
             />
           </div>
 
-          <div className="flex flex-col items-center relative w-full mt-6 lg:mt-16">
+          <div className="flex flex-col items-center relative w-full mt-6 md:mt-16">
   {/* Side part */}
-  <div className="flex flex-row items-center absolute left-12 transform -translate-x-full -bottom-6">
-    <p className="en-vertical-text text-sm lg:text-base mr-2 mb-16">---- Team Gotemba</p>
-    <p className="en-vertical-text text-sm lg:text-base mb-14">
+  <div className="flex flex-row items-center absolute md:left-10 left-11 transform -translate-x-full md:-bottom-6 -bottom-[24%]">
+    <p className="en-vertical-text text-sm md:text-base mr-2 mb-16 md:mb-[60%]">---- Team Gotemba</p>
+    <p className="en-vertical-text text-sm md:text-base mb-14 md:mb-[60%]">
       READ MORE
       <Image
         className="inline-block relative left-2 mt-3"
@@ -349,17 +349,17 @@ const Location = () => {
   </div>
 
   {/* Center text */}
-  <div className="flex flex-col-reverse items-start ml-14 mt-4 lg:mt-9">
-    <p className=" text-base lg:text-xl whitespace-nowrap">essential element in sake brewing.</p>
-    <p className=" text-base lg:text-xl whitespace-nowrap">People are undoubtedly the most</p>
-    <p className=" text-base lg:text-xl whitespace-nowrap">various connections or &quot;en&quot;.</p>
-    <p className=" text-base lg:text-xl whitespace-nowrap">The symbol at Mikuriya Sakaegura embodies</p>
+  <div className="flex flex-col-reverse items-start mt-[20%] md:mt-9 md:-ml-[8%] -ml-[8%]">
+    <p className=" md:text-base text-sm mr-2 whitespace-nowrap">essential element in sake brewing.</p>
+    <p className=" md:text-base text-sm mr-2 whitespace-nowrap">People are undoubtedly the most</p>
+    <p className=" md:text-base text-sm mr-2 whitespace-nowrap">various connections or &quot;en&quot;.</p>
+    <p className=" md:text-base text-sm mr-2 whitespace-nowrap">The symbol at Mikuriya Sakaegura embodies</p>
   </div>
 
   {/* Right text */}
-  <div className="absolute top-0 -right-[20%] flex flex-col items-start mt-4 lg:-mt-9 ">
-    <p className=" text-base lg:text-2xl whitespace-nowrap">Sake brewing that has taken root in the Gotemba</p>
-    <p className=" text-base lg:text-2xl whitespace-nowrap"> area and is being spun towards the future</p>
+  <div className="absolute top-0 md:-right-[18%] right-[9%] flex flex-col items-start mt-4 md:-mt-9 ">
+    <p className=" text-base md:text-2xl whitespace-nowrap">Sake brewing that has taken root in the Gotemba</p>
+    <p className=" text-base md:text-2xl whitespace-nowrap"> area and is being spun towards the future</p>
   </div>
 </div>
 
