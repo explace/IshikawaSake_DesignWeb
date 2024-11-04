@@ -181,7 +181,7 @@ const StoryPage = () => {
           />
           
           <div className="flex justify-between lg:mt-[45%] mt-[45%]">
-            <p className=" text-xl lg:text-2xl font-medium en-vertical-text whitespace-nowrap md:ml-[40%] ml-[39%] -mt-[15%]">
+            <p className=" text-xl lg:text-2xl font-medium whitespace-nowrap lg:-ml-[110%] -ml-[89%]">
             We are Mikuriya Sakaegura, a local team.
             </p>
           </div>
