@@ -145,7 +145,7 @@ const Story = () => {
             alt="nature video"
           />
         </p>
-        <div className="grid grid-cols-1 absolute md:mt-[13%] mt-[35%] md:ml-[15%] ml-[18%]">
+        <div className="grid grid-cols-1 absolute md:mt-[13%] mt-[49%] md:ml-[15%] ml-[18%]">
         <p className=" md:text-base text-sm text-left md:text-md mr-0">
         The rich underground water that emerges after being
         </p>
