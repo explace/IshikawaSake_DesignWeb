@@ -22,7 +22,7 @@ const TopPage = () => {
     <>
     <main
       id="main"
-      className="topPageBg w-[100vw] h-[100vh] relative overflow-hidden border-0 border-purple-600"
+      className="topPageBg w-[100%] h-[100vh] relative overflow-hidden border-0 border-purple-600"
     >
       {/* <Image
         src="/FV_MAIN_IMG_DUMMY.png"
@@ -130,7 +130,7 @@ const TopPage = () => {
         <section className="lg:flex grid place-items-center items-center w-[100%] border-0 border-cyan-300">
           <div className="flex justify-between w-[95%] sm:w-[70%] lg:w-[50%] xl:w-[30%]  lg:ml-10 xl:ml-44 mb-24 lg:mb-0 border-0 border-green-500">
             <p
-              className="vertical-text text-white text-xl cursor-pointer infoHover h-fit"
+              className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer infoHover h-fit"
             //   onMouseEnter={() => {
             //     vid1.current.style.opacity = 1;
             //     vid1.current.play();
