@@ -213,7 +213,7 @@
   @supports (-webkit-appearance: none) {
     .text-with-pseudo::before,
     .text-with-pseudo::after {
-      transform: translateX(-30px);
+      transform: translateX(-36px);
     }
   }
 }
