@@ -135,7 +135,7 @@ const TopPage = () => {
         <div className="z-[40] absolute top-0 grid lg:place-items-center w-[100%] h-[100%] overflow-hidden border-0 border-yellow-300">
           <section className="lg:flex block w-[100%] h-fit mt-auto lg:mt-0 border-0 border-cyan-300">
             <div className="flex justify-between w-[95%] sm:w-[70%] lg:w-[50%] xl:w-[30%] mt-auto lg:ml-10 xl:ml-44 mb-8 lg:mb-0 relative left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 border-0 border-green-500">
-              <div className="border-0 border-red-600 relative h-fit navBtn">
+              <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
                   className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
@@ -153,7 +153,7 @@ const TopPage = () => {
                 <p className="infoHoverBelow"></p>
               </div>
 
-              <div className="border-0 border-red-600 relative h-fit navBtn">
+              <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
                   className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
@@ -171,7 +171,7 @@ const TopPage = () => {
                 <p className="infoHoverBelow"></p>
               </div>
 
-              <div className="border-0 border-red-600 relative h-fit navBtn">
+              <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
                   className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
@@ -192,7 +192,7 @@ const TopPage = () => {
                 <p className="infoHoverBelow"></p>
               </div>
 
-              <div className="border-0 border-red-600 relative h-fit navBtn">
+              <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
                   onMouseEnter={() => {
@@ -221,7 +221,7 @@ const TopPage = () => {
                 <p className="infoHoverBelow"></p>
               </div>
 
-              <div className="border-0 border-red-600 relative h-fit navBtn">
+              <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
                   onMouseEnter={() => {
@@ -249,7 +249,7 @@ const TopPage = () => {
                 <p className="infoHoverBelow"></p>
               </div>
 
-              <div className="border-0 border-red-600 relative h-fit navBtn">
+              <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
                   onMouseEnter={() => {
