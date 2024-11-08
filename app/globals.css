@@ -166,15 +166,86 @@
   line-height: 1.5; /* adjust line height if needed */
 }
 
-.infoHover::after {
+.infoHoverAbove {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  /* top:100%; */
+  left: 40%;
+  transform: translateY(-105%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    /* rgba(255, 255, 255, 0), */
+    /* rgba(255, 255, 255, 0), */
+    rgba(255, 255, 255, 1)
+    );
+    /* background-color: red; */
+    transition: all 0.5s ease;
+    /* opacity: 0; */
+    pointer-events: none;
+  }
+.infoHoverBelow {
+  position: absolute;
+  width: 4px;
+  height: 100vh;
+  top:100%;
+  left: 50%;
+  transform:translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 30%
+    );
+    transition: all 0.5s ease;
+    /* opacity: 0; */
+    pointer-events: none;
+  }
+
+  .navBtn p{
+    opacity: 0;
+  }
+  .navBtn:hover p{
+    opacity: 1;
+  }
+  /* .navBtn2 p{
+    opacity: 0;
+  }
+  .navBtn2:hover p{
+    opacity: 1;
+  }
+  .navBtn3 p{
+    opacity: 0;
+  }
+  .navBtn3:hover p{
+    opacity: 1;
+  }
+  .navBtn4 p{
+    opacity: 0;
+  }
+  .navBtn4:hover p{
+    opacity: 1;
+  }
+  .navBtn5 p{
+    opacity: 0;
+  }
+  .navBtn5:hover p{
+    opacity: 1;
+  }
+  .navBtn6 p{
+    opacity: 0;
+  }
+  .navBtn6:hover p{
+    opacity: 1;
+  } */
+
+/* .infoHover::after {
   content: "";
   position: absolute;
   display: inline-block;
-  /* left: -20px; */
   margin-right: 12px;
   width: 4px;
   height: 100vh;
-  /* background-color: red; */
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
@@ -183,9 +254,9 @@
     transition: all 0.5s ease;
     opacity: 0;
     pointer-events: none;
-  }
+  } */
   
-  .infoHover::before {
+  /* .infoHover::before {
     content: "";
     position: absolute;
     display: inline-block;
@@ -193,7 +264,6 @@
   height: 100vh;
   margin-right: 14px;
   margin-top: -100.5vh;
-  /* background-color: red; */
   background: linear-gradient(
     180deg,
     rgba(230, 17, 17, 0) 85%,
@@ -202,21 +272,21 @@
   transition: all 0.5s ease;
   opacity: 0;
   pointer-events: none;
-}
+} */
 
-.infoHover:hover::after,
+/* .infoHover:hover::after,
 .infoHover:hover::before {
   opacity: 1;
-}
+} */
 
-@media not all and (min-resolution: 0.001dpcm) {
+/* @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
     .text-with-pseudo::before,
     .text-with-pseudo::after {
       transform: translateX(-36px);
     }
   }
-}
+} */
 
 
 @keyframes fadeInAnimation {
