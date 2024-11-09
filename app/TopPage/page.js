@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import Story from "@/components/Story/page";
 import News from "@/components/News/page";
@@ -25,6 +25,27 @@ const TopPage = () => {
   const vid4 = useRef(null);
   const vid5 = useRef(null);
   const vid6 = useRef(null);
+
+//   useEffect(()=>{
+//     function isSafari() {
+//       const ua = navigator.userAgent.toLowerCase();
+//       return ua.includes("safari") && !ua.includes("chrome");
+//   }
+
+//   console.log("isSafari",isSafari());
+
+//   if (!isSafari()) {
+//     document.querySelectorAll(".infoHoverAbove").forEach((el) => {
+//         el.style.left = "120px"; // Example Safari-specific style adjustment
+//         // el.style.transform = "translateX(-45%)";
+//     });
+//     document.querySelectorAll(".infoHoverBelow").forEach((el) => {
+//         el.style.left = "120px";
+//         // el.style.transform = "translateX(-45%)";
+//     });
+// }
+
+//   },[])
   return (
     <>
       <main
