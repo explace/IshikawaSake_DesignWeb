@@ -26,26 +26,26 @@ const TopPage = () => {
   const vid5 = useRef(null);
   const vid6 = useRef(null);
 
-//   useEffect(()=>{
-//     function isSafari() {
-//       const ua = navigator.userAgent.toLowerCase();
-//       return ua.includes("safari") && !ua.includes("chrome");
-//   }
+  //   useEffect(()=>{
+  //     function isSafari() {
+  //       const ua = navigator.userAgent.toLowerCase();
+  //       return ua.includes("safari") && !ua.includes("chrome");
+  //   }
 
-//   console.log("isSafari",isSafari());
+  //   console.log("isSafari",isSafari());
 
-//   if (!isSafari()) {
-//     document.querySelectorAll(".infoHoverAbove").forEach((el) => {
-//         el.style.left = "120px"; // Example Safari-specific style adjustment
-//         // el.style.transform = "translateX(-45%)";
-//     });
-//     document.querySelectorAll(".infoHoverBelow").forEach((el) => {
-//         el.style.left = "120px";
-//         // el.style.transform = "translateX(-45%)";
-//     });
-// }
+  //   if (!isSafari()) {
+  //     document.querySelectorAll(".infoHoverAbove").forEach((el) => {
+  //         el.style.left = "120px"; // Example Safari-specific style adjustment
+  //         // el.style.transform = "translateX(-45%)";
+  //     });
+  //     document.querySelectorAll(".infoHoverBelow").forEach((el) => {
+  //         el.style.left = "120px";
+  //         // el.style.transform = "translateX(-45%)";
+  //     });
+  // }
 
-//   },[])
+  //   },[])
   return (
     <>
       <main
@@ -63,45 +63,45 @@ const TopPage = () => {
         <div className="clouds " style={{ height: "100vh", width: "100vw" }}>
           {/* Cloud 1 - Slow Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage1 mb-20 md:mb-0"
             src="/cloud1.png"
-            style={{ "--i": 1 }}
+            // style={{ "--i": 1 }}
             width={2100}
             height={100}
             alt="Cloud 1"
           />
           {/* Cloud 2 - Fast Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage2 mb-20 md:mb-0"
             src="/cloud2.png"
-            style={{ "--i": 2 }}
+            // style={{ "--i": 2 }}
             width={2100}
             height={100}
             alt="Cloud 2"
           />
           {/* Cloud 3 - Medium Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage3 mb-20 md:mb-0"
             src="/cloud3.png"
-            style={{ "--i": 3 }}
+            // style={{ "--i": 3 }}
             width={2100}
             height={100}
             alt="Cloud 3"
           />
           {/* Cloud 4 - Reverse Slow */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage4 mb-20 md:mb-0"
             src="/cloud4.png"
-            style={{ "--i": 4 }}
+            // style={{ "--i": 4 }}
             width={2100}
             height={100}
             alt="Cloud 4"
           />
           {/* Cloud 5 - Slow Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage5 mb-20 md:mb-0"
             src="/cloud5.png"
-            style={{ "--i": 5 }}
+            // style={{ "--i": 5 }}
             width={2100}
             height={100}
             alt="Cloud 5"
@@ -133,6 +133,7 @@ const TopPage = () => {
           <video
             muted
             loop
+            playsInline
             ref={vid4}
             src="/PRODUCTS.mp4"
             className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
@@ -140,12 +141,14 @@ const TopPage = () => {
           <video
             muted
             loop
+            playsInline
             ref={vid5}
             src="/LOCATION.mp4"
             className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
           />
           <video
             muted
+            playsInline
             loop
             ref={vid6}
             src="/STORY.mp4"
@@ -217,22 +220,19 @@ const TopPage = () => {
                 <p className="infoHoverAbove"> </p>
                 <h3
                   onMouseEnter={() => {
-                    vid4.current.style.opacity = 1;
-                    vid4.current.play();
+                    if (vid4.current) {
+                      vid4.current.muted = true; // Ensure the video is muted
+                      vid4.current.style.opacity = 1;
+                      vid4.current.play();
+                    }
                   }}
                   onMouseLeave={() => {
-                    vid4.current.style.opacity = 0;
-                    vid4.current.pause();
+                    if (vid4.current) {
+                      vid4.current.style.opacity = 0;
+                      vid4.current.pause();
+                    }
                   }}
                   className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
-                  // onMouseEnter={() => {
-                  //   // vid1.current.style.opacity = 1;
-                  //   // vid1.current.play();
-                  // }}
-                  // onMouseLeave={() => {
-                  //   // vid1.current.style.opacity = 0;
-                  //   // vid1.current.pause();
-                  // }}
                 >
                   <Link href={"/ProductsPage"} passHref>
                     <span className="en-vertical-text">PRODUCTS</span>{" "}
@@ -246,22 +246,19 @@ const TopPage = () => {
                 <p className="infoHoverAbove"> </p>
                 <h3
                   onMouseEnter={() => {
-                    vid5.current.style.opacity = 1;
-                    vid5.current.play();
+                    if (vid5.current) {
+                      vid5.current.muted = true; // Ensure the video is muted
+                      vid5.current.style.opacity = 1;
+                      vid5.current.play();
+                    }
                   }}
                   onMouseLeave={() => {
-                    vid5.current.style.opacity = 0;
-                    vid5.current.pause();
+                    if (vid5.current) {
+                      vid5.current.style.opacity = 0;
+                      vid5.current.pause();
+                    }
                   }}
                   className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
-                  // onMouseEnter={() => {
-                  //   // vid1.current.style.opacity = 1;
-                  //   // vid1.current.play();
-                  // }}
-                  // onMouseLeave={() => {
-                  //   // vid1.current.style.opacity = 0;
-                  //   // vid1.current.pause();
-                  // }}
                 >
                   <Link href={"/LocationPage"} passHref>
                     <span className="en-vertical-text">LOCATION</span> 郷土
@@ -274,12 +271,17 @@ const TopPage = () => {
                 <p className="infoHoverAbove"> </p>
                 <h3
                   onMouseEnter={() => {
-                    vid6.current.style.opacity = 1;
-                    vid6.current.play();
+                    if (vid6.current) {
+                      vid6.current.muted = true; // Ensure the video is muted
+                      vid6.current.style.opacity = 1;
+                      vid6.current.play();
+                    }
                   }}
                   onMouseLeave={() => {
-                    vid6.current.style.opacity = 0;
-                    vid6.current.pause();
+                    if (vid6.current) {
+                      vid6.current.style.opacity = 0;
+                      vid6.current.pause();
+                    }
                   }}
                   className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
@@ -299,7 +301,7 @@ const TopPage = () => {
               </div>
             </div>
 
-            <div className="w-fit lg:ml-auto lg:mr-10 xl:mr-60 mb-4 lg:mb-0 border-0 border-white relative left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0" >
+            <div className="w-fit lg:ml-auto lg:mr-10 xl:mr-60 mb-4 lg:mb-0 border-0 border-white relative left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0">
               <Image src={"/LOGO_WH.png"} width={350} height={100} alt="logo" />
             </div>
           </section>
