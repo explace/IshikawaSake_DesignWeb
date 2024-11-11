@@ -203,8 +203,14 @@ const StoryPage = () => {
       <section className="grid place-items-center overflow-hidden relative">
         <div className="absolute top-0 left-[2vw]">
           {/* <p className="en-vertical-text text-2xl lg:text-3xl">富士山から湧く神の水と選りすぐりの米</p> */}
+          { lang === 'jp' ? (
+          <>
           <p className="en-vertical-text text-2xl lg:text-3xl">Message</p>
           <p className="w-[2px] relative left-[37%] mt-2 h-[200vh] bg-black"></p>
+          </>):(<>
+          <p className="en-vertical-text text-2xl lg:text-3xl">Message</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[208vh] bg-black"></p>
+          </>) }
         </div>
 
         <main className="w-[75%]">
@@ -318,8 +324,14 @@ const StoryPage = () => {
         <div className="absolute top-0 left-[2vw]">
           {/* <p className="en-vertical-text text-2xl lg:text-3xl">この地に根ざす人びとと共に100</p>
           <p className="en-vertical-text text-2xl lg:text-3xl mt-2">年先の未来にも紡ぐ酒造りを</p> */}
+           { lang === 'jp' ? (
+          <>
           <p className="en-vertical-text text-2xl lg:text-3xl">Mission</p>
           <p className="w-[2px] relative left-[37%] mt-2 h-[300vh] bg-black"></p>
+          </>):(<>
+          <p className="en-vertical-text text-2xl lg:text-3xl">Mission</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[329vh] bg-black"></p>
+          </>) }
         </div>
 
         <main className="w-[75%]">
