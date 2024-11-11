@@ -165,8 +165,8 @@ const StoryPage = () => {
 
             </p>
             <p className="vertical-text text-2xl font-medium">不思議な縁</p>
-            <p className="vertical-text text-2xl font-medium">酒の神が引き寄せた</p>
-            <p className="vertical-text text-2xl font-medium">富士山からの恵みと</p>
+            {/* <p className="vertical-text text-2xl font-medium">酒の神が引き寄せた</p> */}
+            <p className="vertical-text text-2xl font-medium">富士山からの恵みと酒の神が引き寄せた</p>
           </div>
         </div>
         <p className="absolute top-0 vertical-text text-2xl font-medium right-2 lg:right-24">
@@ -185,8 +185,9 @@ const StoryPage = () => {
 
           
           <div className="justify-center mt-12 md:-ml-[150%] -ml-[130%]">
-            <p className="text-xl md:text-2xl font-medium whitespace-nowrap">A magical bond brought about by the blessings of Mt.</p>
-            <p className="text-xl md:text-2xl text-2xl font-medium whitespace-nowrap ml-[45%]"> Fuji and the god of sake</p>
+            <p className="text-xl md:text-2xl font-medium whitespace-nowrap md:ml-[28%] ml-[30%]">A magical bond brought about by</p>
+            <p className="text-xl md:text-2xl text-2xl font-medium whitespace-nowrap ml-[44%] md:ml-[42%]">the blessings of Mt.Fuji</p>
+            <p className="text-xl md:text-2xl text-2xl font-medium whitespace-nowrap ml-[50%] md:ml-[49%]">and the god of sake</p>
           </div>
         </div>
         <p className="absolute top-0 vertical-text text-2xl font-medium right-2 lg:right-24">
@@ -574,9 +575,17 @@ const StoryPage = () => {
       </section>
 
       <section className=" grid place-items-center relative overflow-hidden">
-        <div className=" absolute lg:top-[6%] top-[6%] left-[2vw]">
-        <p className="en-vertical-text text-4xl ">History</p>
-        <p className="w-[2px] relative left-[37%] mt-2 h-[200vh] bg-black"></p>
+        <div className=" absolute lg:top-[6%] top-[1.3%] left-[2vw]">
+        { lang === 'jp' ? (
+          <>
+        <p className="en-vertical-text text-2xl md:text-4xl ">History</p>
+        <p className="w-[2px] relative left-[37%] mt-2 h-[208vh] bg-black"></p>
+        </>):(<>
+
+        <p className="en-vertical-text text-2xl md:text-4xl ">History</p>
+        <p className="w-[2px] relative left-[37%] mt-2 h-[219vh] bg-black"></p>
+        
+        </>)}
         </div>
 
         <main className="w-[75%]">
@@ -671,10 +680,15 @@ const StoryPage = () => {
       </section>
 
       <section className=" grid place-items-center relative overflow-hidden">
-        <div className=" absolute lg:top-[6%] top-[6%] left-[2vw]">
-          <p className="en-vertical-text text-4xl ">Team Gotemba</p>
-
-          <p className="w-[2px] relative left-[37%] mt-2 h-[200vh] bg-black"></p>
+        <div className=" absolute lg:top-[6%] top-[1%] left-[2vw]">
+        { lang === 'jp' ? (
+          <>
+          <p className="en-vertical-text text-2xl md:text-4xl ">Team Gotemba</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[210vh] bg-black"></p>
+          </>):(<>
+          <p className="en-vertical-text text-2xl md:text-4xl ">Team Gotemba</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[248vh] bg-black"></p>
+          </>)}
         </div>
 
         <main className="w-[75%]">

@@ -102,11 +102,11 @@ const Location = () => {
         <p className="vertical-text text-base lg:text-md mr-0">
         御殿場には素地が揃っています。
         </p>
-        <p className="vertical-text text-base lg:text-md mr-0">
+        {/* <p className="vertical-text text-base lg:text-md mr-0">
         米が欠かせません。
-        </p>
+        </p> */}
         <p className="vertical-text text-base lg:text-md mr-0">
-        豊富で良質な水と
+        豊富で良質な水と米が欠かせません。
         </p>
         <p className="vertical-text text-base lg:text-md mr-5">
         日本酒造りには
@@ -114,11 +114,11 @@ const Location = () => {
 
 
         {/* Additional text with new font size */}
-        <p className="vertical-text text-2xl lg:text-2xl mr-2">
+        {/* <p className="vertical-text text-2xl lg:text-2xl mr-2">
         不思議な縁
-        </p>
+        </p> */}
         <p className="vertical-text text-2xl lg:text-2xl mr-2">
-        酒の神が引き寄せた
+        酒の神が引き寄せた不思議な縁
         </p>
         <p className="vertical-text text-2xl lg:text-2xl mr-4">
         富士山からの恵みと
@@ -201,11 +201,11 @@ const Location = () => {
             <p className="vertical-text text-base lg:text-2xl mr-2">
             食物を供給する土地でした。
             </p>
-            <p className="vertical-text text-base lg:text-2xl mr-2">
+            {/* <p className="vertical-text text-base lg:text-2xl mr-2">
             伊勢神宮の荘園となり、
-            </p>
+            </p> */}
             <p className="vertical-text text-base lg:text-2xl mr-2">
-            当地は平安時代には
+            当地は平安時代には伊勢神宮の荘園となり、
             </p>
             <p className="vertical-text text-base lg:text-2xl mr-2">
             神饌（しんせん）を調理する建物のことです。
@@ -308,10 +308,10 @@ const Location = () => {
             <p className="vertical-text text-base lg:text-2xl mr-2">
             様々な繫がり「縁」を具現化したものです。
             </p>
-            <p className="vertical-text text-base lg:text-2xl mr-2">
+            {/* <p className="vertical-text text-base lg:text-2xl mr-2">
             シンボルマークは、
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-[15%]">わたしたち御厨榮蔵の</p>
+            </p> */}
+            <p className="vertical-text text-base lg:text-2xl mr-[15%]">わたしたち御厨榮蔵のシンボルマークは、</p>
 
             <p className="vertical-text text-base lg:text-2xl mr-0 absolute ml-[65%] -mt-[28%]">未来に紡ぐ酒造り</p>
             <p className="vertical-text text-base lg:text-2xl mr-0 absolute ml-[80%] -mt-[28%]">御殿場の地で根を張った</p>

@@ -160,9 +160,9 @@ const StoryPage = () => {
           
           <div className="flex justify-between mt-10">
             <p className="vertical-text text-2xl font-medium">
-            というローカルチームです
+            ローカルチームです
             </p>
-            <p className="vertical-text text-2xl font-medium">御厨榮蔵（みくりやさかえぐら）</p>
+            <p className="vertical-text text-2xl font-medium">御厨榮蔵（みくりやさかえぐら）という</p>
             <p className="vertical-text text-2xl font-medium">わたしたちは</p>
           </div>
         </div>
@@ -180,9 +180,12 @@ const StoryPage = () => {
             alt="Story Image"
           />
           
-          <div className="flex justify-between lg:mt-[45%] mt-[45%]">
-            <p className=" text-xl lg:text-2xl font-medium whitespace-nowrap lg:-ml-[110%] -ml-[89%]">
-            We are Mikuriya Sakaegura, a local team.
+          <div className="flex-cols justify-between lg:mt-[45%] mt-[55%]">
+            <p className=" text-xl lg:text-2xl font-medium whitespace-nowrap lg:-ml-[60%] -ml-[45%]">
+            We are Mikuriya Sakaegura,
+            </p>
+            <p className=" text-xl lg:text-2xl font-medium whitespace-nowrap lg:ml-[0%] ml-[5%]">
+            a local team.
             </p>
           </div>
         </div>

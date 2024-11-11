@@ -242,9 +242,9 @@ const TopPage = () => {
 
       <Location/>
 
-      <Products/>
+      {/* <Products/>
       
-      <Enjoy/>
+      <Enjoy/> */}
 
       <Footer/>
     </>
