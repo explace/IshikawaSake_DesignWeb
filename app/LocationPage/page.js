@@ -36,7 +36,7 @@ const StoryPage = () => {
         <Image
             className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
             ref={imgRef}
-            src={"/LOCATION_IMG_DUMMY.png"}
+            src={"/FIRST_VIEW_LOCATION_BACKGROUND_PICT.png "}
             width={1700}
             height={1000}
             alt="Background Image"

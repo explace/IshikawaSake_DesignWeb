@@ -81,6 +81,10 @@
   overflow: hidden;
 }
 
+.cloudsimage{
+  animation: animate calc(16s * var(--i)) linear infinite;
+}
+
 .cloudsimage1 {
   position: absolute;
   bottom: -100px;

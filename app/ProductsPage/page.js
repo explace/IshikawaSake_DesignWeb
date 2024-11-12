@@ -33,7 +33,7 @@ const ProductPage = () => {
           <Image
             className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
             ref={imgRef}
-            src={"/PRODUCTS_IMG_DUMMY.png"}
+            src={"/FIRST_VIEW_PRODUCTS_BACKGROUND_PICT.png"}
             width={1700}
             height={1000}
             alt="Background Image"
@@ -59,7 +59,7 @@ const ProductPage = () => {
         <div className="clouds absolute top-10 left-0 h-[100%] w-[100%] z-[20]">
           {/* Cloud 1 - Slow Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage mb-20 md:-mb-10"
             src="/cloud1.png"
             style={{ "--i": 1 }}
             width={2100}
@@ -68,7 +68,7 @@ const ProductPage = () => {
           />
           {/* Cloud 2 - Fast Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage mb-20 md:-mb-10"
             src="/cloud2.png"
             style={{ "--i": 2 }}
             width={2100}
@@ -77,7 +77,7 @@ const ProductPage = () => {
           />
           {/* Cloud 3 - Medium Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage mb-20 md:-mb-10"
             src="/cloud3.png"
             style={{ "--i": 3 }}
             width={2100}
@@ -86,7 +86,7 @@ const ProductPage = () => {
           />
           {/* Cloud 4 - Reverse Slow */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage mb-20 md:-mb-10"
             src="/cloud4.png"
             style={{ "--i": 4 }}
             width={2100}
@@ -95,7 +95,7 @@ const ProductPage = () => {
           />
           {/* Cloud 5 - Slow Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage mb-20 md:-mb-10"
             src="/cloud5.png"
             style={{ "--i": 5 }}
             width={2100}

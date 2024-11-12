@@ -37,7 +37,7 @@ const StoryPage = () => {
         <Image
             className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
             ref={imgRef}
-            src={"/STORY_IMG_DUMMY.png"}
+            src={"/FIRST_VIEW_STORY_BAACKGROUND_PICT.png"}
             width={1700}
             height={1000}
             alt="Background Image"
@@ -45,7 +45,6 @@ const StoryPage = () => {
           />
 
           {/* Video */}
-
           <div className="absolute inset-0 z-[0]">
           <video
               muted
@@ -216,7 +215,7 @@ const StoryPage = () => {
         <main className="w-[75%]">
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2"
-            src="/MESSAGE_STORY_1.png"
+            src="/MESSAGE_PICT_1.png"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -291,7 +290,7 @@ const StoryPage = () => {
 
           <Image
             className="w-[100%] lg:w-[62%] mt-20 relative left-1/2 -translate-x-1/2"
-            src="/MESSAGE_STORY_2.png"
+            src="/MESSAGE_PICT_2.png"
             width={3000}
             height={1000}
             alt="Story Image"
