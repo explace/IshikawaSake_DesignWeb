@@ -64,7 +64,7 @@ const TopPage = () => {
             className="cloudsimage1 mb-20 md:mb-0"
             src={"/cloud1.png"}
             // style={{ "--i": 1 }}
-            width={100}
+            width={2100}
             height={100}
             alt="Cloud1"
           />

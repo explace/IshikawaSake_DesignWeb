@@ -90,11 +90,12 @@
 
 .cloudsimage1 {
   position: relative;
-  /* bottom: -100px; */
-  left: 0vw;
-  top: 0;
-  animation: animateTest 4s linear infinite;
+  bottom: -100px;
+  left: 0;
+  /* top: 0; */
+  animation: animate 16s linear infinite;
   /* border: 2px solid red; */
+  width: 100vw;
 }
 .cloudsimage2 {
   position: relative;
@@ -129,14 +130,7 @@
     left: 100vw;
   }
 }
-@keyframes animateTest {
-  0% {
-    top: -10vw;
-  }
-  100% {
-    top: 0vw;
-  }
-}
+
 /* .topPageMain_noIMG{
   background-image:none;
 
