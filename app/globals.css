@@ -90,34 +90,34 @@
 
 .cloudsimage1 {
   position: relative;
-  bottom: -100px;
+  /* bottom: -100px; */
   left: 0;
   /* top: 0; */
   animation: animate 16s linear infinite;
   /* border: 2px solid red; */
-  width: 100vw;
+  /* width: 100vw; */
 }
 .cloudsimage2 {
   position: relative;
-  bottom: -100px;
+  /* bottom: -100px; */
   left: -100vw;
   animation: animate 32s linear infinite;
 }
 .cloudsimage3 {
   position: relative;
-  bottom: -100px;
+  /* bottom: -100px; */
   left: -100vw;
   animation: animate 48s linear infinite;
 }
 .cloudsimage4 {
   position: relative;
-  bottom: -100px;
+  /* bottom: -100px; */
   left: -100vw;
   animation: animate 64s linear infinite;
 }
 .cloudsimage5 {
   position: relative;
-  bottom: -100px;
+  /* bottom: -100px; */
   left: -100vw;
   animation: animate 80s linear infinite;
 }

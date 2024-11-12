@@ -59,9 +59,9 @@ const TopPage = () => {
 
 
         <div className="absolute bottom-0 border-2 border-red-500">
-          <p className="text-cyan-200">Testing</p>
+          {/* <p className="text-cyan-200">Testing</p> */}
           <Image
-            className="cloudsimage1 mb-20 md:mb-0"
+            className="cloudsimage1"
             src={"/cloud1.png"}
             // style={{ "--i": 1 }}
             width={2100}
