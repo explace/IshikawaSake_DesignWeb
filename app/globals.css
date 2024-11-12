@@ -79,52 +79,53 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  z-index: 39;
 }
 
 .cloudsimage{
   animation: animate calc(16s * var(--i)) linear infinite;
   position: absolute;
   bottom: -100px;
-  transform: translateX(0vw);
+  left: -100vw;
 }
 
 .cloudsimage1 {
   position: absolute;
   bottom: -100px;
-  transform: translateX(0vw);
+  left: 0vw;
   animation: animate 16s linear infinite;
 }
 .cloudsimage2 {
   position: absolute;
   bottom: -100px;
-  transform: translateX(0vw);
+  left: -100vw;
   animation: animate 32s linear infinite;
 }
 .cloudsimage3 {
   position: absolute;
   bottom: -100px;
-  transform: translateX(0vw);
+  left: -100vw;
   animation: animate 48s linear infinite;
 }
 .cloudsimage4 {
   position: absolute;
   bottom: -100px;
-  transform: translateX(0vw);
+  left: -100vw;
   animation: animate 64s linear infinite;
 }
 .cloudsimage5 {
   position: absolute;
   bottom: -100px;
-  transform: translateX(0vw);
+  left: -100vw;
   animation: animate 80s linear infinite;
 }
 
 @keyframes animate {
   0% {
-    transform: translateX(-100vw);
+    left: -100vw;
   }
   100% {
-    transform: translateX(100vw);
+    left: 100vw;
   }
 }
 /* .topPageMain_noIMG{
