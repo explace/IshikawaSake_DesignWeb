@@ -62,7 +62,7 @@ const TopPage = () => {
           <p className="text-cyan-200">Testing</p>
           <Image
             className="cloudsimage1 mb-20 md:mb-0"
-            src={"/LOGO_2_BK.png"}
+            src={"/cloud1.png"}
             // style={{ "--i": 1 }}
             width={100}
             height={100}
