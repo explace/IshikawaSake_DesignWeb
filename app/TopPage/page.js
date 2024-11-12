@@ -50,7 +50,7 @@ const TopPage = () => {
     <>
       <main
         id="main"
-        className="topPageBg h-[100vh] relative overflow-hidden border-2 border-purple-600"
+        className="topPageBg h-[100vh] relative overflow-hidden"
       >
         {/* <Image
         src="/FV_MAIN_IMG_DUMMY.png"
@@ -60,7 +60,6 @@ const TopPage = () => {
         className="w-[100vw] mt-10 md:mt-0 block"
       /> */}
 
-        <div className="clouds">
           {/* Cloud 1 - Slow Speed */}
           <Image
             className="cloudsimage1 mb-20 md:mb-0"
@@ -106,7 +105,6 @@ const TopPage = () => {
             height={100}
             alt="Cloud 5"
           />
-        </div>
 
         <div className="z-[20] border-0 border-blue-500">
           {/* <video
