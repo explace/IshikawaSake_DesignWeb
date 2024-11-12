@@ -57,8 +57,7 @@ const TopPage = () => {
         className="w-[100vw] mt-10 md:mt-0 block"
       /> */}
 
-
-        <div className="absolute bottom-0 border-2 border-red-500">
+        <div className="absolute bottom-0">
           {/* <p className="text-cyan-200">Testing</p> */}
           <Image
             className="cloudsimage1"
@@ -69,10 +68,10 @@ const TopPage = () => {
             alt="Cloud1"
           />
         </div>
-        
-        {/* <div className="absolute bottom-0">
+
+        <div className="absolute bottom-0">
           <Image
-            className="cloudsimage2 mb-20 md:mb-0"
+            className="cloudsimage2"
             src={"/cloud2.png"}
             // style={{ "--i": 2 }}
             width={2100}
@@ -80,10 +79,10 @@ const TopPage = () => {
             alt="Cloud2"
           />
         </div>
-        
+
         <div className="absolute bottom-0">
           <Image
-            className="cloudsimage3 mb-20 md:mb-0"
+            className="cloudsimage3"
             src={"/cloud3.png"}
             // style={{ "--i": 3 }}
             width={2100}
@@ -91,10 +90,10 @@ const TopPage = () => {
             alt="Cloud3"
           />
         </div>
-        
+
         <div className="absolute bottom-0">
           <Image
-            className="cloudsimage4 mb-20 md:mb-0"
+            className="cloudsimage4"
             src={"/cloud4.png"}
             // style={{ "--i": 4 }}
             width={2100}
@@ -105,14 +104,14 @@ const TopPage = () => {
 
         <div className="absolute bottom-0">
           <Image
-            className="cloudsimage5 mb-20 md:mb-0"
+            className="cloudsimage5"
             src={"/cloud5.png"}
             // style={{ "--i": 5 }}
             width={2100}
             height={100}
             alt="Cloud5"
           />
-        </div> */}
+        </div>
 
         <div className="z-[20] border-0 border-blue-500">
           {/* <video
