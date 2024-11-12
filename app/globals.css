@@ -88,7 +88,7 @@
   transform: translateX(0vw);
 }
 
-/* .cloudsimage1 {
+.cloudsimage1 {
   position: absolute;
   bottom: -100px;
   transform: translateX(0vw);
@@ -117,7 +117,7 @@
   bottom: -100px;
   transform: translateX(0vw);
   animation: animate 80s linear infinite;
-} */
+}
 
 @keyframes animate {
   0% {

@@ -63,45 +63,45 @@ const TopPage = () => {
         <div className="clouds " style={{ height: "100vh", width: "100vw" }}>
           {/* Cloud 1 - Slow Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage1 mb-20 md:mb-0"
             src="/cloud1.png"
-            style={{ "--i": 1 }}
+            // style={{ "--i": 1 }}
             width={2100}
             height={100}
             alt="Cloud 1"
           />
           {/* Cloud 2 - Fast Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage2 mb-20 md:mb-0"
             src="/cloud2.png"
-            style={{ "--i": 2 }}
+            // style={{ "--i": 2 }}
             width={2100}
             height={100}
             alt="Cloud 2"
           />
           {/* Cloud 3 - Medium Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage3 mb-20 md:mb-0"
             src="/cloud3.png"
-            style={{ "--i": 3 }}
+            // style={{ "--i": 3 }}
             width={2100}
             height={100}
             alt="Cloud 3"
           />
           {/* Cloud 4 - Reverse Slow */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage4 mb-20 md:mb-0"
             src="/cloud4.png"
-            style={{ "--i": 4 }}
+            // style={{ "--i": 4 }}
             width={2100}
             height={100}
             alt="Cloud 4"
           />
           {/* Cloud 5 - Slow Speed */}
           <Image
-            className="cloudsimage mb-20 md:mb-0"
+            className="cloudsimage5 mb-20 md:mb-0"
             src="/cloud5.png"
-            style={{ "--i": 5 }}
+            // style={{ "--i": 5 }}
             width={2100}
             height={100}
             alt="Cloud 5"
