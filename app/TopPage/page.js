@@ -57,21 +57,20 @@ const TopPage = () => {
         className="w-[100vw] mt-10 md:mt-0 block"
       /> */}
 
-        {/* Cloud 1 - Slow Speed */}
 
-        <div className="absolute bottom-0 z-[51] border-2 border-red-500">
+        <div className="absolute bottom-0 border-2 border-red-500">
           <p className="text-cyan-200">Testing</p>
           <Image
-            className="cloudsimage1 mb-20 md:mb-0 border-2 border-red-500"
-            src={"/cloud1.png"}
+            className="cloudsimage1 mb-20 md:mb-0"
+            src={"/LOGO_2_BK.png"}
             // style={{ "--i": 1 }}
-            width={2100}
+            width={100}
             height={100}
             alt="Cloud1"
           />
         </div>
-        {/* Cloud 2 - Fast Speed */}
-        <div className="absolute bottom-0 z-[51]">
+        
+        {/* <div className="absolute bottom-0">
           <Image
             className="cloudsimage2 mb-20 md:mb-0"
             src={"/cloud2.png"}
@@ -81,8 +80,8 @@ const TopPage = () => {
             alt="Cloud2"
           />
         </div>
-        {/* Cloud 3 - Medium Speed */}
-        <div className="absolute bottom-0 z-[51]">
+        
+        <div className="absolute bottom-0">
           <Image
             className="cloudsimage3 mb-20 md:mb-0"
             src={"/cloud3.png"}
@@ -92,8 +91,8 @@ const TopPage = () => {
             alt="Cloud3"
           />
         </div>
-        {/* Cloud 4 - Reverse Slow */}
-        <div className="absolute bottom-0 z-[51]">
+        
+        <div className="absolute bottom-0">
           <Image
             className="cloudsimage4 mb-20 md:mb-0"
             src={"/cloud4.png"}
@@ -103,8 +102,8 @@ const TopPage = () => {
             alt="Cloud4"
           />
         </div>
-        {/* Cloud 5 - Slow Speed */}
-        <div className="absolute bottom-0 z-[51]">
+
+        <div className="absolute bottom-0">
           <Image
             className="cloudsimage5 mb-20 md:mb-0"
             src={"/cloud5.png"}
@@ -113,7 +112,7 @@ const TopPage = () => {
             height={100}
             alt="Cloud5"
           />
-        </div>
+        </div> */}
 
         <div className="z-[20] border-0 border-blue-500">
           {/* <video
