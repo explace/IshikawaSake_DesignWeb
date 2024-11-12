@@ -61,16 +61,19 @@ const TopPage = () => {
       /> */}
 
           {/* Cloud 1 - Slow Speed */}
-          <Image
-            className="cloudsimage1 mb-20 md:mb-0"
+         <div className="absolute bottom-0 z-[51]">
+         <Image
+            className="cloudsimage1 mb-20 md:mb-0 z-[51]"
             src="/cloud1.png"
             // style={{ "--i": 1 }}
             width={2100}
             height={100}
             alt="Cloud 1"
           />
+         </div>
           {/* Cloud 2 - Fast Speed */}
-          <Image
+         <div className="absolute bottom-0 z-[51]">
+         <Image
             className="cloudsimage2 mb-20 md:mb-0"
             src="/cloud2.png"
             // style={{ "--i": 2 }}
@@ -78,7 +81,9 @@ const TopPage = () => {
             height={100}
             alt="Cloud 2"
           />
+         </div>
           {/* Cloud 3 - Medium Speed */}
+          <div className="absolute bottom-0 z-[51]"> 
           <Image
             className="cloudsimage3 mb-20 md:mb-0"
             src="/cloud3.png"
@@ -87,7 +92,9 @@ const TopPage = () => {
             height={100}
             alt="Cloud 3"
           />
+          </div>
           {/* Cloud 4 - Reverse Slow */}
+          <div className="absolute bottom-0 z-[51]">
           <Image
             className="cloudsimage4 mb-20 md:mb-0"
             src="/cloud4.png"
@@ -96,8 +103,10 @@ const TopPage = () => {
             height={100}
             alt="Cloud 4"
           />
+          </div>
           {/* Cloud 5 - Slow Speed */}
-          <Image
+         <div className="absolute bottom-0 z-[51]">
+         <Image
             className="cloudsimage5 mb-20 md:mb-0"
             src="/cloud5.png"
             // style={{ "--i": 5 }}
@@ -105,6 +114,7 @@ const TopPage = () => {
             height={100}
             alt="Cloud 5"
           />
+         </div>
 
         <div className="z-[20] border-0 border-blue-500">
           {/* <video
