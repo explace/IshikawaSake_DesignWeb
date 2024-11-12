@@ -50,7 +50,7 @@ const TopPage = () => {
     <>
       <main
         id="main"
-        className="topPageBg w-[100%] h-[100vh] relative overflow-hidden border-0 border-purple-600"
+        className="topPageBg h-[100vh] relative overflow-hidden border-0 border-purple-600"
       >
         {/* <Image
         src="/FV_MAIN_IMG_DUMMY.png"
@@ -136,7 +136,7 @@ const TopPage = () => {
             playsInline
             ref={vid4}
             src="/PRODUCTS.mp4"
-            className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
+            className="absolute w-[100vw] h-[100vh] object-cover object-center opacity-0 vid"
           />
           <video
             muted
@@ -144,7 +144,7 @@ const TopPage = () => {
             playsInline
             ref={vid5}
             src="/LOCATION.mp4"
-            className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
+            className="absolute w-[100vw] h-[100vh] object-cover object-center opacity-0 vid"
           />
           <video
             muted
@@ -152,7 +152,7 @@ const TopPage = () => {
             loop
             ref={vid6}
             src="/STORY.mp4"
-            className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
+            className="absolute w-[100vw] h-[100vh] object-cover object-center opacity-0 vid"
           />
         </div>
 
