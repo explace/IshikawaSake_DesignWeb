@@ -336,7 +336,7 @@ const StoryPage = () => {
         <main className="w-[75%]">
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2"
-            src="/HISTORY_STORY.png"
+            src="/MISSION_PICT_1.png"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -423,7 +423,7 @@ const StoryPage = () => {
 
           <Image
             className="w-[100%] lg:w-[62%] relative mt-[10%] left-1/2 -translate-x-1/2"
-            src="/REGION_STORY.png"
+            src="/MISSION_PICT_2.png"
             width={3000}
             height={1000}
             alt="Story Image"
