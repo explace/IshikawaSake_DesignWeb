@@ -325,15 +325,16 @@ const TopPage = () => {
           />
         </div>
       </main>
-      <News />
 
       <Story />
 
       <Location />
 
-      <Products />
+      {/* <Products /> */}
 
-      <Enjoy />
+      {/* <Enjoy /> */}
+
+      <News />
 
       <Footer />
     </>

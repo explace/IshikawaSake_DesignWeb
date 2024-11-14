@@ -27,61 +27,65 @@ const Nav = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-
+  useEffect(() => {
     // detect the current url
     const currentUrl = window.location.href;
-    const lastPart = currentUrl.split('/').pop();
-    if(lastPart === "TopPage"){
+    const lastPart = currentUrl.split("/").pop();
+    if (lastPart === "TopPage") {
       navLogo.current.classList.remove("invert");
       nav.current.classList.remove("text-black");
       nav.current.classList.add("text-white");
-    }
 
-  },[])
+      if (typeof window !== "undefined") {
+        if (window.scrollY / window.innerHeight > 1) {
+          navLogo.current.style.filter = `invert(1)`;
+          // menuToggle.current.style.filter = `invert(1)`;
+          navPCMain.current.style.filter = `invert(1)`;
+          // if (window.innerWidth > 1280) {
+          //   navBtns.current.style.display = "flex";
+          //   navBtns.current.style.opacity = 1;
+          // }
+        }
+
+        const handleScroll = (e) => {
+          const scrollTop = window.scrollY; // Current scroll position
+          const windowHeight = window.innerHeight;
+          const scrollPercentage = scrollTop / windowHeight;
+
+          if (scrollPercentage <= 1) {
+            // if (window.innerWidth > 1280) {
+            //   if (scrollPercentage > 0.75) {
+            //     navBtns.current.style.display = "flex";
+            //   }
+            //   if (scrollPercentage < 0.75) {
+            //     navBtns.current.style.display = "none";
+            //   }
+            //   navBtns.current.style.opacity = scrollPercentage;
+            // }
+            navLogo.current.style.filter = `invert(${scrollPercentage})`;
+            navPCMain.current.style.filter = `invert(${scrollPercentage})`;
+            // menuToggle.current.style.filter = `invert(${scrollPercentage})`;
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+          window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
+        };
+      }
+    }
+    else{
+      navLogo.current.classList.add("invert");
+      nav.current.classList.add("text-black");
+      nav.current.classList.remove("text-white");
+    }
+  }, []);
 
   // useEffect(() => {
-  //   if (navBtns.current) {
-  //     navBtns.current.style.display = "none";
-  //   }
-  //   if (typeof window !== "undefined") {
-  //     if (window.scrollY / window.innerHeight > 1) {
-  //       navLogo.current.style.filter = `invert(1)`;
-  //       menuToggle.current.style.filter = `invert(1)`;
-  //       navPCMain.current.style.filter = `invert(1)`;
-  //       if (window.innerWidth > 1280) {
-  //         navBtns.current.style.display = "flex";
-  //         navBtns.current.style.opacity = 1;
-  //       }
-  //     }
-
-  //     const handleScroll = (e) => {
-  //       const scrollTop = window.scrollY; // Current scroll position
-  //       const windowHeight = window.innerHeight;
-  //       const scrollPercentage = scrollTop / windowHeight;
-
-  //       if (scrollPercentage <= 1) {
-  //         if (window.innerWidth > 1280) {
-  //           if (scrollPercentage > 0.75) {
-  //             navBtns.current.style.display = "flex";
-  //           }
-  //           if (scrollPercentage < 0.75) {
-  //             navBtns.current.style.display = "none";
-  //           }
-  //           navBtns.current.style.opacity = scrollPercentage;
-  //         }
-  //         navLogo.current.style.filter = `invert(${scrollPercentage})`;
-  //         navPCMain.current.style.filter = `invert(${scrollPercentage})`;
-  //         menuToggle.current.style.filter = `invert(${scrollPercentage})`;
-  //       }
-  //     };
-
-  //     window.addEventListener("scroll", handleScroll);
-
-  //     return () => {
-  //       window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
-  //     };
-  //   }
+  //   // if (navBtns.current) {
+  //   //   navBtns.current.style.display = "none";
+  //   // }
   // }, []);
 
   return (
@@ -98,7 +102,6 @@ const Nav = () => {
             />
           </div>
         </Link>
-        
 
         {/* desktop navbar */}
         <main ref={navPCMain} className="ml-auto relative flex">
@@ -117,24 +120,33 @@ const Nav = () => {
             <p className="mr-5 cursor-pointer">SHOP INFO</p>
          </div> */}
           <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
-          <Link href={"https://www.instagram.com/gotembaishikawashuzo/"} target="_blank"> 
-            <FaInstagram />
-          </Link>
+            <Link
+              href={"https://www.instagram.com/gotembaishikawashuzo/"}
+              target="_blank"
+            >
+              <FaInstagram />
+            </Link>
           </p>
           <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
-          <Link href={"https://x.com/gotembaishikawa"} target="_blank"> 
-            <FaXTwitter />
-          </Link>
+            <Link href={"https://x.com/gotembaishikawa"} target="_blank">
+              <FaXTwitter />
+            </Link>
           </p>
           <p className="hidden xl:grid cursor-pointer place-items-center text-2xl mr-5">
-          <Link href={"https://www.facebook.com/profile.php?id=61565849080359"} target="_blank"> 
-            <FaFacebook />
-          </Link>
+            <Link
+              href={"https://www.facebook.com/profile.php?id=61565849080359"}
+              target="_blank"
+            >
+              <FaFacebook />
+            </Link>
           </p>
           <p className="hidden xl:grid cursor-pointer text-stone-400 place-items-center text-2xl mr-5">
-          <Link href={"http://www.youtube.com/@gotembaishikawashuzo  "} target="_blank"> 
-            <FaYoutube />
-          </Link>
+            <Link
+              href={"http://www.youtube.com/@gotembaishikawashuzo  "}
+              target="_blank"
+            >
+              <FaYoutube />
+            </Link>
           </p>
 
           <div

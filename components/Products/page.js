@@ -74,7 +74,7 @@ const Products = () => {
           alt="nature video"
         />
         <p className="vertical-text absolute text-white text-lg sm:text-xl lg:text-3xl">
-          ものがたり
+        私たちのために
         </p>
       </div>
 

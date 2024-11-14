@@ -81,7 +81,7 @@ const Location = () => {
           alt="nature video"
         />
         <p className="vertical-text absolute text-white text-lg sm:text-xl lg:text-3xl">
-          ものがたり
+        ホームタウン
         </p>
       </div>
 
@@ -171,7 +171,7 @@ const Location = () => {
 
             <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
               <p className="en-vertical-text mr-4 text-sm lg:text-base">
-                ---- Shuzo
+                ---- History
               </p>
               <p className="en-vertical-text mr-4 text-sm lg:text-base">
                 READ MORE
@@ -200,10 +200,10 @@ const Location = () => {
               </p>
 
               <div className="absolute top-[-30%] right-6 flex">
-                <p className="vertical-text text-base lg:text-2xl">
+                <p className="vertical-text text-base lg:text-2xl dropShadow">
                   御厨（みくりや）と呼ばれていました
                 </p>
-                <p className="vertical-text text-base lg:text-2xl">
+                <p className="vertical-text text-base lg:text-2xl dropShadow">
                   かつてこの土地は、
                 </p>
               </div>
@@ -221,7 +221,7 @@ const Location = () => {
 
             <div className="flex mt-6">
               <p className="en-vertical-text md:mr-4 mr-2 text-sm lg:text-base">
-                ---- Shuzo
+                ---- History
               </p>
               <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
                 READ MORE
@@ -288,10 +288,10 @@ const Location = () => {
                 わたしたち御厨榮蔵のシンボルマークは、
               </p>
               <div className="absolute top-[-30%] right-6 flex">
-                <p className="vertical-text text-base lg:text-2xl">
+                <p className="vertical-text text-base lg:text-2xl dropShadow">
                   未来に紡ぐ酒造り
                 </p>
-                <p className="vertical-text text-base lg:text-2xl">
+                <p className="vertical-text text-base lg:text-2xl dropShadow">
                   御殿場の地で根を張った
                 </p>
               </div>
