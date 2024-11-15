@@ -1,5 +1,5 @@
 'use client'
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import Image from "next/image";
 
 import Footer from "@/components/Footer/page";
@@ -9,20 +9,25 @@ const ProductPage = () => {
   const vidRef = useRef(null);
   const imgRef = useRef(null);
 
-  // Function to play the video
+  // State to control the z-index of the clouds
+  const [cloudZIndex, setCloudZIndex] = useState(10);
+
+  // Function to play the video and adjust z-index
   const handleMouseEnter = () => {
     vidRef.current.style.opacity = 1;
     imgRef.current.style.opacity = 0;
-
     vidRef.current.play();
+    setCloudZIndex(0); // Set clouds behind video
   };
 
-  // Function to pause the video
+  // Function to pause the video and reset z-index
   const handleMouseLeave = () => {
     vidRef.current.style.opacity = 0;
     imgRef.current.style.opacity = 1;
     vidRef.current.pause();
+    setCloudZIndex(10); // Set clouds in front of video
   };
+
 
   return (
     <div>
@@ -55,54 +60,57 @@ const ProductPage = () => {
 
         </div>
 
-        {/* Clouds */}
-        <div className="clouds absolute top-10 left-0 h-[100%] w-[100%] z-[20]">
-          {/* Cloud 1 - Slow Speed */}
+        {/* Clouds with dynamic z-index */}
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
           <Image
-            className="cloudsimage mb-20 md:-mb-10"
-            src="/cloud1.png"
-            style={{ "--i": 1 }}
+            className="cloudsimage1"
+            src={"/cloud1.png"}
             width={2100}
             height={100}
-            alt="Cloud 1"
-          />
-          {/* Cloud 2 - Fast Speed */}
-          <Image
-            className="cloudsimage mb-20 md:-mb-10"
-            src="/cloud2.png"
-            style={{ "--i": 2 }}
-            width={2100}
-            height={100}
-            alt="Cloud 2"
-          />
-          {/* Cloud 3 - Medium Speed */}
-          <Image
-            className="cloudsimage mb-20 md:-mb-10"
-            src="/cloud3.png"
-            style={{ "--i": 3 }}
-            width={2100}
-            height={100}
-            alt="Cloud 3"
-          />
-          {/* Cloud 4 - Reverse Slow */}
-          <Image
-            className="cloudsimage mb-20 md:-mb-10"
-            src="/cloud4.png"
-            style={{ "--i": 4 }}
-            width={2100}
-            height={100}
-            alt="Cloud 4"
-          />
-          {/* Cloud 5 - Slow Speed */}
-          <Image
-            className="cloudsimage mb-20 md:-mb-10"
-            src="/cloud5.png"
-            style={{ "--i": 5 }}
-            width={2100}
-            height={100}
-            alt="Cloud 5"
+            alt="Cloud1"
           />
         </div>
+        {/* Repeat for other cloud images, applying the same dynamic z-index */}
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud2.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud3.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud4.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud5.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
 
         {/* Main Content */}
         <div className="flex flex-col gap-4 z-[40] relative top-12 w-[50%] items-center pt-52 mt-0 border-0 ml-[25%] border-green-500">

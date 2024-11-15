@@ -37,53 +37,57 @@ const LandingPage = () => {
         />
       </div>
 
-      <div className="clouds " style={{ height: "100vh", width: "100vw" }}>
-        {/* Cloud 1 - Slow Speed */}
-        <Image
-          className="cloudsimage mb-20 md:mb-0"
-          src="/cloud1.png"
-          style={{ "--i": 1 }}
-          width={2100}
-          height={100}
-          alt="Cloud 1"
-        />
-        {/* Cloud 2 - Fast Speed */}
-        <Image
-          className="cloudsimage mb-20 md:mb-0"
-          src="/cloud2.png"
-          style={{ "--i": 2 }}
-          width={2100}
-          height={100}
-          alt="Cloud 2"
-        />
-        {/* Cloud 3 - Medium Speed */}
-        <Image
-          className="cloudsimage mb-20 md:mb-0"
-          src="/cloud3.png"
-          style={{ "--i": 3 }}
-          width={2100}
-          height={100}
-          alt="Cloud 3"
-        />
-        {/* Cloud 4 - Reverse Slow */}
-        <Image
-          className="cloudsimage mb-20 md:mb-0"
-          src="/cloud4.png"
-          style={{ "--i": 4 }}
-          width={2100}
-          height={100}
-          alt="Cloud 4"
-        />
-        {/* Cloud 5 - Slow Speed */}
-        <Image
-          className="cloudsimage mb-20 md:mb-0"
-          src="/cloud5.png"
-          style={{ "--i": 5 }}
-          width={2100}
-          height={100}
-          alt="Cloud 5"
-        />
-      </div>
+      {/* Clouds with dynamic z-index */}
+      <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage1"
+            src={"/cloud1.png"}
+            width={2100}
+            height={100}
+            alt="Cloud1"
+          />
+        </div>
+        {/* Repeat for other cloud images, applying the same dynamic z-index */}
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage2"
+            src={"/cloud2.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage2"
+            src={"/cloud3.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage2"
+            src={"/cloud4.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage2"
+            src={"/cloud5.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+     
 
       <div className="z-[20] border-0 border-blue-500">
         <video

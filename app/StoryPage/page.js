@@ -1,111 +1,113 @@
 'use client'
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer/page";
-
 import { useSelector } from "react-redux";
 
 const StoryPage = () => {
-
   const vidRef = useRef(null);
   const imgRef = useRef(null);
-
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
 
+  // State to control the z-index of the clouds
+  const [cloudZIndex, setCloudZIndex] = useState(10);
 
-  // Function to play the video
+  // Function to play the video and adjust z-index
   const handleMouseEnter = () => {
     vidRef.current.style.opacity = 1;
     imgRef.current.style.opacity = 0;
-
     vidRef.current.play();
+    setCloudZIndex(0); // Set clouds behind video
   };
 
-  // Function to pause the video
+  // Function to pause the video and reset z-index
   const handleMouseLeave = () => {
     vidRef.current.style.opacity = 0;
     imgRef.current.style.opacity = 1;
     vidRef.current.pause();
+    setCloudZIndex(10); // Set clouds in front of video
   };
 
   return (
     <div className="">
-      {/* Main Story Section */}
       <div className="relative h-[100vh] w-[100%] bg-neutral-600 overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0 z-[10]">
-        <Image
-            className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
+          <Image
+            className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out"
             ref={imgRef}
             src={"/FIRST_VIEW_STORY_BAACKGROUND_PICT.png"}
             width={1700}
             height={1000}
             alt="Background Image"
-            style={{ opacity: 1 }} // Initial opacity for the image
+            style={{ opacity: 1 }}
           />
 
           {/* Video */}
           <div className="absolute inset-0 z-[0]">
-          <video
+            <video
               muted
               loop
               ref={vidRef}
               src="/STORY.mp4"
-              className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out" // Add transition to the video
-              style={{ opacity: 0 }} // Initial opacity for the video
+              className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out"
+              style={{ opacity: 0 }}
             />
           </div>
-
         </div>
 
-        {/* Clouds */}
-        <div className="clouds absolute top-10 left-0 h-[100%] w-[100%] z-[20]">
-          {/* Cloud 1 - Slow Speed */}
+        {/* Clouds with dynamic z-index */}
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
           <Image
-            className="cloudsimage mb-20 md:mb-0"
-            src="/cloud1.png"
-            style={{ "--i": 1 }}
+            className="cloudsimage1"
+            src={"/cloud1.png"}
             width={2100}
             height={100}
-            alt="Cloud 1"
-          />
-          {/* Cloud 2 - Fast Speed */}
-          <Image
-            className="cloudsimage mb-20 md:mb-0"
-            src="/cloud2.png"
-            style={{ "--i": 2 }}
-            width={2100}
-            height={100}
-            alt="Cloud 2"
-          />
-          {/* Cloud 3 - Medium Speed */}
-          <Image
-            className="cloudsimage mb-20 md:mb-0"
-            src="/cloud3.png"
-            style={{ "--i": 3 }}
-            width={2100}
-            height={100}
-            alt="Cloud 3"
-          />
-          {/* Cloud 4 - Reverse Slow */}
-          <Image
-            className="cloudsimage mb-20 md:mb-0"
-            src="/cloud4.png"
-            style={{ "--i": 4 }}
-            width={2100}
-            height={100}
-            alt="Cloud 4"
-          />
-          {/* Cloud 5 - Slow Speed */}
-          <Image
-            className="cloudsimage mb-20 md:mb-0"
-            src="/cloud5.png"
-            style={{ "--i": 5 }}
-            width={2100}
-            height={100}
-            alt="Cloud 5"
+            alt="Cloud1"
           />
         </div>
+        {/* Repeat for other cloud images, applying the same dynamic z-index */}
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud2.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud3.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud4.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0" style={{ zIndex: cloudZIndex }}>
+          <Image
+            className="cloudsimage2"
+            src={"/cloud5.png"}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+
+
 
         {/* Main Content */}
         <div className="flex flex-col gap-4 z-[40] relative top-12 w-[100vw] items-center pt-52 mt-0 border-0 border-green-500">
@@ -232,13 +234,21 @@ const StoryPage = () => {
           </p>
 
           <p className="text-lg lg:text-xl mt-16 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
-          霊峰富士の深い懐に包まれる御殿場。
+          霊峰富士の深い懐に包まれる御殿場。<br/>
           わたしたちが望む富士の稜線はたおやかで、毎日眺めていても見飽きることはありません。
           </p>
 
           <p className="text-lg lg:text-xl mt-12 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
-          富士山は雄大な眺めだけでなく、伏流水という自然の恵みも届けてくれています。この伏流水がわたしたち御殿場市民の飲み水でもあります。
+          富士山は雄大な眺めだけでなく、伏流水という自然の恵みも届けてくれています。
+          御殿場市ではこの伏流水がわたしたち市民の飲み水でもあります。
+          <br /><br />
+          富士山の雪解け水が地中でろ過され、長い歳月を経て湧出る豊かな伏流水。
+          この素晴らしい自然の恵みをもっと広く伝えるとともに、地域により良い形で還元する方法はないかと、
+          つねづね考えていました。じつは伏流水は、御殿場での米作りにも寄与しています。
+          御殿場の地は、寒暖差があり米作りに適した地勢です。
+          富士山の水と御殿場の米。大地をありのままに醸せたら……それがまさに日本酒でした。
           </p>
+
 
           {/* <p className="text-lg lg:text-xl mt-16 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
             富士山の雪解け水が地中でろ過され、長い歳月を経て湧出す豊かな伏流水。
@@ -251,9 +261,9 @@ const StoryPage = () => {
             まに醸せたら……それがまさに日本酒でした。
           </p> */}
           
-          <p className="text-lg lg:text-xl mt-12 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
+          {/* <p className="text-lg lg:text-xl mt-12 w-[95%] lg:w-[54%] relative left-1/2 -translate-x-1/2">
           富士山の雪解け水が長い歳月を経てろ過され、湧き出る豊かな伏流水。この素晴らしい自然の恵みをもっと広く伝えるとともに、地域により良い形で還元する方法はないかと、つねづね考えていました。じつは伏流水は、御殿場での米作りにも寄与しています。御殿場の地は、寒暖差があり米作りに適した地勢です。富士山の水と御殿場の米。大地をありのままに醸せたら……それがまさに日本酒でした。
-          </p>
+          </p> */}
 
           </>):(<>
 
