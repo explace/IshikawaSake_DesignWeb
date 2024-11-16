@@ -10,6 +10,7 @@ import Footer from "@/components/Footer/page";
 
 import Image from "next/image";
 import Link from "next/link";
+import ShopInfo from "@/components/ShopInfo";
 
 const TopPage = () => {
   // const btn1Hover=useRef(null);
@@ -335,6 +336,8 @@ const TopPage = () => {
       {/* <Enjoy /> */}
 
       <News />
+
+      <ShopInfo/>
 
       <Footer />
     </>
