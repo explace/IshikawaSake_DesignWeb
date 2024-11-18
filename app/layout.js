@@ -1,4 +1,4 @@
-import { Zen_Old_Mincho } from "next/font/google";
+import { Zen_Old_Mincho } from "@next/font/google";
 import "./globals.css";
 import Nav from "@/components/Navbar/page";
 // import { Provider } from "react-redux";
@@ -11,7 +11,11 @@ import Head from "next/head";
 }
 import ProviderWrapper from "@/components/ProviderWrapper";
 
-const inter = Zen_Old_Mincho({ subsets: ["latin"], weight: "400" });
+const zenOldMincho = Zen_Old_Mincho({
+  subsets: ["latin"],
+  weight: "500",
+  display: "swap", // Optional, improves perceived performance
+});
 
 export const metadata = {
   title: "御殿場石川酒造株式会社｜御厨榮蔵",
@@ -31,14 +35,14 @@ export const metadata = {
     title: "御殿場石川酒造株式会社｜御厨榮蔵",
     description:
       "2025年初春、静岡県御殿場市印野に新たに生まれる酒蔵。富士山の雪解け水が長い歳月を経てろ過され湧出した伏流水と寒暖差のある気候が生み出すこだわりの米。この素晴らしい自然の恵みを活かし、御殿場の地に根ざす人びとと共に100年先の未来にも紡ぐ酒造りを。",
-    images: ["https://m.media-amazon.com/images/I/71ijyeOZEUL._SX679_.jpg"],
+    // images: ["https://m.media-amazon.com/images/I/71ijyeOZEUL._SX679_.jpg"],
     url: "https://www.gotembaishikawashuzo.com",
   },
   twitter: {
     title: "御殿場石川酒造株式会社｜御厨榮蔵",
     description:
       "2025年初春、静岡県御殿場市印野に新たに生まれる酒蔵。富士山の雪解け水が長い歳月を経てろ過され湧出した伏流水と寒暖差のある気候が生み出すこだわりの米。この素晴らしい自然の恵みを活かし、御殿場の地に根ざす人びとと共に100年先の未来にも紡ぐ酒造りを。",
-    images: ["https://m.media-amazon.com/images/I/71ijyeOZEUL._SX679_.jpg"],
+    // images: ["https://m.media-amazon.com/images/I/71ijyeOZEUL._SX679_.jpg"],
     card: "summary_large_image",
     creator: "@gotembaishikawashuzo",
   },
@@ -59,7 +63,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <body className={inter.className}>
+      <body className={zenOldMincho.className}>
         {/* <Provider store={store}> */}
         <ProviderWrapper>
           <Nav />
