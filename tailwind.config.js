@@ -9,6 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens:{
+  bigHeight:{
+    raw:'(min-height:618px)'
+  }
+      },
       keyframes: {
         cloudSlow: {
           '0%': { transform: 'translateX(-20%)' },

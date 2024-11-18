@@ -108,10 +108,10 @@ const Story = () => {
             <p className="vertical-text text-base lg:text-md mr-0">
               この素晴らしい自然の恵みをもっと広く伝えたいと、
             </p>
-            <p className="vertical-text text-base lg:text-md mr-4">
+            <p className="vertical-text text-base lg:text-md mr-6">
               湧出る豊かな伏流水。
             </p>
-            <p className="vertical-text text-base lg:text-md mr-0 -ml-3">
+            <p className="vertical-text text-base lg:text-md mr-0">
               富士山の雪解け水が長い歳月を経て地中でろ過され、
             </p>
 
@@ -124,10 +124,10 @@ const Story = () => {
             <p className="vertical-text text-base md:text-2xl mr-1">
               この地に根ざす人びとと共に
             </p>
-            <p className="vertical-text text-base md:text-2xl mr-4">
+            <p className="vertical-text text-base md:text-2xl mr-6">
               選りすぐりの米
             </p>
-            <p className="vertical-text text-base md:text-2xl mr-0 -ml-3">
+            <p className="vertical-text text-base md:text-2xl mr-0">
               富士山から湧く神の水と
             </p>
           </>

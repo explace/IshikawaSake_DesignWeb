@@ -162,13 +162,13 @@ const TopPage = () => {
           />
         </div>
 
-        <div className="z-[40] absolute top-0 grid lg:place-items-center w-[100%] h-[100%] overflow-hidden border-0 border-yellow-300">
-          <section className="lg:flex block w-[100%] h-fit mt-auto lg:mt-0 border-0 border-cyan-300">
-            <div className="flex justify-between w-[95%] sm:w-[70%] lg:w-[50%] xl:w-[30%] mt-auto lg:ml-10 xl:ml-44 mb-8 lg:mb-0 relative left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 border-0 border-green-500">
+        <div className="z-[40] absolute top-0 grid md:place-items-center w-[100%] h-[100%] overflow-hidden border-0 border-yellow-300">
+          <section className="md:flex block relative top-1/2 md:top-0 -translate-y-1/2 md:translate-y-0 w-[100%] h-fit mt-[5rem] bigHeight:mt-[0rem] border-0 border-cyan-300">
+            <div className="flex justify-between w-[95%] sm:w-[40%] lg:w-[50%] xl:w-[30%] md:ml-10 xl:ml-44 mb-2 lg:mb-0 relative left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 border-0 border-green-500">
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
-                  className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
                   //   // vid1.current.play();
@@ -186,7 +186,7 @@ const TopPage = () => {
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
-                  className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
                   //   // vid1.current.play();
@@ -204,7 +204,7 @@ const TopPage = () => {
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
-                  className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
                   //   // vid1.current.play();
@@ -238,7 +238,7 @@ const TopPage = () => {
                       vid4.current.pause();
                     }
                   }}
-                  className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                 >
                   <Link href={"/ProductsPage"} passHref>
                     <span className="en-vertical-text">PRODUCTS</span>{" "}
@@ -264,7 +264,7 @@ const TopPage = () => {
                       vid5.current.pause();
                     }
                   }}
-                  className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                 >
                   <Link href={"/LocationPage"} passHref>
                     <span className="en-vertical-text">LOCATION</span> 郷土
@@ -289,7 +289,7 @@ const TopPage = () => {
                       vid6.current.pause();
                     }
                   }}
-                  className="vertical-text relative inline-flex align-middle text-white text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
                   //   // vid1.current.play();
@@ -307,8 +307,8 @@ const TopPage = () => {
               </div>
             </div>
 
-            <div className="w-fit lg:ml-auto lg:mr-10 xl:mr-60 mb-4 lg:mb-0 border-0 border-white relative left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0">
-              <Image src={"/LOGO_WH.png"} width={350} height={100} alt="logo" />
+            <div className="w-fit md:ml-auto md:mr-10 xl:mr-60 mb-0 lg:mb-0 border-0 border-white relative left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0">
+              <Image className="w-[20rem] md:w-[20rem] lg:w-[100%]" src={"/LOGO_WH.png"} width={350} height={100} alt="logo" />
             </div>
           </section>
         </div>

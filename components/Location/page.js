@@ -81,7 +81,7 @@ const Location = () => {
           alt="nature video"
         />
         <p className="vertical-text absolute text-white text-lg sm:text-xl lg:text-3xl">
-        ホームタウン
+        郷土
         </p>
       </div>
 

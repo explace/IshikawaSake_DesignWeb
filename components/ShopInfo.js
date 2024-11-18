@@ -92,7 +92,7 @@ const ShopInfo = () => {
         </div>
       </div>
 
-      <div className="border-0 border-green-700 mt-8 md:mt16 flex flex-wrap justify-between items-center w-[95%] lg:w-[80%]">
+      {/* <div className="border-0 border-green-700 mt-8 md:mt16 flex flex-wrap justify-between items-center w-[95%] lg:w-[80%]">
         <Image
           className="w-[100%] md:w-[48%] mb-6 md:mb-0"
           src="/ONLINESTORE_IMG.png"
@@ -112,7 +112,7 @@ const ShopInfo = () => {
           取扱店舗
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
