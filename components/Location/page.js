@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Location = () => {
   const fadeInLocation = useRef(null);
@@ -36,9 +37,9 @@ const Location = () => {
     };
   }, []);
   return (
-    <div className="mt-6">
+    <div className="mt-0">
       <div className="relative overflow-hidden">
-        <div className="w-[150%] lg:w-[100%] relative -translate-x-[15%] lg:translate-x-0">
+        <div className="w-[150%] lg:w-[100%] mb-6 relative -translate-x-[15%] lg:translate-x-0">
           <Image
             // className=""
             src="/UNDERWATER_ILLUSTRATION_SET.png"
@@ -92,6 +93,7 @@ const Location = () => {
               ---- Message / History / Region
             </p>
             <p className="en-vertical-text mr-4 text-sm lg:text-base">
+              <Link href="/LocationPage">
               READ MORE
               <Image
                 className="inline-block relative left-[10%] mt-5"
@@ -100,6 +102,7 @@ const Location = () => {
                 height={50}
                 alt="nature video"
               />
+            </Link>
             </p>
             <p className="vertical-text text-base lg:text-md mr-0">
               御殿場には素地が揃っています。
@@ -131,6 +134,7 @@ const Location = () => {
               ---- Message / History / Region
             </p>
             <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
+              <Link href="/LocationPage">
               READ MORE
               <Image
                 className="inline-block relative left-[10%] mt-5"
@@ -139,6 +143,7 @@ const Location = () => {
                 height={50}
                 alt="nature video"
               />
+            </Link>
             </p>
 
             <section>
@@ -174,6 +179,7 @@ const Location = () => {
                 ---- History
               </p>
               <p className="en-vertical-text mr-4 text-sm lg:text-base">
+                <Link href="/LocationPage#history">
                 READ MORE
                 <Image
                   className="inline-block relative left-[10%] mt-3"
@@ -182,6 +188,7 @@ const Location = () => {
                   height={50}
                   alt="nature video"
                 />
+              </Link>
               </p>
               <p className="vertical-text text-base lg:text-2xl mr-2">
                 食物を供給する土地でした。
@@ -224,6 +231,7 @@ const Location = () => {
                 ---- History
               </p>
               <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
+                <Link href="/LocationPage#history">
                 READ MORE
                 <Image
                   className="inline-block relative left-[10%] mt-5"
@@ -232,6 +240,7 @@ const Location = () => {
                   height={50}
                   alt="nature video"
                 />
+              </Link>
               </p>
 
               <section>
@@ -266,6 +275,7 @@ const Location = () => {
                 ---- Team Gotemba
               </p>
               <p className="en-vertical-text mr-4 text-sm lg:text-base">
+                <Link href="/LocationPage#teamGotemba">
                 READ MORE
                 <Image
                   className="inline-block relative left-[10%] mt-3"
@@ -274,6 +284,7 @@ const Location = () => {
                   height={50}
                   alt="nature video"
                 />
+              </Link>
               </p>
               <p className="vertical-text text-base lg:text-2xl mr-2">
                 なんといっても人です。
@@ -312,6 +323,7 @@ const Location = () => {
                 ---- Team Gotemba
               </p>
               <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
+                <Link href="/LocationPage#teamGotemba">
                 READ MORE
                 <Image
                   className="inline-block relative left-[10%] mt-5"
@@ -320,6 +332,7 @@ const Location = () => {
                   height={50}
                   alt="nature video"
                 />
+              </Link>
               </p>
 
               <section>

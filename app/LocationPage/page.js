@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer/page";
 
@@ -30,6 +30,16 @@ const StoryPage = () => {
     vidRef.current.pause();
     setCloudZIndex(10); // Set clouds in front of video
   };
+  
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
 
   return (
     <div className="">
@@ -581,7 +591,7 @@ const StoryPage = () => {
         </div> */}
       </section>
 
-      <section className=" grid place-items-center relative overflow-hidden">
+      <section id="history" className=" grid place-items-center relative overflow-hidden">
         <div className=" absolute lg:top-[6%] top-[1.3%] left-[2vw]">
         { lang === 'jp' ? (
           <>
@@ -686,7 +696,7 @@ const StoryPage = () => {
         </div> */}
       </section>
 
-      <section className=" grid place-items-center relative overflow-hidden">
+      <section id="teamGotemba" className=" grid place-items-center relative overflow-hidden">
         <div className=" absolute lg:top-[6%] top-[1%] left-[2vw]">
         { lang === 'jp' ? (
           <>

@@ -80,12 +80,14 @@ const Footer = () => {
             "プライバシーポリシー"
           )}
         </p>
-        <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-stone-400">
-          {lang === "en" ? (
+        <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-black">
+         <Link href={"/ContactPage"}>
+         {lang === "en" ? (
             <span className="en-vertical-text">Inquiries</span>
           ) : (
             "お問い合わせ"
           )}
+          </Link>
         </p>
 
           <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-black">

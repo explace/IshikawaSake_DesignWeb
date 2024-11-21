@@ -9,13 +9,15 @@ import Location from "@/components/Location/page";
 import Enjoy from "@/components/Enjoy/page";
 import Products from "@/components/Products/page";
 import Footer from "@/components/Footer/page";
+import TopPage from "./TopPage/page";
 
 export default function Home() {
   return (
     <>
-      <LandingPage />
+      {/* <LandingPage /> */}
+      <TopPage/>
       
-      <News />
+      {/* <News /> */}
       
       {/* <Story/>
 
@@ -25,7 +27,7 @@ export default function Home() {
       
       <Enjoy/> */}
 
-      <Footer/>
+      {/* <Footer/> */}
 
       {/* <p className="mt-[90vh] text-3xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illum

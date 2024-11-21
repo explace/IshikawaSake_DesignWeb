@@ -168,7 +168,7 @@ const TopPage = () => {
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
-                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-stone-300 text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
                   //   // vid1.current.play();
@@ -204,7 +204,7 @@ const TopPage = () => {
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
-                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-stone-300 text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
                   //   // vid1.current.play();
@@ -214,10 +214,10 @@ const TopPage = () => {
                   //   // vid1.current.pause();
                   // }}
                 >
-                  <Link href={"/EnjoyPage"} passHref>
+                  {/* <Link href={"/EnjoyPage"} passHref> */}
                     <span className="en-vertical-text">ENJOY</span>{" "}
                     お酒を楽しく美味しく
-                  </Link>
+                  {/* </Link> */}
                 </h3>
                 <p className="infoHoverBelow"></p>
               </div>
@@ -238,12 +238,12 @@ const TopPage = () => {
                       vid4.current.pause();
                     }
                   }}
-                  className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
+                  className="vertical-text relative inline-flex align-middle text-stone-300 text-lg lg:text-xl cursor-pointer h-fit"
                 >
-                  <Link href={"/ProductsPage"} passHref>
+                  {/* <Link href={"/ProductsPage"} passHref> */}
                     <span className="en-vertical-text">PRODUCTS</span>{" "}
                     わたしたちのお酒
-                  </Link>
+                  {/* </Link> */}
                 </h3>
                 <p className="infoHoverBelow"></p>
               </div>

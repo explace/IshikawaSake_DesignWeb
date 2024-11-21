@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Navbar/page";
 // import { Provider } from "react-redux";
 // import store from "@/redux/store";
+import { Toaster } from "@/components/ui/sonner"
 import Head from "next/head";
 {
   /* <style>
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
         <ProviderWrapper>
           <Nav />
           {children}
+          <Toaster richColors closeButton/>
         </ProviderWrapper>
 
         {/* </Provider> */}

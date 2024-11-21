@@ -72,7 +72,7 @@ const News = () => {
   }
 
   return (
-    <div className="mt-10 grid place-items-center relative">
+    <div className="mt-24 grid place-items-center relative">
       {newsPopup && (
         <section
           ref={newsSection}

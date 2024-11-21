@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Story = () => {
   const fadeInStory = useRef(null);
@@ -37,7 +38,7 @@ const Story = () => {
   }, []);
 
   return (
-    <div className="mt-40">
+    <div className="mt-12">
       <div className="relative overflow-hidden">
         <div className="w-[150%] lg:w-[96.5%] relative -translate-x-[19%] lg:translate-x-0">
           <Image
@@ -90,6 +91,7 @@ const Story = () => {
               ---- Message / History / Region
             </p>
             <p className="en-vertical-text mr-4 text-sm lg:text-base">
+              <Link href="/StoryPage">
               READ MORE
               <Image
                 className="inline-block relative left-[10%] mt-5"
@@ -98,6 +100,7 @@ const Story = () => {
                 height={50}
                 alt="nature video"
               />
+            </Link>
             </p>
             <p className="vertical-text text-base lg:text-md mr-0">
               つねづね考えていました。
@@ -108,7 +111,7 @@ const Story = () => {
             <p className="vertical-text text-base lg:text-md mr-0">
               この素晴らしい自然の恵みをもっと広く伝えたいと、
             </p>
-            <p className="vertical-text text-base lg:text-md mr-6">
+            <p className="vertical-text text-base lg:text-md mr-0">
               湧出る豊かな伏流水。
             </p>
             <p className="vertical-text text-base lg:text-md mr-0">
@@ -124,7 +127,7 @@ const Story = () => {
             <p className="vertical-text text-base md:text-2xl mr-1">
               この地に根ざす人びとと共に
             </p>
-            <p className="vertical-text text-base md:text-2xl mr-6">
+            <p className="vertical-text text-base md:text-2xl mr-0">
               選りすぐりの米
             </p>
             <p className="vertical-text text-base md:text-2xl mr-0">
@@ -136,7 +139,8 @@ const Story = () => {
              <p className="en-vertical-text md:mr-4 mr-2 text-sm lg:text-base">
               ---- Message / History / Region
             </p>
-            <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
+           <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
+           <Link href="/StoryPage">
               READ MORE
               <Image
                 className="inline-block relative left-[10%] mt-5"
@@ -145,6 +149,7 @@ const Story = () => {
                 height={50}
                 alt="nature video"
               />
+            </Link>
             </p>
             
 

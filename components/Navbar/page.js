@@ -7,7 +7,6 @@ import { changeLangFunc } from "@/redux/actions";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
-
 const Nav = () => {
   const nav = useRef(null);
   const navLogo = useRef(null);
@@ -28,10 +27,11 @@ const Nav = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("nav")
     // detect the current url
     const currentUrl = window.location.href;
     const lastPart = currentUrl.split("/").pop();
-    if (lastPart === "TopPage") {
+    if (lastPart === "TopPage" || lastPart=="") {
       navLogo.current.classList.remove("invert");
       nav.current.classList.remove("text-black");
       nav.current.classList.add("text-white");
@@ -74,8 +74,7 @@ const Nav = () => {
           window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
         };
       }
-    }
-    else{
+    } else {
       navLogo.current.classList.add("invert");
       nav.current.classList.add("text-black");
       nav.current.classList.remove("text-white");
