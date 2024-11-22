@@ -14,19 +14,28 @@ import TopPage from "./TopPage/page";
 export default function Home() {
   return (
     <>
+      {/* Comment out this component for the Grand Opening page */}
       <LandingPage />
+
+      {/* Uncomment out this component for the Main Opening page */}
       {/* <TopPage/> */}
       
+      {/* Comment out this component for the Grand Opening page */}
       <News />
       
+      {/* Uncomment out this component for the Grand Opening page */}
       {/* <Story/>
 
-      <Location/>
+      {/* Uncomment out this component for the Grand Opening page */}
+      {/* <Location/> */}
 
-      <Products/>
+       {/* Uncomment out this component for the Grand Opening page */}
+      {/* <Products/> */}
       
-      <Enjoy/> */}
+      {/* Uncomment out this component for the Grand Opening page */}
+      {/* <Enjoy/>  */}
 
+      {/* Common part for both pages */}
       <Footer/>
 
       {/* <p className="mt-[90vh] text-3xl">
