@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer/page";
 import { useSelector } from "react-redux";
@@ -8,25 +8,35 @@ const StoryPage = () => {
   const vidRef = useRef(null);
   const imgRef = useRef(null);
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
+  const [cloudZIndex, setCloudZIndex] = useState(0);
 
-  // State to control the z-index of the clouds
-  const [cloudZIndex, setCloudZIndex] = useState(10);
+  // Autoplay video on page load
+  useEffect(() => {
+    if (vidRef.current) {
+      vidRef.current.play().catch((err) =>
+        console.error('Video playback failed:', err)
+      );
+    }
+  }, []);
 
-  // Function to play the video and adjust z-index
+  // Handle mouse hover events
   const handleMouseEnter = () => {
-    vidRef.current.style.opacity = 1;
-    imgRef.current.style.opacity = 0;
-    vidRef.current.play();
-    setCloudZIndex(0); // Set clouds behind video
+    if (vidRef.current && imgRef.current) {
+      vidRef.current.style.opacity = 0;
+      imgRef.current.style.opacity = 1;
+      vidRef.current.play();
+    }
+    setCloudZIndex(10); // Set clouds behind video
   };
 
-  // Function to pause the video and reset z-index
   const handleMouseLeave = () => {
-    vidRef.current.style.opacity = 0;
-    imgRef.current.style.opacity = 1;
-    vidRef.current.pause();
-    setCloudZIndex(10); // Set clouds in front of video
+    if (vidRef.current && imgRef.current) {
+      vidRef.current.style.opacity = 1;
+      imgRef.current.style.opacity = 0;
+    }
+    setCloudZIndex(0); // Set clouds in front of video
   };
+
 
   return (
     <div className="">
@@ -39,7 +49,7 @@ const StoryPage = () => {
             width={1700}
             height={1000}
             alt="Background Image"
-            style={{ opacity: 1 }}
+            style={{ opacity: 0 }}
           />
 
           {/* Video */}
@@ -50,7 +60,7 @@ const StoryPage = () => {
               ref={vidRef}
               src="/STORY.mp4"
               className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out"
-              style={{ opacity: 0 }}
+              style={{ opacity: 1 }}
             />
           </div>
         </div>

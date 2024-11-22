@@ -14,10 +14,10 @@ import TopPage from "./TopPage/page";
 export default function Home() {
   return (
     <>
-      {/* <LandingPage /> */}
-      <TopPage/>
+      <LandingPage />
+      {/* <TopPage/> */}
       
-      {/* <News /> */}
+      <News />
       
       {/* <Story/>
 
@@ -27,7 +27,7 @@ export default function Home() {
       
       <Enjoy/> */}
 
-      {/* <Footer/> */}
+      <Footer/>
 
       {/* <p className="mt-[90vh] text-3xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illum
