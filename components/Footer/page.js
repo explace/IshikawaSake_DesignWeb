@@ -127,10 +127,14 @@ const Footer = () => {
           </span>{" "}
           御厨榮蔵
         </p>
-        <p onClick={handleScrollToElement} className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg cursor-pointer font-medium">
+        <Link href="/TopPage#newsProp">
+        <p
+        // onClick={handleScrollToElement}
+        className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg cursor-pointer font-medium">
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
         </p>
+           </Link>
 
         <p className="vertical-text text-black mr-4 2xl:mr-10 text-base  text-stone-400 lg:text-lg font-medium cursor-pointer">
           <span className="en-vertical-text text-xl lg:text-2xl">

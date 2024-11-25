@@ -13,12 +13,6 @@ import Link from "next/link";
 import ShopInfo from "@/components/ShopInfo";
 
 const TopPage = () => {
-  // const btn1Hover=useRef(null);
-  // const btn2Hover=useRef(null);
-  // const btn3Hover=useRef(null);
-  // const btn4Hover=useRef(null);
-  // const btn5Hover=useRef(null);
-  // const btn6Hover=useRef(null);
 
   // const vid1 = useRef(null);
   // const vid2 = useRef(null);
@@ -27,39 +21,21 @@ const TopPage = () => {
   const vid5 = useRef(null);
   const vid6 = useRef(null);
 
-  //   useEffect(()=>{
-  //     function isSafari() {
-  //       const ua = navigator.userAgent.toLowerCase();
-  //       return ua.includes("safari") && !ua.includes("chrome");
-  //   }
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
 
-  //   console.log("isSafari",isSafari());
-
-  //   if (!isSafari()) {
-  //     document.querySelectorAll(".infoHoverAbove").forEach((el) => {
-  //         el.style.left = "120px"; // Example Safari-specific style adjustment
-  //         // el.style.transform = "translateX(-45%)";
-  //     });
-  //     document.querySelectorAll(".infoHoverBelow").forEach((el) => {
-  //         el.style.left = "120px";
-  //         // el.style.transform = "translateX(-45%)";
-  //     });
-  // }
-
-  //   },[])
   return (
     <>
       <main id="main" className="topPageBg h-[100vh] relative overflow-hidden">
-        {/* <Image
-        src="/FV_MAIN_IMG_DUMMY.png"
-        width={3000}
-        height={100}
-        alt="logo"
-        className="w-[100vw] mt-10 md:mt-0 block"
-      /> */}
 
         <div className="absolute bottom-0">
-          {/* <p className="text-cyan-200">Testing</p> */}
           <Image
             className="cloudsimage1"
             src={"/cloud1.png"}
@@ -178,7 +154,9 @@ const TopPage = () => {
                   //   // vid1.current.pause();
                   // }}
                 >
+                  <Link href={"#"} passHref>
                   <span className="en-vertical-text">SHOP INFO</span> 御厨榮蔵
+                  </Link>
                 </h3>
                 <p className="infoHoverBelow"></p>
               </div>
@@ -186,6 +164,19 @@ const TopPage = () => {
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
+                onClick={()=>{
+                  document.getElementById("newsProp").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+
+                  // const newsDiv = document.getElementById("newsDiv");
+                  // if (newsDiv) {
+                  //   const rect = newsDiv.getBoundingClientRect();
+                  //   const offsetTop = window.pageYOffset + rect.top - 100; // Subtract 100px from the position
+                  //   window.scrollTo({
+                  //     top: offsetTop,
+                  //     behavior: "smooth",
+                  //   });
+                  // }
+                }}
                   className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
@@ -196,7 +187,7 @@ const TopPage = () => {
                   //   // vid1.current.pause();
                   // }}
                 >
-                  <span className="en-vertical-text">NEWS</span> お知らせ
+                  <span className="en-vertical-text mb-4">NEWS</span>お知らせ
                 </h3>
                 <p className="infoHoverBelow"></p>
               </div>
@@ -214,10 +205,10 @@ const TopPage = () => {
                   //   // vid1.current.pause();
                   // }}
                 >
-                  {/* <Link href={"/EnjoyPage"} passHref> */}
+                  <Link href={"#"} passHref>
                     <span className="en-vertical-text">ENJOY</span>{" "}
                     お酒を楽しく美味しく
-                  {/* </Link> */}
+                  </Link>
                 </h3>
                 <p className="infoHoverBelow"></p>
               </div>
@@ -240,10 +231,9 @@ const TopPage = () => {
                   }}
                   className="vertical-text relative inline-flex align-middle text-stone-300 text-lg lg:text-xl cursor-pointer h-fit"
                 >
-                  {/* <Link href={"/ProductsPage"} passHref> */}
-                    <span className="en-vertical-text">PRODUCTS</span>{" "}
-                    わたしたちのお酒
-                  {/* </Link> */}
+                  <Link href={"#"} passHref>
+                    <span className="en-vertical-text">PRODUCTS</span> わたしたちのお酒
+                  </Link>
                 </h3>
                 <p className="infoHoverBelow"></p>
               </div>
@@ -335,7 +325,11 @@ const TopPage = () => {
 
       {/* <Enjoy /> */}
 
+      <p id="newsProp"></p>
+
+      <div>
       <News />
+      </div>
 
       <ShopInfo/>
 
