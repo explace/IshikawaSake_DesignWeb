@@ -250,14 +250,14 @@ const ContactPage = () => {
 
             <button
               type="submit"
-              className="grid mt-10 md:mt-20 place-items-center relative bg-white text-black p-3 md:p-5 border-2 border-black contactCard hover:text-white hover:bg-black transition-all duration-300 rounded-full w-[15rem] md:w-[20rem]"
+              className="flex items-center py-3 md:py-5 mt-10 md:mt-20 bg-white text-black border-2 border-black contactCard hover:text-white hover:bg-black transition-all duration-300 rounded-full"
             >
-              <p className="font-semibold">
+              <p className="font-semibold ml-16">
                 {
-                    lang === "en" ? "Submit" : "提出する"
+                    lang === "en" ? "To the confirmation screen" : "確認画面へ"
                 }
               </p>
-                <IoIosArrowDroprightCircle className="absolute top-1/2 -translate-y-1/2 right-5 text-4xl" />
+                <IoIosArrowDroprightCircle className="text-4xl ml-4 mr-8" />
             </button>
 
             {/* <input
