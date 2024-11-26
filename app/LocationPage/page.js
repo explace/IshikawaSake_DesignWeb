@@ -58,7 +58,7 @@ const StoryPage = () => {
         <Image
             className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
             ref={imgRef}
-            src={"/FIRST_VIEW_LOCATION_BACKGROUND_PICT.png "}
+            src={"/FIRST_VIEW_LOCATION_BACKGROUND_PICT.jpg"}
             width={1700}
             height={1000}
             alt="Background Image"
@@ -245,7 +245,7 @@ const StoryPage = () => {
 
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2"
-            src="/MtFUJI_BENEFIT_PICT_1.png"
+            src="/MtFUJI_BENEFIT_PICT_1.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -266,7 +266,7 @@ const StoryPage = () => {
            
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2"
-            src="/MtFUJI_BENEFIT_PICT_1.png"
+            src="/MtFUJI_BENEFIT_PICT_1.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -285,7 +285,7 @@ const StoryPage = () => {
 
           <Image
             className="w-[100%] lg:w-[62%] mt-20 relative left-1/2 -translate-x-1/2"
-            src="/MtFUJI_BENEFIT_PICT_2.png"
+            src="/MtFUJI_BENEFIT_PICT_2.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -307,7 +307,7 @@ const StoryPage = () => {
 
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
-            src="/MtFUJI_BENEFIT_PICT_3.png"
+            src="/MtFUJI_BENEFIT_PICT_3.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -331,7 +331,7 @@ const StoryPage = () => {
 
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
-            src="/MtFUJI_BENEFIT_PICT_3.png"
+            src="/MtFUJI_BENEFIT_PICT_3.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -381,7 +381,7 @@ const StoryPage = () => {
           
           <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
-            src="/MtFUJI_BENEFIT_PICT_4.png"
+            src="/MtFUJI_BENEFIT_PICT_4.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -616,7 +616,7 @@ const StoryPage = () => {
         <main className="w-[75%]">
         <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
-            src="/HISTORY_PICT_1.png"
+            src="/HISTORY_PICT_1.jpg"
             width={3000}
             height={1000}
             alt="Story Image"
@@ -719,7 +719,7 @@ const StoryPage = () => {
         <main className="w-[75%]">
         <Image
             className="w-[100%] lg:w-[62%] relative left-1/2 -translate-x-1/2 mt-[8%]"
-            src="/TEAM_GOTEMBA_PICT_1.png"
+            src="/TEAM_GOTEMBA_PICT_1.jpg"
             width={3000}
             height={1000}
             alt="Story Image"

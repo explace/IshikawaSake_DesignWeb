@@ -74,7 +74,7 @@ const Story = () => {
       <div className=" relative grid place-items-center">
         <Image
           className="w-[90%] lg:w-[80%]"
-          src="/FV_STORY_BACKGROUND.png"
+          src="/TOPPAGE_STORY_PICT.jpg"
           width={3000}
           height={300}
           alt="nature video"

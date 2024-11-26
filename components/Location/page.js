@@ -76,7 +76,7 @@ const Location = () => {
       <div className=" relative grid place-items-center">
         <Image
           className="w-[90%] lg:w-[80%]"
-          src="/FV_LOCATION_BACKGROUND.png"
+          src="/TOPPAGE_LOCATION_PICT_1.jpg"
           width={3000}
           height={300}
           alt="nature video"
@@ -168,7 +168,7 @@ const Location = () => {
           <div className="border-0 border-red-300 mr-0 lg:mr-8 mb-10 lg:mb-0 w-[22rem] sm:w-[30rem]">
             <Image
               className="w-[100%]"
-              src="/TOPPAGE_LOCATION_PICT_2.png"
+              src="/TOPPAGE_LOCATION_PICT_2.jpg"
               width={500}
               height={300}
               alt="nature video"
@@ -220,7 +220,7 @@ const Location = () => {
           <div className="lg:mr-8 mb-10 lg:mb-0 w-[22rem] sm:w-[30rem] border-0 border-red-400">
             <Image
               className="w-[100%]"
-              src="/TOPPAGE_LOCATION_PICT_2.png"
+              src="/TOPPAGE_LOCATION_PICT_2.jpg"
               width={500}
               height={300}
               alt="nature video"

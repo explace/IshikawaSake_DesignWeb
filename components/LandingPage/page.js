@@ -15,7 +15,7 @@ const LandingPage = () => {
   return (
     <main id="main" className="topPageMain relative overflow-hidden">
       <Image
-        src="/TOP_PAGE_FV_FOR_OPEN.png"
+        src="/TOP_PAGE_FV_FOR_OPEN.jpg"
         width={3000}
         height={100}
         alt="logo"
