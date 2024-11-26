@@ -36,7 +36,7 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    inquiryItem: "option1",
+    inquiryItem: "卸に関するお問い合わせ",
     inquiryContent: "",
   });
 
@@ -76,7 +76,7 @@ const ContactPage = () => {
         setFormData({
           name: "",
           email: "",
-          inquiryItem: "option1",
+          inquiryItem: "卸に関するお問い合わせ",
           inquiryContent: "",
         });
       } else {
@@ -87,7 +87,7 @@ const ContactPage = () => {
       setFormData({
         name: "",
         email: "",
-        inquiryItem: "option1",
+        inquiryItem: "卸に関するお問い合わせ",
         inquiryContent: "",
       });
     }
@@ -154,7 +154,7 @@ const ContactPage = () => {
               />
             </div>
 
-            <div className="w-[100%] block md:flex md:items-center md:justify-between mb-8 md:mb-4">
+            {/* <div className="w-[100%] block md:flex md:items-center md:justify-between mb-8 md:mb-4">
               <label htmlFor="inquiryItem" className="">
                 {lang === "en" ? "Inquiry Item" : "お問い合わせ項目"}
                 <span className="text-[#ff0000] relative -top-1 left-1">*</span>
@@ -171,16 +171,12 @@ const ContactPage = () => {
                   })
                 }
               >
-                <option value="option1">option1</option>
-                <option value="option2">option2</option>
-                <option value="option3">option3</option>
+                <option value="卸に関するお問い合わせ">卸に関するお問い合わせ</option>
+                <option value="酒造見学に関するお問い合わせ">酒造見学に関するお問い合わせ</option>
+                <option value="取材に関するお問い合わせ">取材に関するお問い合わせ</option>
+                <option value="その他のお問い合わせ">その他のお問い合わせ</option>
               </select>
-
-              {/* <MdKeyboardArrowDown
-                // onClick={()=>{openSelect()}}
-                className="text-[#94d4e4] text-3xl absolute top-1/2 -translate-y-1/2 right-7"
-              /> */}
-            </div>
+            </div> */}
 
             <div className="w-[100%] block md:flex md:items-center md:justify-between mb-8 md:mb-4">
               <label htmlFor="inquiryContent" className="">
@@ -219,35 +215,32 @@ const ContactPage = () => {
               </p>
               </div> */}
             <p className="text-center mt-12">
+
                 {
-                    lang === "en" ? "Please note that we may not be able to reply to your inquiries." : "お問い合わせにつきましては、お返事いたしかねる場合がございます。"
+                    lang === "en" ? "After checking the contents of your inquiry, our staff will reply to you." : "いただきました内容を確認のうえ、担当者よりご返事させていただきます。"
                 }
               
               <br />
                 {
-                    lang === "en" ? "We will take your opinions seriously and use them as a reference for our activities." : "いただきましたご意見は大切に受け止め、活動の参考にさせていただきますが、"
-                }
-              
-              <br />
-                {
-                    lang === "en" ? "Please note that we do not provide individual responses to inquiries." : "個別のお返事はしておりませんので、あらかじめご了承ください。"
+                    lang === "en" ? "Please note that we may not be able to reply depending on the content of your inquiry." : "また、内容によっては、お返事しかねる場合がございますので予めご了承ください。"
                 }
               
               <br />
               <br />
                 {
-                    lang === "en" ? "Regarding the handling of personal information," : "個人情報の取り扱いについては、"
+                    lang === "en" ? "We will comply with the" : "個人情報の取り扱いについては、"
                 }
-              <Link className="text-[#94d4e4] underline" href={"#"}>
+              <Link className="text-black underline mx-2" href={"#"}>
                 {
                     lang === "en" ? "Privacy Policy" : "プライバシーポリシー"
                 }
                 
               </Link>
-                {
-                    lang === "en" ? "We will comply with the following." : "を遵守します。"
-                }
               
+                {
+                    lang === "en" ? "regarding the handling of personal information." : "を遵守します。"
+                }
+
               <br />
                 {
                     lang === "en" ? "Please read the contents and press the 'Proceed to confirmation screen' button." : "内容をご一読の上、「確認画面へ」ボタンを押してください。"
@@ -257,14 +250,14 @@ const ContactPage = () => {
 
             <button
               type="submit"
-              className="grid mt-10 md:mt-20 place-items-center relative bg-white text-black p-3 md:p-5 border-2 border-black contactCard hover:text-white hover:bg-black transition-all duration-300 rounded-full w-[15rem] md:w-[20rem]"
+              className="flex items-center py-3 md:py-5 mt-10 md:mt-20 bg-white text-black border-2 border-black contactCard hover:text-white hover:bg-black transition-all duration-300 rounded-full"
             >
-              <p className="font-semibold">
+              <p className="font-semibold ml-16">
                 {
-                    lang === "en" ? "Submit" : "提出する"
+                    lang === "en" ? "To the confirmation screen" : "確認画面へ"
                 }
               </p>
-                <IoIosArrowDroprightCircle className="absolute top-1/2 -translate-y-1/2 right-5 text-4xl" />
+                <IoIosArrowDroprightCircle className="text-4xl ml-4 mr-8" />
             </button>
 
             {/* <input

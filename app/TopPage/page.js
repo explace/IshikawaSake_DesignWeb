@@ -21,16 +21,6 @@ const TopPage = () => {
   const vid5 = useRef(null);
   const vid6 = useRef(null);
 
-  useEffect(() => {
-    // Check if there's a hash in the URL
-    if (window.location.hash) {
-      const targetElement = document.querySelector(window.location.hash);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, []);
-
   return (
     <>
       <main id="main" className="topPageBg h-[100vh] relative overflow-hidden">
@@ -165,7 +155,7 @@ const TopPage = () => {
                 <p className="infoHoverAbove"> </p>
                 <h3
                 onClick={()=>{
-                  document.getElementById("newsProp").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+                  document.getElementById("newsPropTopPage").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 
                   // const newsDiv = document.getElementById("newsDiv");
                   // if (newsDiv) {
@@ -325,11 +315,9 @@ const TopPage = () => {
 
       {/* <Enjoy /> */}
 
-      <p id="newsProp"></p>
+      <p id="newsPropTopPage"></p>
 
-      <div>
       <News />
-      </div>
 
       <ShopInfo/>
 
