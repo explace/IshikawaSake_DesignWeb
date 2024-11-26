@@ -64,7 +64,7 @@ const ShopInfo = () => {
       <div className="border-0 border-red-300 grid place-items-center md:place-items-start md:flex md:items-center w-[95%] lg:w-[80%]">
         <Image
           className="mr-4 xl:mr-8 2xl:mr-16 mb-8 md:mb-0 w-[100%] md:w-[65%] 2xl:w-[75%]"
-          src="/SHOPINFO_IMG.png"
+          src="/SHOP.jpg"
           width={3000}
           height={300}
           alt="shop1"

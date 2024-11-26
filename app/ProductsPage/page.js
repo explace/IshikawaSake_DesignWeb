@@ -48,7 +48,7 @@ const ProductPage = () => {
           <Image
             className="object-cover w-full h-full transition-opacity duration-1000 ease-in-out" // Add transition to the image
             ref={imgRef}
-            src={"/FIRST_VIEW_PRODUCTS_BACKGROUND_PICT.png"}
+            src={"/FIRST_VIEW_PRODUCTS_BACKGROUND_PICT.jpg"}
             width={1700}
             height={1000}
             alt="Background Image"
