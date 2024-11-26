@@ -68,7 +68,7 @@ const Products = () => {
       <div className="mt-14 lg:mt-24 relative grid place-items-center">
         <Image
           className="w-[90%] lg:w-[80%]"
-          src="/FV_PRODUCTS_BACKGROUND.png"
+          src="/FV_PRODUCTS_BACKGROUND.jpg"
           width={3000}
           height={300}
           alt="nature video"
