@@ -18,25 +18,26 @@ export default function Home() {
     if (window.location.hash) {
       const targetElement = document.querySelector(window.location.hash);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
       }
     }
   }, []);
-
   return (
-    <>
+    <main>
       {/* Comment out this component for the Grand Opening page */}
       <LandingPage />
 
       {/* Uncomment out this component for the Main Opening page */}
       {/* <TopPage/> */}
 
-      <p id="newsProp"></p>
       
+      <p id="newsProp">
+      </p>
+
       {/* Comment out this component for the Grand Opening page */}
-      <div>
       <News />
-      </div>
       
       {/* Uncomment out this component for the Grand Opening page */}
       {/* <Story/>
@@ -67,6 +68,6 @@ export default function Home() {
         veniam aperiam perspiciatis deserunt sapiente similique blanditiis vitae
         fugit!
       </p> */}
-    </>
+    </main>
   );
 }
