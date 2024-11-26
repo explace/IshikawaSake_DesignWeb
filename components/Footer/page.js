@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -7,6 +7,17 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 
 const Footer = () => {
+  const [prod, setProd] = useState(false);
+  useEffect(() => {
+    // detect the current url
+    const currentUrl = window.location.href;
+    const lastPart = currentUrl.split("/").pop();
+    if (lastPart === "") {
+      setProd(true);
+
+    }
+  }, []);
+
   const lang = useSelector((state) => state.reducer1.lang);
 
   const easeOutQuad = (t) => t * (2 - t);
@@ -80,15 +91,29 @@ const Footer = () => {
             "プライバシーポリシー"
           )}
         </p>
-        <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-black">
-         <Link href={"/ContactPage"}>
+         {
+           !prod?(
+            <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-black">
+            <Link href={"/ContactPage"}>
          {lang === "en" ? (
-            <span className="en-vertical-text">Inquiries</span>
+           <span className="en-vertical-text">Inquiries</span>
           ) : (
             "お問い合わせ"
           )}
           </Link>
-        </p>
+            </p>
+          )
+          :
+          (
+            <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-black">
+            {lang === "en" ? (
+              <span className="en-vertical-text">Inquiries</span>
+            ) : (
+              "お問い合わせ"
+            )}
+            </p>
+          )
+         }
 
           <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-black">
           <Link href={"/Profile"}>
