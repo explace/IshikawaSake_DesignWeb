@@ -1,6 +1,6 @@
 "use client";
 // import Video from 'next-video';
-// import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Story from "../components/Story/page";
 import News from "../components/News/page";
 // import Nav from "../components/Navbar/page";
@@ -12,6 +12,17 @@ import Footer from "@/components/Footer/page";
 import TopPage from "./TopPage/page";
 
 export default function Home() {
+
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
     <>
       {/* Comment out this component for the Grand Opening page */}
@@ -19,9 +30,13 @@ export default function Home() {
 
       {/* Uncomment out this component for the Main Opening page */}
       {/* <TopPage/> */}
+
+      <p id="newsProp"></p>
       
       {/* Comment out this component for the Grand Opening page */}
+      <div>
       <News />
+      </div>
       
       {/* Uncomment out this component for the Grand Opening page */}
       {/* <Story/>

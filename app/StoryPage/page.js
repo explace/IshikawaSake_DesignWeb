@@ -18,6 +18,7 @@ const StoryPage = () => {
       );
     }
   }, []);
+  
 
   // Handle mouse hover events
   const handleMouseEnter = () => {
@@ -503,6 +504,7 @@ const StoryPage = () => {
         </main>
         <p></p>
       </section> */}
+      
 
       <Footer />
     </div>

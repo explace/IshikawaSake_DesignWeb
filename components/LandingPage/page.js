@@ -10,6 +10,8 @@ const LandingPage = () => {
   const vid4 = useRef(null);
   const vid5 = useRef(null);
   const vid6 = useRef(null);
+
+  
   return (
     <main id="main" className="topPageMain relative overflow-hidden">
       <Image
