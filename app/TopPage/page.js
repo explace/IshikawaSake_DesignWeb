@@ -13,7 +13,6 @@ import Link from "next/link";
 import ShopInfo from "@/components/ShopInfo";
 
 const TopPage = () => {
-
   // const vid1 = useRef(null);
   // const vid2 = useRef(null);
   // const vid3 = useRef(null);
@@ -24,7 +23,6 @@ const TopPage = () => {
   return (
     <>
       <main id="main" className="topPageBg h-[100vh] relative overflow-hidden">
-
         <div className="absolute bottom-0">
           <Image
             className="cloudsimage1"
@@ -128,7 +126,7 @@ const TopPage = () => {
           />
         </div>
 
-        <div className="z-[40] absolute top-0 grid md:place-items-center w-[100%] h-[100%] overflow-hidden border-0 border-yellow-300">
+        {/* <div className="z-[40] absolute top-0 grid md:place-items-center w-[100%] h-[100%] overflow-hidden border-0 border-yellow-300">
           <section className="md:flex block relative top-1/2 md:top-0 -translate-y-1/2 md:translate-y-0 w-[100%] h-fit mt-[5rem] bigHeight:mt-[0rem] border-0 border-cyan-300">
             <div className="flex justify-between w-[95%] sm:w-[40%] lg:w-[50%] xl:w-[30%] md:ml-10 xl:ml-44 mb-2 lg:mb-0 relative left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 border-0 border-green-500">
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
@@ -145,7 +143,7 @@ const TopPage = () => {
                   // }}
                 >
                   <Link href={"#"} passHref>
-                  <span className="en-vertical-text">SHOP INFO</span> 御厨榮蔵
+                    <span className="en-vertical-text">SHOP INFO</span> 御厨榮蔵
                   </Link>
                 </h3>
                 <p className="infoHoverBelow"></p>
@@ -154,19 +152,25 @@ const TopPage = () => {
               <div className="border-0 border-red-600 relative h-fit w-fit navBtn">
                 <p className="infoHoverAbove"> </p>
                 <h3
-                onClick={()=>{
-                  document.getElementById("newsPropTopPage").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+                  onClick={() => {
+                    document
+                      .getElementById("newsPropTopPage")
+                      .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                        inline: "nearest",
+                      });
 
-                  // const newsDiv = document.getElementById("newsDiv");
-                  // if (newsDiv) {
-                  //   const rect = newsDiv.getBoundingClientRect();
-                  //   const offsetTop = window.pageYOffset + rect.top - 100; // Subtract 100px from the position
-                  //   window.scrollTo({
-                  //     top: offsetTop,
-                  //     behavior: "smooth",
-                  //   });
-                  // }
-                }}
+                    // const newsDiv = document.getElementById("newsDiv");
+                    // if (newsDiv) {
+                    //   const rect = newsDiv.getBoundingClientRect();
+                    //   const offsetTop = window.pageYOffset + rect.top - 100; // Subtract 100px from the position
+                    //   window.scrollTo({
+                    //     top: offsetTop,
+                    //     behavior: "smooth",
+                    //   });
+                    // }
+                  }}
                   className="vertical-text relative inline-flex align-middle text-white text-lg lg:text-xl cursor-pointer h-fit"
                   // onMouseEnter={() => {
                   //   // vid1.current.style.opacity = 1;
@@ -222,7 +226,8 @@ const TopPage = () => {
                   className="vertical-text relative inline-flex align-middle text-stone-300 text-lg lg:text-xl cursor-pointer h-fit"
                 >
                   <Link href={"#"} passHref>
-                    <span className="en-vertical-text">PRODUCTS</span> わたしたちのお酒
+                    <span className="en-vertical-text">PRODUCTS</span>{" "}
+                    わたしたちのお酒
                   </Link>
                 </h3>
                 <p className="infoHoverBelow"></p>
@@ -288,12 +293,18 @@ const TopPage = () => {
             </div>
 
             <div className="w-fit md:ml-auto md:mr-10 xl:mr-60 mb-0 lg:mb-0 border-0 border-white relative left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0">
-              <Image className="w-[20rem] md:w-[20rem] lg:w-[100%]" src={"/LOGO_WH.png"} width={350} height={100} alt="logo" />
+              <Image
+                className="w-[20rem] md:w-[20rem] lg:w-[100%]"
+                src={"/LOGO_WH.png"}
+                width={350}
+                height={100}
+                alt="logo"
+              />
             </div>
           </section>
-        </div>
+        </div> */}
 
-        <div className="absolute left-[50%] bottom-2 z-[50]">
+        {/* <div className="absolute left-[50%] bottom-2 z-[50]">
           <p className="en-vertical-text-scroll scroll-text text-black">
             scroll
           </p>
@@ -304,7 +315,7 @@ const TopPage = () => {
             height={100}
             alt="logo"
           />
-        </div>
+        </div> */}
       </main>
 
       <Story />
@@ -319,7 +330,7 @@ const TopPage = () => {
 
       <News />
 
-      <ShopInfo/>
+      <ShopInfo />
 
       <Footer />
     </>
