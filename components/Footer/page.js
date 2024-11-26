@@ -7,16 +7,6 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 
 const Footer = () => {
-  const [prod, setProd] = useState(false);
-  useEffect(() => {
-    // detect the current url
-    const currentUrl = window.location.href;
-    const lastPart = currentUrl.split("/").pop();
-    if (lastPart === "") {
-      setProd(true);
-
-    }
-  }, []);
 
   const lang = useSelector((state) => state.reducer1.lang);
 
@@ -91,8 +81,7 @@ const Footer = () => {
             "プライバシーポリシー"
           )}
         </p>
-         {
-           !prod?(
+        
             <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-black">
             <Link href={"/ContactPage"}>
          {lang === "en" ? (
@@ -102,18 +91,7 @@ const Footer = () => {
           )}
           </Link>
             </p>
-          )
-          :
-          (
-            <p className="vertical-text relative top-4 mr-2 text-base lg:text-lg text-black">
-            {lang === "en" ? (
-              <span className="en-vertical-text">Inquiries</span>
-            ) : (
-              "お問い合わせ"
-            )}
-            </p>
-          )
-         }
+          
 
           <p className="vertical-text relative top-4 mr-4 text-base lg:text-lg text-black">
           <Link href={"/Profile"}>
@@ -174,15 +152,19 @@ const Footer = () => {
           </span>{" "}
           わたしたちのお酒
         </p>
-        <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-          <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
+        <p className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
+         <Link href={"/LocationPage"}>
+         <span className="en-vertical-text text-xl lg:text-2xl">
             LOCATION
-          </span>
+          </span>{" "}
           郷土
+          </Link>
         </p>
-        <p className="vertical-text text-stone-400 text-base lg:text-lg font-medium">
+        <p className="vertical-text text-black text-base lg:text-lg font-medium">
+          <Link href={"/StoryPage"}>
           <span className="en-vertical-text text-xl lg:text-2xl">STORY</span>{" "}
           ものがたり
+          </Link>
         </p>
       </div>
 
