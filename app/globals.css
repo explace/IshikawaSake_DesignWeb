@@ -250,6 +250,14 @@
   
   }
 
+  .dropShadowblack{
+    filter: drop-shadow(0 0 5px rgb(62, 61, 61))
+    drop-shadow(3px 0 3px rgb(62, 61, 61))
+    drop-shadow(-3px 0 3px rgb(62, 62, 61))
+    ;
+  
+  }
+
   
 /* @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
@@ -455,3 +463,4 @@
     @apply bg-background text-foreground;
   }
 }
+
