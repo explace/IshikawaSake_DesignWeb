@@ -36,7 +36,6 @@ const Products = () => {
       <div className="relative overflow-hidden">
         <div className="w-[150%] lg:w-[100%] relative -translate-x-[15%] lg:translate-x-0">
           <Image
-            // className=" w-[100%]"
             src="/SPRING_WATER_ILLUSTRATION_SET.png"
             width={3000}
             height={300}
