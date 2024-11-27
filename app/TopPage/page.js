@@ -322,7 +322,7 @@ const TopPage = () => {
 
       <Location />
 
-      {/* <Products /> */}
+      <Products />
 
       {/* <Enjoy /> */}
 
@@ -330,6 +330,7 @@ const TopPage = () => {
 
       <News />
 
+      <p id="shopInfoPropTopPage"></p>
       <ShopInfo />
 
       <Footer />

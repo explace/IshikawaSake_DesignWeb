@@ -85,9 +85,9 @@ const ShopInfo = () => {
           <p className="text-sm lg:text-base">〒412-0008</p>
           <p className="text-sm lg:text-base">静岡県御殿場市印野1388-37</p>
           <p className="text-sm lg:text-base">電話 ／ 0550-75-7788</p>
-          <p className="text-sm lg:text-base">FAX ／ 0550-70-7799</p>
-          <p className="text-sm lg:text-base">営業時間 ／ 00時-00時</p>
-          <p className="text-sm lg:text-base">定休日 ／ 毎週火曜日、年末年始</p>
+          {/* <p className="text-sm lg:text-base">FAX ／ 0550-70-7799</p> */}
+          <p className="text-sm lg:text-base">営業時間／1/12 10:00 AM オープン予定</p>
+          <p className="text-sm lg:text-base">定休日／不定休</p>
 
         </div>
       </div>

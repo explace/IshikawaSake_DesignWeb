@@ -214,39 +214,49 @@ const ContactPage = () => {
                 に同意する
               </p>
               </div> */}
-            <p className="text-center mt-12">
+            <div className="text-center mt-12">  
+  <p>
+    {
+      lang === "en" ? "After checking the contents of your inquiry, our staff will reply to you." : "いただきました内容を確認のうえ、担当者よりご返事させていただきます。"
+    }
+  </p>
+  <p>
+    {
+      lang === "en" ? "Please note that we may not be able to reply depending on the content of your inquiry." : "また、内容によっては、お返事しかねる場合がございますので予めご了承ください。"
+    }
+  </p>
 
-                {
-                    lang === "en" ? "After checking the contents of your inquiry, our staff will reply to you." : "いただきました内容を確認のうえ、担当者よりご返事させていただきます。"
-                }
-              
-              <br />
-                {
-                    lang === "en" ? "Please note that we may not be able to reply depending on the content of your inquiry." : "また、内容によっては、お返事しかねる場合がございますので予めご了承ください。"
-                }
-              
-              <br />
-              <br />
-                {
-                    lang === "en" ? "We will comply with the" : "個人情報の取り扱いについては、"
-                }
-              <Link className="text-black underline mx-2" href={"#"}>
-                {
-                    lang === "en" ? "Privacy Policy" : "プライバシーポリシー"
-                }
-                
-              </Link>
-              
-                {
-                    lang === "en" ? "regarding the handling of personal information." : "を遵守します。"
-                }
+  {/* Insert here */}
+  <div className="border border-gray-300 text-left py-3 px-4 bg-gray-50 text-black leading-relaxed mt-6 mb-6 w-[750px]">
+    <p className="mb-4">
+    個人情報の取り扱いについて<br/>
+    ご提供いただいた個人情報は、個人情報保護・プライバシー尊重の観点から、保護すべき重要な情報であると認識し、厳重に管理いたしま
+    す。<br/>
+    お問い合わせ・サービス提供・利用者に有益と思われる情報の提供に関する対応に限り個人情報を利用させていただきます。
+    また、法律に基づく場合や、利用者・当店・第三者の財産、権利を保護するために必要な場合を除き、本人の同意を得ないで、個人情報を
+    第三者に開示・提供することはいたしません。
+    </p>
+  </div>
 
-              <br />
-                {
-                    lang === "en" ? "Please read the contents and press the 'Proceed to confirmation screen' button." : "内容をご一読の上、「確認画面へ」ボタンを押してください。"
-                }
-              
-            </p>
+  <p>
+    {
+      lang === "en" ? "We will comply with the" : "個人情報の取り扱いについては、"
+    }
+    <Link className="text-black underline mx-2" href={"#"}>
+      {
+        lang === "en" ? "Privacy Policy" : "プライバシーポリシー"
+      }
+    </Link>
+    {
+      lang === "en" ? "regarding the handling of personal information." : "を遵守します。"
+    }
+  </p>
+  <p>
+    {
+      lang === "en" ? "Please read the contents and press the 'Proceed to confirmation screen' button." : "内容をご一読の上、「確認画面へ」ボタンを押してください。"
+    }
+  </p>
+</div>
 
             <button
               type="submit"

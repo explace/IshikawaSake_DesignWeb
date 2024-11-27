@@ -9,7 +9,7 @@ const ProductPage = () => {
   const vidRef = useRef(null);
   const imgRef = useRef(null);
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
-  const [cloudZIndex, setCloudZIndex] = useState(0);
+  const [cloudZIndex, setCloudZIndex] = useState(10);
 
   // Autoplay video on page load
   useEffect(() => {
@@ -32,10 +32,10 @@ const ProductPage = () => {
 
   const handleMouseLeave = () => {
     if (vidRef.current && imgRef.current) {
-      vidRef.current.style.opacity = 1;
-      imgRef.current.style.opacity = 0;
+      vidRef.current.style.opacity = 0;
+      imgRef.current.style.opacity = 1;
     }
-    setCloudZIndex(0); // Set clouds in front of video
+    setCloudZIndex(10); // Set clouds in front of video
   };
 
 
@@ -52,7 +52,7 @@ const ProductPage = () => {
             width={1700}
             height={1000}
             alt="Background Image"
-            style={{ opacity: 0 }} // Initial opacity for the image
+            style={{ opacity: 1 }} // Initial opacity for the image
           />
 
            {/* Video */}
@@ -64,7 +64,7 @@ const ProductPage = () => {
               ref={vidRef}
               src="/PRODUCTS.mp4"
               className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out" // Add transition to the video
-              style={{ opacity: 1 }} // Initial opacity for the video
+              style={{ opacity: 0 }} // Initial opacity for the video
             />
            </div>
 

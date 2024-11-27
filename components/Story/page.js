@@ -71,7 +71,7 @@ const Story = () => {
         </div>
       </div>
 
-      <div className=" relative grid place-items-center">
+      <div className=" relative grid mt-1 place-items-center">
         <Image
           className="w-[90%] lg:w-[80%]"
           src="/TOPPAGE_STORY_PICT.jpg"
