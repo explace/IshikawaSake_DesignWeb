@@ -65,7 +65,7 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="mt-14 lg:mt-24 relative grid place-items-center">
+      <div className="mt-14 lg:-mt-16 relative grid place-items-center">
         <Image
           className="w-[90%] lg:w-[80%]"
           src="/FV_PRODUCTS_BACKGROUND.jpg"
@@ -74,7 +74,7 @@ const Products = () => {
           alt="nature video"
         />
         <p className="vertical-text absolute text-white text-lg sm:text-xl lg:text-3xl dropShadowblack">
-        私たちのために
+        わたしたちのお酒
         </p>
       </div>
 

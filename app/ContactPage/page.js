@@ -214,7 +214,7 @@ const ContactPage = () => {
                 に同意する
               </p>
               </div> */}
-            <div className="text-center mt-12">
+            <div className="text-center mt-12">  
   <p>
     {
       lang === "en" ? "After checking the contents of your inquiry, our staff will reply to you." : "いただきました内容を確認のうえ、担当者よりご返事させていただきます。"
