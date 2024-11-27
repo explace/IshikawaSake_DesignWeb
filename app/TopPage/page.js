@@ -330,6 +330,7 @@ const TopPage = () => {
 
       <News />
 
+      <p id="shopInfoPropTopPage"></p>
       <ShopInfo />
 
       <Footer />
