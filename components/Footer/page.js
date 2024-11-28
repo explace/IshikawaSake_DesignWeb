@@ -158,7 +158,7 @@ const Footer = () => {
         <p
         // onClick={handleScrollToElement}
         className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg cursor-pointer font-medium">
-        <Link href="/#newsProp">
+        <Link href="/TopPage#newsPropTopPage">
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
            </Link>
