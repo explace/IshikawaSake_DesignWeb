@@ -121,10 +121,10 @@ const Location = () => {
             {/* <p className="vertical-text text-2xl lg:text-2xl mr-2">
               不思議な縁
             </p> */}
-            <p className="vertical-text text-2xl lg:text-2xl mr-2">
+            <p className="vertical-text text-xl md:text-2xl mr-2">
               酒の神が引き寄せた不思議な縁
             </p>
-            <p className="vertical-text text-2xl lg:text-2xl mr-4">
+            <p className="vertical-text text-xl md:text-2xl mr-4">
               富士山からの恵みと
             </p>
           </>

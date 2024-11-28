@@ -60,6 +60,7 @@ const ProductPage = () => {
            <div className="absolute inset-0 z-[0]">
            <video
               muted
+              playsInline
               loop
               ref={vidRef}
               src="/PRODUCTS.mp4"
