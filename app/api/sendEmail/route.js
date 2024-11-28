@@ -26,8 +26,6 @@ export async function POST(req) {
 \n
 メールアドレス : ${email}
 \n
-お問い合わせ項目 : ${inquiryItem}
-\n
 お問い合わせ内容 : ${inquiryContent}
 `,
       // html: `
