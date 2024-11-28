@@ -322,7 +322,7 @@ const TopPage = () => {
 
       <Location />
 
-      <Products />
+      {/* <Products /> */}
 
       {/* <Enjoy /> */}
 

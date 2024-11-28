@@ -60,6 +60,7 @@ const ProductPage = () => {
            <div className="absolute inset-0 z-[0]">
            <video
               muted
+              playsInline
               loop
               ref={vidRef}
               src="/PRODUCTS.mp4"
@@ -185,8 +186,8 @@ const ProductPage = () => {
 
       <section className="grid border-0 border-cyan-500 place-items-center overflow-hidden relative">
         <div className="absolute top-0 left-[2vw] lg:left-[8vw]">
-          <p className="en-vertical-text text-2xl lg:text-4xl">SAKAE</p>
-          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p>
+          {/* <p className="en-vertical-text text-2xl lg:text-4xl">SAKAE</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p> */}
         </div>
 
         <main className="w-[85%] px-4 lg:px-44">
@@ -221,8 +222,8 @@ const ProductPage = () => {
           </div>
 
           <p className="my-10 lg:my-20 text-lg lg:text-xl">
-            <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
-            DAI GINJO
+            {/* <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
+            DAI GINJO */}
           </p>
 
           <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
@@ -280,7 +281,7 @@ const ProductPage = () => {
           </div>
 
           <p className="mt-20 mb-16 text-xl">
-            <span className="text-4xl font-semibold">特別純米</span>JUNMAI GINJO
+            {/* <span className="text-4xl font-semibold">特別純米</span>JUNMAI GINJO */}
           </p>
 
           <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
@@ -338,8 +339,8 @@ const ProductPage = () => {
           </div>
 
           <p className="mt-20 mb-16 text-xl">
-            <span className="text-4xl font-semibold">特別純米</span>SPECIAL
-            JUNMAI
+            {/* <span className="text-4xl font-semibold">特別純米</span>SPECIAL
+            JUNMAI */}
           </p>
 
           <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
@@ -401,8 +402,8 @@ const ProductPage = () => {
 
       <section className="grid mt-24 border-0 border-cyan-500 place-items-center overflow-hidden relative">
         <div className="absolute top-0 left-[2vw] lg:left-[8vw]">
-          <p className="en-vertical-text text-2xl lg:text-4xl">SAKUYA</p>
-          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p>
+          {/* <p className="en-vertical-text text-2xl lg:text-4xl">SAKUYA</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p> */}
         </div>
 
         <main className="w-[85%] px-4 lg:px-44">
@@ -437,8 +438,8 @@ const ProductPage = () => {
           </div>
 
           <p className="my-10 lg:my-20 text-lg lg:text-xl">
-            <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
-           GINJO
+            {/* <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
+           GINJO */}
           </p>
 
           <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">

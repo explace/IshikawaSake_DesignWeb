@@ -121,16 +121,16 @@ const Story = () => {
             {/* <p className="vertical-text text-base lg:text-2xl mr-1 ml-4">
         酒造りを
         </p> */}
-            <p className="vertical-text text-base md:text-2xl mr-1 ml-5">
+            <p className="vertical-text text-xl md:text-2xl mr-1 ml-5">
               100年先の未来にも紡ぐ酒造りを
             </p>
-            <p className="vertical-text text-base md:text-2xl mr-1">
+            <p className="vertical-text text-xl md:text-2xl mr-1">
               この地に根ざす人びとと共に
             </p>
-            <p className="vertical-text text-base md:text-2xl mr-0">
+            <p className="vertical-text text-xl md:text-2xl mr-0">
               選りすぐりの米
             </p>
-            <p className="vertical-text text-base md:text-2xl mr-0">
+            <p className="vertical-text text-xl md:text-2xl mr-0">
               富士山から湧く神の水と
             </p>
           </>

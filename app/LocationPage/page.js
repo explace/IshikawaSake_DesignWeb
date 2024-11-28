@@ -71,6 +71,7 @@ const StoryPage = () => {
 
           <video
               muted
+              playsInline
               loop
               ref={vidRef}
               src="/LOCATION.mp4"
