@@ -67,7 +67,7 @@ const StoryPage = () => {
 
            {/* Video */}
 
-          <div className="absolute inset-0 z-[0]">
+          <div className="custom-video-controls absolute inset-0 z-[0]">
 
           <video
               muted
