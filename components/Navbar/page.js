@@ -31,7 +31,7 @@ const Nav = () => {
     // detect the current url
     const currentUrl = window.location.href;
     const lastPart = currentUrl.split("/").pop();
-    if (lastPart === "TopPage") {
+    if (lastPart === "TopPage" || lastPart === "") {
       navLogo.current.classList.remove("invert");
       nav.current.classList.remove("text-black");
       nav.current.classList.add("text-white");
