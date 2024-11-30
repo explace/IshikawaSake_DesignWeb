@@ -148,7 +148,7 @@ const Footer = () => {
       {/* Second Section */}
       <div className="flex order-1 lg:order-3 justify-center mb-10 lg:mb-0">
         <p className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
-         <Link href={"/TopPage#shopInfoPropTopPage"}>
+         <Link href={"/#shopInfoPropTopPage"}>
          <span className="en-vertical-text text-xl lg:text-2xl">
             SHOP INFO
           </span>{" "}
@@ -158,20 +158,20 @@ const Footer = () => {
         <p
         // onClick={handleScrollToElement}
         className="vertical-text text-black mr-4 2xl:mr-10 text-base lg:text-lg cursor-pointer font-medium">
-        <Link href="/TopPage#newsPropTopPage">
+        <Link href="/#newsPropTopPage">
           <span className="en-vertical-text text-xl lg:text-2xl">NEWS</span>{" "}
           お知らせ
            </Link>
         </p>
 
-        <p className="vertical-text text-black mr-4 2xl:mr-10 text-base  text-stone-400 lg:text-lg font-medium cursor-pointer">
+        <p className="vertical-text mr-4 2xl:mr-10 text-base  text-stone-400 lg:text-lg font-medium cursor-pointer">
           <span className="en-vertical-text text-xl lg:text-2xl">
             ENJOY
           </span>{" "}
           お酒を楽しく美味しく
         </p>
 
-        <p className="vertical-text text-black text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
+        <p className="vertical-text text-stone-400 mr-4 2xl:mr-10 text-base lg:text-lg font-medium">
           <span className="en-vertical-text text-stone-400 text-xl lg:text-2xl">
             PRODUCTS
           </span>{" "}
