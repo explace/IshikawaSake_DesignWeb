@@ -1,22 +1,23 @@
-'use client'
-import React, {useRef, useState, useEffect } from "react";
+"use client";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import Footer from "@/components/Footer/page";
 import ProductCard from "@/components/ProductCard/page";
+import axios from "axios";
 const ProductPage = () => {
-
   const vidRef = useRef(null);
   const imgRef = useRef(null);
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
   const [cloudZIndex, setCloudZIndex] = useState(10);
+  const [posts, setPosts] = useState([]);
 
   // Autoplay video on page load
   useEffect(() => {
     if (vidRef.current) {
-      vidRef.current.play().catch((err) =>
-        console.error('Video playback failed:', err)
-      );
+      vidRef.current
+        .play()
+        .catch((err) => console.error("Video playback failed:", err));
     }
   }, []);
 
@@ -38,6 +39,28 @@ const ProductPage = () => {
     setCloudZIndex(10); // Set clouds in front of video
   };
 
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        console.log("process.env.WP_API", process.env.NEXT_PUBLIC_WP_API);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_WP_API}`);
+        let fetchedPosts = response.data;
+
+        const updatedPosts = await Promise.all(
+          fetchedPosts.filter((e) =>
+            e.class_list.includes("category-junmaidaiginjo")
+          )
+        );
+
+        setPosts(updatedPosts);
+        // console.log("posts", updatedPosts);
+      } catch (error) {
+        console.error("There was an error fetching the data!", error);
+      }
+    };
+
+    getPosts();
+  }, []);
 
   return (
     <div>
@@ -55,10 +78,10 @@ const ProductPage = () => {
             style={{ opacity: 1 }} // Initial opacity for the image
           />
 
-           {/* Video */}
+          {/* Video */}
 
-           <div className="custom-video-controls absolute inset-0 z-[0]">
-           <video
+          <div className="custom-video-controls absolute inset-0 z-[0]">
+            <video
               muted
               playsInline
               loop
@@ -67,8 +90,7 @@ const ProductPage = () => {
               className="absolute w-[100%] h-[100%] object-cover object-center transition-opacity duration-1000 ease-in-out" // Add transition to the video
               style={{ opacity: 0 }} // Initial opacity for the video
             />
-           </div>
-
+          </div>
         </div>
 
         {/* Clouds with dynamic z-index */}
@@ -122,16 +144,18 @@ const ProductPage = () => {
           />
         </div>
 
-
         {/* Main Content */}
         <div className="flex flex-col gap-4 z-[40] relative top-12 w-[50%] items-center pt-52 mt-0 border-0 ml-[25%] border-green-500">
           <div className="w-fit basis-1/2">
             <Image src={"/LOGO_WH.png"} width={150} height={30} alt="logo" />
           </div>
           <p
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="text-6xl text-slate-50 basis-1/2 ml-3 cursor-pointer">PRODUCTS</p>
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="text-6xl text-slate-50 basis-1/2 ml-3 cursor-pointer"
+          >
+            PRODUCTS
+          </p>
         </div>
 
         {/* Scroll Indicator */}
@@ -227,187 +251,43 @@ const ProductPage = () => {
           </p>
 
           <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-          </div>
+            {posts.map((post, index) => {
+              if (post.class_list) {
+                const tagItems = post.class_list.filter((item) =>
+                  item.startsWith("tag-vol-")
+                );
 
-          <p className="mt-20 mb-16 text-xl">
-            {/* <span className="text-4xl font-semibold">特別純米</span>JUNMAI GINJO */}
-          </p>
+                return tagItems.map((tagItem, tagIndex) => (
+                  <ProductCard
+                    jpmsg={post.title.rendered}
+                    volume={tagItem.substring(8)}
+                    enmsg="KONOHA SAKAE"
+                    color="BLUE"
+                    name="令和誉富士"
+                    points={[
+                      // "– 精米歩合５０％",
+                      // "– アルコール度１５度",
+                      // "– 生�仕込み",
+                    ]}
+                    desc={post.content.rendered}
+                  />
+                ));
+              }
 
-          <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-          </div>
-
-          <p className="mt-20 mb-16 text-xl">
-            {/* <span className="text-4xl font-semibold">特別純米</span>SPECIAL
-            JUNMAI */}
-          </p>
-
-          <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
-            <ProductCard
-              jpmsg="このは榮"
-              volume="720ml"
-              enmsg="KONOHA SAKAE"
-              color="BLUE"
-              name="令和誉富士"
-              points={[
-                "– 精米歩合５０％",
-                "– アルコール度１５度",
-                "– 生�仕込み",
-              ]}
-              desc="福島県いわき市産、酒米の横綱とも
-い わ れ る「山 田 錦」を 蔵 で 最 高 の
-50％まで磨き上げ、昔ながらの生仕
-込みで醸したトラディショナルな正
-統派の日本酒です。"
-            />
+              return null;
+            })}
           </div>
         </main>
       </section>
 
-
-      <section className="grid mt-24 border-0 border-cyan-500 place-items-center overflow-hidden relative">
+      {/* <section className="grid mt-24 border-0 border-cyan-500 place-items-center overflow-hidden relative">
         <div className="absolute top-0 left-[2vw] lg:left-[8vw]">
-          {/* <p className="en-vertical-text text-2xl lg:text-4xl">SAKUYA</p>
-          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p> */}
+          <p className="en-vertical-text text-2xl lg:text-4xl">SAKUYA</p>
+          <p className="w-[2px] relative left-[37%] mt-2 h-[500vh] bg-black"></p>
         </div>
 
         <main className="w-[85%] px-4 lg:px-44">
-        <div className="border-0 border-red-600 w-[100%] lg:w-[70%] grid place-items-center lg:place-items-start lg:flex relative left-1/2 -translate-x-1/2">
+          <div className="border-0 border-red-600 w-[100%] lg:w-[70%] grid place-items-center lg:place-items-start lg:flex relative left-1/2 -translate-x-1/2">
             <div className="flex items-start border-0 border-green-600">
               <p className="text-center vertical-text mr-2 text-red-500 text-xl lg:text-2xl">
                 高い水準で揃っていました︒
@@ -438,8 +318,8 @@ const ProductPage = () => {
           </div>
 
           <p className="my-10 lg:my-20 text-lg lg:text-xl">
-            {/* <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
-           GINJO */}
+            <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
+           GINJO
           </p>
 
           <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
@@ -495,10 +375,8 @@ const ProductPage = () => {
 統派の日本酒です。"
             />
           </div>
-
-        
         </main>
-      </section>
+      </section> */}
       {/* Footer Section */}
       {/* 生み出します
 おいしい日本酒を
