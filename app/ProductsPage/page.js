@@ -259,6 +259,7 @@ const ProductPage = () => {
 
                 return tagItems.map((tagItem, tagIndex) => (
                   <ProductCard
+                  key={index}
                     jpmsg={post.title.rendered}
                     volume={tagItem.substring(8)}
                     enmsg="KONOHA SAKAE"
