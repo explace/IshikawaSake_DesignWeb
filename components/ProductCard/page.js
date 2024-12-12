@@ -37,9 +37,13 @@ const ProductCard = (props) => {
         })
       }
 
-      <p className="text-base mt-6">
+      {/* <p className="text-base mt-6">
       {props.desc}
-      </p>
+      </p> */}
+      <p
+                    className="border-0 border-red-600 mt-4 md:mt-6 text-sm md:text-base"
+                    dangerouslySetInnerHTML={{ __html: props.desc }}
+                  />
     </div>
   );
 };
