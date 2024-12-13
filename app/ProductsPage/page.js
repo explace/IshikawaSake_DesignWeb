@@ -42,7 +42,6 @@ const ProductPage = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        console.log("process.env.WP_API", process.env.NEXT_PUBLIC_WP_API);
         const response = await axios.get(`${process.env.NEXT_PUBLIC_WP_API}`);
         let fetchedPosts = response.data;
 
