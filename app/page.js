@@ -1,19 +1,23 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 // import Story from "../components/Story/page";
-import News from "../components/News/page";
 // import Nav from "../components/Navbar/page";
 // import LandingPage from "../components/LandingPage/page";
 // import Location from "@/components/Location/page";
 // import Enjoy from "@/components/Enjoy/page";
 // import Products from "@/components/Products/page";
 // import Footer from "@/components/Footer/page";
-import TopPage from "./TopPage/page";
 // import Image from "next/image";
 // import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 // import { FaXTwitter } from "react-icons/fa6";
 // import { useSelector } from "react-redux";
 // import Link from "next/link";
+import Story from "@/components/Story/page";
+import News from "@/components/News/page";
+import Location from "@/components/Location/page";
+import Footer from "@/components/Footer/page";
+import Image from "next/image";
+import ShopInfo from "@/components/ShopInfo";
 
 export default function Home() {
   // const lang = useSelector((state) => state.reducer1.lang);
@@ -29,6 +33,13 @@ export default function Home() {
   //     }
   //   }
   // }, []);
+
+  // const vid1 = useRef(null);
+  // const vid2 = useRef(null);
+  // const vid3 = useRef(null);
+  const vid4 = useRef(null);
+  const vid5 = useRef(null);
+  const vid6 = useRef(null);
   return (
     <main>
       {/* Comment out this component for the Grand Opening page */}
@@ -41,7 +52,123 @@ export default function Home() {
       {/* <p id="newsProp"></p>
       <News /> */}
 
-      <TopPage/>
+      <main id="main" className="topPageBg h-[100vh] relative overflow-hidden">
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage1"
+            src={"/cloud1.png"}
+            // style={{ "--i": 1 }}
+            width={2100}
+            height={100}
+            alt="Cloud1"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage2"
+            src={"/cloud2.png"}
+            // style={{ "--i": 2 }}
+            width={2100}
+            height={100}
+            alt="Cloud2"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage3"
+            src={"/cloud3.png"}
+            // style={{ "--i": 3 }}
+            width={2100}
+            height={100}
+            alt="Cloud3"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage4"
+            src={"/cloud4.png"}
+            // style={{ "--i": 4 }}
+            width={2100}
+            height={100}
+            alt="Cloud4"
+          />
+        </div>
+
+        <div className="absolute bottom-0">
+          <Image
+            className="cloudsimage5"
+            src={"/cloud5.png"}
+            // style={{ "--i": 5 }}
+            width={2100}
+            height={100}
+            alt="Cloud5"
+          />
+        </div>
+
+        <div className="z-[20] border-0 border-blue-500">
+          {/* <video
+          muted
+          loop
+          ref={vid1}
+          src="/nature_vid.mp4"
+          className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
+        />
+        <video
+          muted
+          loop
+          ref={vid2}
+          src="/nature_vid2.mp4"
+          className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
+        />
+        <video
+          muted
+          loop
+          ref={vid3}
+          src="/nature_vid.mp4"
+          className="absolute w-[100%] h-[100%] object-cover object-center opacity-0 vid"
+        /> */}
+          <video
+            muted
+            loop
+            playsInline
+            ref={vid4}
+            src="/PRODUCTS.mp4"
+            className="absolute w-[100vw] h-[100vh] object-cover object-center opacity-0 vid"
+          />
+          <video
+            muted
+            loop
+            playsInline
+            ref={vid5}
+            src="/LOCATION.mp4"
+            className="absolute w-[100vw] h-[100vh] object-cover object-center opacity-0 vid"
+          />
+          <video
+            muted
+            playsInline
+            loop
+            ref={vid6}
+            src="/STORY.mp4"
+            className="absolute w-[100vw] h-[100vh] object-cover object-center opacity-0 vid"
+          />
+        </div>
+      </main>
+
+      <Story />
+
+      <Location />
+
+      <p id="newsPropTopPage"></p>
+
+      <News />
+
+      <p id="shopInfoPropTopPage"></p>
+      <ShopInfo />
+
+      <Footer />
 
       {/* <div className="w-full mt-20 p-2 sm:p-6 lg:p-12 2xl:p-24 grid lg:flex justify-evenly relative">
         <div className="mb-32 lg:mb-0 order-3 lg:order-1 grid place-items-center mr-0 lg:mr-2 2xl:mr-32">
