@@ -2,9 +2,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer/page";
-import { useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
 
 const StoryPage = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(changeNavTransition(false));
+  },[])
   const vidRef = useRef(null);
   const imgRef = useRef(null);
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux

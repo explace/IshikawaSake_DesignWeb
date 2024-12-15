@@ -5,9 +5,14 @@ import { IoIosArrowDroprightCircle, IoIosMail } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { toast } from "sonner";
 import { z } from "zod";
-import { useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
 
 const ContactPage = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(changeNavTransition(false));
+  },[])
   const lang = useSelector((state) => state.reducer1.lang);
 
   const [step, setStep] = useState(1);

@@ -4,8 +4,14 @@ import Image from "next/image";
 import axios from "axios";
 import Footer from "@/components/Footer/page";
 import { MdOutlineCancel } from "react-icons/md";
+import { useDispatch,useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
 
 const EnjoyPage = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(changeNavTransition(false));
+  },[])
   const fadeInEnjoy = useRef(null);
   const [posts, setPosts] = useState([]);
   const [enjoyPopup, setEnjoyPopup] = useState(false);
@@ -46,7 +52,7 @@ const EnjoyPage = () => {
     const getPosts = async () => {
       try {
         const response = await axios.get(
-          "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
+          `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts`
           // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
         );
         let fetchedPosts = response.data;
@@ -58,7 +64,7 @@ const EnjoyPage = () => {
               const imageId = post.featured_media;
               try {
                 const mediaResponse = await axios.get(
-                  `https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/media/${imageId}`
+                  `${process.env.NEXT_PUBLIC_WORDPRESS_API}/media/${imageId}`
                 );
                 post.featured_media = mediaResponse.data.link;
               } catch (error) {

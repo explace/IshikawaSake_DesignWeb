@@ -1,9 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
-import { useSelector } from "react-redux";
 import Head from "next/head";
+import { useDispatch,useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
+
 const Profile = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(changeNavTransition(false));
+  },[])
   const containerStyle = {
     width: "100%",
     height: "35rem",
@@ -56,7 +62,7 @@ const Profile = () => {
 
         <div className="grid place-items-center mt-20 mb-20">
           <LoadScript
-            googleMapsApiKey="AIzaSyDq8q3YcsgGWmZOty9F5zgmceAocbBtItA"
+            googleMapsApiKey={`${process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY}`}
             language={mapLanguage}
           >
             <GoogleMap

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useSelector } from "react-redux";
 import { MdOutlineCancel } from "react-icons/md";
 
@@ -12,6 +12,12 @@ const News = () => {
   const [newsDesc, setNewsDesc] = useState("");
   const [newsPopup, setNewsPopup] = useState(false);
   const lang = useSelector((state) => state.reducer1.lang);
+  const postFromNewWP = useSelector((state) => state.reducer1.posts);
+
+  useEffect(()=>{
+    // console.log("postFromNewWP", postFromNewWP);
+    setPosts(postFromNewWP)
+  },[postFromNewWP])
 
   useEffect(() => {
     const target = fadeInNews.current;
@@ -46,22 +52,22 @@ const News = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const response = await axios.get(
-          "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
-          // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
+  // useEffect(() => {
+  //   const getPosts = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
+  //         // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
 
-        );
-        setPosts(response.data);
-      } catch (error) {
-        console.error("There was an error fetching the data!", error);
-      }
-    };
+  //       );
+  //       setPosts(response.data);
+  //     } catch (error) {
+  //       console.error("There was an error fetching the data!", error);
+  //     }
+  //   };
 
-    getPosts();
-  }, [lang]);
+  //   getPosts();
+  // }, [lang]);
 
   function convertDate(dateString) {
     const date = new Date(dateString);
