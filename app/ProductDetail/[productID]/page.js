@@ -20,7 +20,9 @@ const ProductIDPage = ({ params }) => {
       {posts.map((post, index) => {
         if (post.id == params.productID) {
           return (
-            <div className="grid place-items-center sm:place-items-start sm:flex">
+            <div
+            key={index}
+            className="grid place-items-center sm:place-items-start sm:flex">
               <Image
                 className="w-[15rem] md:w-[20rem] mr-6"
                 src="/SAKAE_SAKE_IMG_DUMMY.png"
