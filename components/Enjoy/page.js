@@ -38,7 +38,7 @@ const Enjoy = () => {
     const getPosts = async () => {
       try {
         const response = await axios.get(
-          "https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/posts"
+          `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts`
         );
         const fetchedPosts = response.data;
 
@@ -47,7 +47,7 @@ const Enjoy = () => {
           console.log("imageId", imageId);
           try {
             const res = await axios.get(
-              `https://admin.gotembaishikawashuzo.com/wp-json/wp/v2/media/${imageId}`
+              `${process.env.NEXT_PUBLIC_WORDPRESS_API}/media/${imageId}`
             );
             if (res && res.data && res.data.guid && res.data.guid.rendered) {
               post.featured_media = res.data.guid.rendered;

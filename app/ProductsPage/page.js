@@ -1,16 +1,25 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import Footer from "@/components/Footer/page";
 import ProductCard from "@/components/ProductCard/page";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
 const ProductPage = () => {
+  const dispatch = useDispatch();
+  const postFromNewWP = useSelector((state) => state.reducer1.posts);
   const vidRef = useRef(null);
   const imgRef = useRef(null);
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
   const [cloudZIndex, setCloudZIndex] = useState(10);
   const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    dispatch(changeNavTransition(false));
+    setPosts(postFromNewWP);
+  }, [postFromNewWP]);
 
   // Autoplay video on page load
   useEffect(() => {
@@ -39,27 +48,27 @@ const ProductPage = () => {
     setCloudZIndex(10); // Set clouds in front of video
   };
 
-  useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_WP_API}`);
-        let fetchedPosts = response.data;
+  // useEffect(() => {
+  //   const getPosts = async () => {
+  //     try {
+  //       const response = await axios.get(`${process.env.NEXT_PUBLIC_WP_API}`);
+  //       let fetchedPosts = response.data;
 
-        const updatedPosts = await Promise.all(
-          fetchedPosts.filter((e) =>
-            e.class_list.includes("category-junmaidaiginjo")
-          )
-        );
+  //       const updatedPosts = await Promise.all(
+  //         fetchedPosts.filter((e) =>
+  //           e.class_list.includes("category-junmaidaiginjo")
+  //         )
+  //       );
 
-        setPosts(updatedPosts);
-        // console.log("posts", updatedPosts);
-      } catch (error) {
-        console.error("There was an error fetching the data!", error);
-      }
-    };
+  //       setPosts(updatedPosts);
+  //       // console.log("posts", updatedPosts);
+  //     } catch (error) {
+  //       console.error("There was an error fetching the data!", error);
+  //     }
+  //   };
 
-    getPosts();
-  }, []);
+  //   getPosts();
+  // }, []);
 
   return (
     <div>
@@ -249,36 +258,35 @@ const ProductPage = () => {
             DAI GINJO */}
           </p>
 
-          <div className="border-red-500 border-0 flex flex-wrap justify-center sm:justify-between">
-            {posts.map((post, index) => {
-              if (post.class_list) {
-                const tagItems = post.class_list.filter((item) =>
-                  item.startsWith("tag-vol-")
-                );
-
-                return tagItems.map((tagItem, tagIndex) => (
-                  <ProductCard
-                  key={index}
-                    jpmsg={post.title.rendered}
-                    volume={tagItem.substring(8)}
-                    enmsg="KONOHA SAKAE"
-                    color="BLUE"
-                    name="令和誉富士"
-                    points={[
-                      // "– 精米歩合５０％",
-                      // "– アルコール度１５度",
-                      // "– 生�仕込み",
-                    ]}
-                    desc={post.content.rendered}
-                  />
-                ));
-              }
-
-              return null;
-            })}
-          </div>
+          
         </main>
       </section>
+
+      <section className="border-0 border-red-400 flex flex-wrap gap-4 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-center sm:justify-between">
+            {posts
+              .filter((e) => e.class_list.includes("category-products"))
+              .map((post, index) => {
+                return (
+                  <ProductCard
+                    key={index}
+                    jpmsg={post.acf.japanese_name_of_sake}
+                    volume={post.acf.volume}
+                    enmsg={post.acf.english_name_of_sake}
+                    color="BLUE"
+                    name={post.acf.type_of_sake}
+                    points={
+                      [
+                        // "– 精米歩合５０％",
+                        // "– アルコール度１５度",
+                        // "– 生�仕込み",
+                      ]
+                    }
+                    desc={post.content.rendered}
+                    productID={post.id}
+                  />
+                );
+              })}
+          </section>
 
       {/* <section className="grid mt-24 border-0 border-cyan-500 place-items-center overflow-hidden relative">
         <div className="absolute top-0 left-[2vw] lg:left-[8vw]">

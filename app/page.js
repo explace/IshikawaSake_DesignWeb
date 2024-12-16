@@ -18,8 +18,14 @@ import Location from "@/components/Location/page";
 import Footer from "@/components/Footer/page";
 import Image from "next/image";
 import ShopInfo from "@/components/ShopInfo";
-
+import Nav from "@/components/Navbar/page";
+import { useDispatch,useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
 export default function Home() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(changeNavTransition(true));
+  },[])
   // const lang = useSelector((state) => state.reducer1.lang);
 
   // useEffect(() => {

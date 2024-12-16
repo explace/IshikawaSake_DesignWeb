@@ -11,8 +11,14 @@ import Footer from "@/components/Footer/page";
 import Image from "next/image";
 import Link from "next/link";
 import ShopInfo from "@/components/ShopInfo";
+import { useDispatch,useSelector } from "react-redux";
+import { changeNavTransition } from "@/redux/actions";
 
 const TopPage = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(changeNavTransition(true));
+  },[])
   // const vid1 = useRef(null);
   // const vid2 = useRef(null);
   // const vid3 = useRef(null);

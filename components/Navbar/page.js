@@ -2,12 +2,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { changeLangFunc } from "@/redux/actions";
+import { useDispatch,useSelector } from "react-redux";
+import { changeLangFunc,getPostsFunc } from "@/redux/actions";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
+import axios from "axios";
 const Nav = () => {
+  const navTransition = useSelector((state) => state.reducer1.navTransition);
+  const posts = useSelector((state) => state.reducer1.posts);
+
   const nav = useRef(null);
   const navLogo = useRef(null);
   const navPCMain = useRef(null);
@@ -24,28 +28,45 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState("jp");
 
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("nav")
-    // detect the current url
-    const currentUrl = window.location.href;
-    const lastPart = currentUrl.split("/").pop();
-    if (lastPart === "TopPage" || lastPart === "") {
-      navLogo.current.classList.remove("invert");
-      nav.current.classList.remove("text-black");
-      nav.current.classList.add("text-white");
+    console.log("getting")
+    const getPosts = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts`
+          // "https://public-api.wordpress.com/wp/v2/sites/exdev0a2e2b7a53.wordpress.com/posts"
 
+        );
+        // setPosts(response.data);
+        dispatch(getPostsFunc(response.data));
+      } catch (error) {
+        console.error("There was an error fetching the data!", error);
+      }
+    };
+
+    if(posts.length === 0) {
+      getPosts();
+    }
+
+  }, []);
+
+  useEffect(() => {
+
+    // console.log("tans in nav", navTransition);
+    if (navTransition) {
+      // const currentUrl = window.location.href;
+      // const lastPart = currentUrl.split("/").pop();
+      // navLogo.current.classList.remove("invert");
+      // nav.current.classList.remove("text-black");
+      // nav.current.classList.add("text-white");
+      
       if (typeof window !== "undefined") {
-        if (window.scrollY / window.innerHeight > 1) {
-          navLogo.current.style.filter = `invert(1)`;
-          // menuToggle.current.style.filter = `invert(1)`;
-          navPCMain.current.style.filter = `invert(1)`;
-          // if (window.innerWidth > 1280) {
-          //   navBtns.current.style.display = "flex";
-          //   navBtns.current.style.opacity = 1;
-          // }
-        }
+        navLogo.current.style.filter = "invert(0)";
+        navPCMain.current.style.color="white"
+        
 
         const handleScroll = (e) => {
           const scrollTop = window.scrollY; // Current scroll position
@@ -53,6 +74,7 @@ const Nav = () => {
           const scrollPercentage = scrollTop / windowHeight;
 
           if (scrollPercentage <= 1) {
+            console.log("scroll")
             // if (window.innerWidth > 1280) {
             //   if (scrollPercentage > 0.75) {
             //     navBtns.current.style.display = "flex";
@@ -63,37 +85,45 @@ const Nav = () => {
             //   navBtns.current.style.opacity = scrollPercentage;
             // }
             navLogo.current.style.filter = `invert(${scrollPercentage})`;
-            navPCMain.current.style.filter = `invert(${scrollPercentage})`;
-            // menuToggle.current.style.filter = `invert(${scrollPercentage})`;
+            navPCMain.current.style.color =`rgb(${255-scrollPercentage*255},${255-scrollPercentage*255},${255-scrollPercentage*255})` ;
           }
         };
 
+        if (window.scrollY / window.innerHeight > 1) {
+          console.log("wow")
+          // nav.current.style.color="black"
+          navLogo.current.style.filter = `invert(1)`;
+          navPCMain.current.style.color="black";
+          // if (window.innerWidth > 1280) {
+          //   navBtns.current.style.display = "flex";
+          //   navBtns.current.style.opacity = 1;
+          // }
+        }
+
         window.addEventListener("scroll", handleScroll);
+
 
         return () => {
           window.removeEventListener("scroll", handleScroll); // Cleanup on component unmount
         };
       }
-    } else {
-      navLogo.current.classList.add("invert");
-      nav.current.classList.add("text-black");
-      nav.current.classList.remove("text-white");
     }
-  }, []);
-
-  // useEffect(() => {
-  //   // if (navBtns.current) {
-  //   //   navBtns.current.style.display = "none";
-  //   // }
-  // }, []);
+    else {
+      // navLogo.current.classList.add("invert");
+      // nav.current.classList.add("text-black");
+      // nav.current.classList.remove("text-white");
+      navPCMain.current.style.color="black"
+      navLogo.current.style.filter = "invert(1)";
+    }
+  }, [navTransition]);
 
   return (
-    <nav ref={nav} className="fixed top-0 z-[1000000] text-black w-[100%]">
+    <nav ref={nav} className="fixed top-0 z-[1000000] w-[100%]">
       <section className="z-[101] mt-2 flex items-center p-2 md:p-3 md:mt-4 w-[100%] md:w-[96%] relative left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md ">
         <Link href={"/"}>
-          <div ref={navLogo} className="border-0 border-white invert">
+          <div ref={navLogo} className="border-0 border-white">
             <Image
-              className="cursor-pointer lll"
+              className="cursor-pointer"
               src={"/LOGOTYPE_WH.png"}
               width={250}
               height={100}

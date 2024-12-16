@@ -1,8 +1,19 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import ProductCard from "../ProductCard/page";
 const Products = () => {
   const fadeInProducts = useRef(null);
+
+  // const dispatch = useDispatch();
+  const postFromNewWP = useSelector((state) => state.reducer1.posts);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    setPosts(postFromNewWP);
+  }, [postFromNewWP]);
 
   useEffect(() => {
     const target = fadeInProducts.current;
@@ -97,7 +108,7 @@ const Products = () => {
         {/* </p> */}
       </div>
 
-      <section className="flex flex-wrap gap-4 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 items-center justify-center sm:justify-between">
+      <section className="border-0 border-yellow-400 flex flex-wrap gap-4 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-center sm:justify-between">
         {/* <div className="">
       
       <div className="relative text-red-600">
@@ -146,67 +157,32 @@ const Products = () => {
     </div>
     </div> */}
 
-        <div className="">
-          <div className=" relative text-red-600">
-            <Image
-              className="w-[15rem] lg:w-[20rem] mt-6"
-              src="/SAKAE_SAKE_IMG_DUMMY.png"
-              width={500}
-              height={300}
-              alt="nature video"
-            />
-          </div>
+        {posts
+          .filter((e) => e.class_list.includes("category-products"))
+          .slice(0, 3)
+          .map((post, index) => {
+            return (
+              <ProductCard
+                key={index}
+                jpmsg={post.acf.japanese_name_of_sake}
+                volume={post.acf.volume}
+                enmsg={post.acf.english_name_of_sake}
+                color="BLUE"
+                name={post.acf.type_of_sake}
+                points={
+                  [
+                    // "– 精米歩合５０％",
+                    // "– アルコール度１５度",
+                    // "– 生�仕込み",
+                  ]
+                }
+                desc={post.content.rendered}
+                productID={post.id}
+              />
+            );
+          })}
 
-          <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-            <p className="text-red-600 vertical-text text-base lg:text-2xl mr-0">
-              見飽きることはありません︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              毎日眺めていても
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              東側から望む富士の稜線はたおやかで︑
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-4 text-red-600">
-              富士山をつねに見上げる御殿場︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0">
-              酒造りを <span className="en-vertical-text">SAKAE</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="">
-          <div className=" relative text-red-600">
-            <Image
-              className="w-[15rem] lg:w-[20rem] mt-6"
-              src="/SAKUYA_SAKE_IMG_DUMMY.png"
-              width={500}
-              height={300}
-              alt="nature video"
-            />
-          </div>
-
-          <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16">
-            <p className="text-red-600 vertical-text text-base lg:text-2xl mr-0">
-              見飽きることはありません︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              毎日眺めていても
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0 text-red-600">
-              東側から望む富士の稜線はたおやかで︑
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-4 text-red-600">
-              富士山をつねに見上げる御殿場︒
-            </p>
-            <p className="vertical-text text-base lg:text-2xl mr-0">
-              酒造りを <span className="en-vertical-text">SAKUYA</span>
-            </p>
-          </div>
-        </div>
-
-        <div>
+        {/* <div>
           <div className=" relative text-red-600">
             <Image
               className="w-[15rem] lg:w-[20rem] mt-6"
@@ -234,17 +210,21 @@ const Products = () => {
               酒造りを <span className="en-vertical-text">Premium</span>
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
 
-      <div className="mt-4 grid place-items-center">
-        <p>VIEW ALL</p>
-        <Image
-          src="/READMORE_DROP.png"
-          width={22}
-          height={30}
-          alt="nature video"
-        />
+      <div className="border-0 border-red-500 mt-4 grid place-items-center">
+        <Link href="/ProductsPage">
+          <div className="border-0 border-red-500 grid place-items-center">
+            <p className="text-sm md:text-base">VIEW ALL</p>
+            <Image
+              src="/READMORE_DROP.png"
+              width={22}
+              height={30}
+              alt="nature video"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );

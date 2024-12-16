@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const ProductCard = (props) => {
   return (
     <div className="border-0 border-blue-600 w-[16rem] mb-8">
       <Image
-      className="w-full mb-8"
+        className="w-full mb-8"
         src="/SAKAE_SAKE_IMG_DUMMY.png"
         width={1700}
         height={1000}
@@ -19,31 +20,38 @@ const ProductCard = (props) => {
 
       <div className="border-red-700 border-0 my-6 flex items-center">
         <Image
-        className="w-[2.5rem] mr-4"
-            src={`/LOGO_${props.color}.png`}
-            width={3000}
-            height={1000}
-            alt="Story Image"
-            />
-            <p className="text-xl">{props.name}
-            </p>
+          className="w-[2.5rem] mr-4"
+          src={`/LOGO_${props.color}.png`}
+          width={3000}
+          height={1000}
+          alt="Story Image"
+        />
+        <p className="text-xl">{props.name}</p>
       </div>
 
-      {
-        props.points.map((point, index) => {
-          return (
-              <p key={index} className="text-xl mb-2">{point}</p>
-          );
-        })
-      }
+      {/* {props.points.map((point, index) => {
+        return (
+          <p key={index} className="text-xl mb-2">
+            {point}
+          </p>
+        );
+      })} */}
 
       {/* <p className="text-base mt-6">
       {props.desc}
       </p> */}
       <p
-                    className="border-0 border-red-600 mt-4 md:mt-6 text-sm md:text-base"
-                    dangerouslySetInnerHTML={{ __html: props.desc }}
-                  />
+        className="border-0 border-red-600 mt-4 md:mt-6 text-sm md:text-base"
+        dangerouslySetInnerHTML={{ __html: props.desc }}
+      />
+     
+
+      <button className="border-2 border-black mt-4 py-1 px-3">
+        <Link href={`/ProductDetail/${props.productID}`}>
+
+          <p className="text-sm md:text-base">続きを読む</p>
+          </Link>
+      </button>
     </div>
   );
 };
