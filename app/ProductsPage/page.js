@@ -15,6 +15,7 @@ const ProductPage = () => {
   const lang = useSelector((state) => state.reducer1.lang); // Get language from Redux
   const [cloudZIndex, setCloudZIndex] = useState(10);
   const [posts, setPosts] = useState([]);
+  const [popup, setPopup] = useState(false);
 
   useEffect(() => {
     dispatch(changeNavTransition(false));
@@ -257,36 +258,31 @@ const ProductPage = () => {
             {/* <span className="text-2xl lg:text-4xl font-semibold">純米大吟醸</span> JUNMAI
             DAI GINJO */}
           </p>
-
-          
         </main>
       </section>
 
-      <section className="border-0 border-red-400 flex flex-wrap gap-4 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-center sm:justify-between">
-            {posts
-              .filter((e) => e.class_list.includes("category-products"))
-              .map((post, index) => {
-                return (
-                  <ProductCard
-                    key={index}
-                    jpmsg={post.acf.japanese_name_of_sake}
-                    volume={post.acf.volume}
-                    enmsg={post.acf.english_name_of_sake}
-                    color="BLUE"
-                    name={post.acf.type_of_sake}
-                    points={
-                      [
-                        // "– 精米歩合５０％",
-                        // "– アルコール度１５度",
-                        // "– 生�仕込み",
-                      ]
-                    }
-                    desc={post.content.rendered}
-                    productID={post.id}
-                  />
-                );
-              })}
-          </section>
+      <section className="border-0 border-red-400 flex flex-wrap gap-x-4 gap-y-8 justify-evenly lg:grid lg:grid-cols-3 lg:justify-items-center w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2">
+        {posts
+          .filter((e) => e.class_list.includes("category-products"))
+          .map((post, index) => {
+            return (
+                <ProductCard
+                  key={index}
+                  jpname={post.acf.japanese_name_of_sake}
+                  volume={post.acf.volume}
+                  enname={post.acf.english_name_of_sake}
+                  color="BLUE"
+                  type={post.acf.type_of_sake}
+                  points={post.acf.points}
+                  desc={post.acf.description}
+                  productID={post.id}
+                />
+               
+            );
+          })}
+      </section>
+
+      
 
       {/* <section className="grid mt-24 border-0 border-cyan-500 place-items-center overflow-hidden relative">
         <div className="absolute top-0 left-[2vw] lg:left-[8vw]">

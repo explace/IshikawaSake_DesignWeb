@@ -108,7 +108,7 @@ const Products = () => {
         {/* </p> */}
       </div>
 
-      <section className="border-0 border-yellow-400 flex flex-wrap gap-4 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-center sm:justify-between">
+      <section className="border-0 border-yellow-400 flex flex-wrap gap-x-4 gap-y-8 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-evenly">
         {/* <div className="">
       
       <div className="relative text-red-600">
@@ -163,21 +163,15 @@ const Products = () => {
           .map((post, index) => {
             return (
               <ProductCard
-                key={index}
-                jpmsg={post.acf.japanese_name_of_sake}
-                volume={post.acf.volume}
-                enmsg={post.acf.english_name_of_sake}
-                color="BLUE"
-                name={post.acf.type_of_sake}
-                points={
-                  [
-                    // "– 精米歩合５０％",
-                    // "– アルコール度１５度",
-                    // "– 生�仕込み",
-                  ]
-                }
-                desc={post.content.rendered}
-                productID={post.id}
+              key={index}
+              jpname={post.acf.japanese_name_of_sake}
+              volume={post.acf.volume}
+              enname={post.acf.english_name_of_sake}
+              color="BLUE"
+              type={post.acf.type_of_sake}
+              points={post.acf.points}
+              desc={post.acf.description}
+              productID={post.id}
               />
             );
           })}
