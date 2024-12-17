@@ -117,7 +117,7 @@ const ProductCard = (props) => {
 
                 <p className="text-sm md:text-base mt-6">希望小売価格</p>
 
-                <p className="text-sm md:text-base mt-1">{props.volume}</p>
+                <p className="text-base md:text-xl mt-1">{props.volume}</p>
               </div>
             </div>
             {/* );
