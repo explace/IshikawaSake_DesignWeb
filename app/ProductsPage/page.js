@@ -269,7 +269,7 @@ const ProductPage = () => {
                 <ProductCard
                   key={index}
                   jpname={post.acf.japanese_name_of_sake}
-                  volume={post.acf.volume}
+                  amount={post.acf.amount}
                   enname={post.acf.english_name_of_sake}
                   color="BLUE"
                   type={post.acf.type_of_sake}
