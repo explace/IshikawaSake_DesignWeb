@@ -46,10 +46,10 @@ const ProductCard = (props) => {
         {/* <p className="text-base mt-6">
       {props.desc}
       </p> */}
-        <p
+        {/* <p
           className="border-0 border-red-600 mt-4 md:mt-6 text-sm md:text-base"
           dangerouslySetInnerHTML={{ __html: props.points }}
-        />
+        /> */}
         {/* <p
         className="border-2 border-red-600 mt-4 md:mt-6 text-sm md:text-base"
         >
@@ -63,7 +63,7 @@ const ProductCard = (props) => {
           onClick={() => setPopup(true)}
           className="border-2 border-black mt-4 py-1 px-3"
         >
-          <p className="text-sm md:text-base">続きを読む</p>
+          <p className="text-sm md:text-base">詳細はこちら</p>
         </button>
       </main>
 
@@ -75,16 +75,16 @@ const ProductCard = (props) => {
               onClick={() => {
                 setPopup(false);
               }}
-              className="z-[25] relative mt-[5rem] left-1/2 -translate-x-1/2 sm:translate-x-0 sm:absolute sm:top-[13%] sm:left-[85vw] w-fit text-4xl sm:text-6xl cursor-pointer"
+              className="z-[25] right-4 bottom-6 absolute sm:top-[10rem] sm:right-[15vw] w-fit text-5xl sm:text-6xl cursor-pointer"
             >
               <MdOutlineCancel />
             </div>
             <div
               // key={index}
-              className="z-[24] border-0 border-black w-fit relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 grid place-items-center sm:place-items-start sm:flex"
+              className="z-[24] mt-8 sm:mt-0 border-0 mr-4 border-black w-fit relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 grid place-items-center sm:place-items-start sm:flex"
             >
               <Image
-                className="w-[20rem] md:w-[22rem] lg:w-[25rem] sm:mr-6"
+                className="w-[20rem] md:w-[22rem] lg:w-[25rem] sm:mr-20"
                 src="/SAKAE_SAKE_IMG_DUMMY.png"
                 width={1700}
                 height={1000}
@@ -97,7 +97,7 @@ const ProductCard = (props) => {
 
                 <div className="border-red-700 border-0 my-6 flex items-center">
                   <Image
-                    className="w-[2.5rem] mr-4"
+                    className="w-[2.5rem] mr-2"
                     src={`/LOGO_BLUE.png`}
                     width={3000}
                     height={1000}
@@ -115,7 +115,7 @@ const ProductCard = (props) => {
                   dangerouslySetInnerHTML={{ __html: props.points }}
                 />
 
-                <p className="text-base md:text-xl mt-6">希望小売価格</p>
+                <p className="text-sm md:text-base mt-6">希望小売価格</p>
 
                 <p className="text-base md:text-xl mt-1">{props.volume}</p>
               </div>

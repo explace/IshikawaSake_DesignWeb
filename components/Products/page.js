@@ -207,7 +207,7 @@ const Products = () => {
         </div> */}
       </section>
 
-      <div className="border-0 border-red-500 mt-4 grid place-items-center">
+      {/* <div className="border-0 border-red-500 mt-4 grid place-items-center">
         <Link href="/ProductsPage">
           <div className="border-0 border-red-500 grid place-items-center">
             <p className="text-sm md:text-base">VIEW ALL</p>
@@ -219,7 +219,7 @@ const Products = () => {
             />
           </div>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
