@@ -91,7 +91,7 @@ const Products = () => {
         </p>
       </div>
 
-      <div className="flex justify-center relative w-[100%] mt-6 lg:mt-16 text-red-600">
+      <div className="border-0 border-red-500 flex justify-center relative w-[100%] mt-6 lg:mt-16 text-red-600">
         <p className="vertical-text text-base lg:text-2xl mr-0">
           見飽きることはありません︒
         </p>
@@ -108,7 +108,7 @@ const Products = () => {
         {/* </p> */}
       </div>
 
-      <section className="border-0 border-yellow-400 flex flex-wrap gap-x-4 gap-y-8 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-evenly">
+      <section className="border-0 border-yellow-400 mt-3 lg:mt-10 flex flex-wrap gap-x-4 gap-y-8 w-[95%] lg:w-[80%] relative left-1/2 -translate-x-1/2 justify-evenly">
         {/* <div className="">
       
       <div className="relative text-red-600">
@@ -167,7 +167,7 @@ const Products = () => {
               jpname={post.acf.japanese_name_of_sake}
               amount={post.acf.amount}
               enname={post.acf.english_name_of_sake}
-              color="BLUE"
+              type_color={post.acf.type_image}
               type={post.acf.type_of_sake}
               points={post.acf.points}
               desc={post.acf.description}
