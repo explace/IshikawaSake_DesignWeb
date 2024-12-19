@@ -271,7 +271,7 @@ const ProductPage = () => {
                   jpname={post.acf.japanese_name_of_sake}
                   amount={post.acf.amount}
                   enname={post.acf.english_name_of_sake}
-                  color="BLUE"
+                  type_color={post.acf.type_image}
                   type={post.acf.type_of_sake}
                   points={post.acf.points}
                   desc={post.acf.description}

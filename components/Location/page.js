@@ -190,19 +190,19 @@ const Location = () => {
                 />
               </Link>
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-2">
+              <p className="vertical-text text-base mr-2">
                 食物を供給する土地でした。
               </p>
               {/* <p className="vertical-text text-base lg:text-2xl mr-2">
                   伊勢神宮の荘園となり、
                 </p> */}
-              <p className="vertical-text text-base lg:text-2xl mr-2">
+              <p className="vertical-text text-base mr-2">
                 当地は平安時代には伊勢神宮の荘園となり、
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-2">
+              <p className="vertical-text text-base mr-2">
                 神饌（しんせん）を調理する建物のことです。
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-[15%]">
+              <p className="vertical-text text-base mr-[15%]">
                 厨は台所を意味し、
               </p>
 
@@ -286,16 +286,16 @@ const Location = () => {
                 />
               </Link>
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-2">
+              <p className="vertical-text text-base mr-2">
                 なんといっても人です。
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-2">
+              <p className="vertical-text text-base mr-2">
                 酒造りに欠かせないものは、
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-2">
+              <p className="vertical-text text-base mr-2">
                 様々な繫がり「縁」を具現化したものです。
               </p>
-              <p className="vertical-text text-base lg:text-2xl mr-[15%]">
+              <p className="vertical-text text-base mr-[15%]">
                 わたしたち御厨榮蔵のシンボルマークは、
               </p>
               <div className="absolute top-[-30%] right-6 flex">

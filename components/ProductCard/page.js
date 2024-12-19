@@ -27,7 +27,7 @@ const ProductCard = (props) => {
         <div className="border-red-700 border-0 my-6 flex items-center">
           <Image
             className="w-[2rem] md:w-[2.5rem] mr-2 md:mr-4"
-            src={`/LOGO_${props.color}.png`}
+            src={`/LOGO_${props.type_color}.png`}
             width={3000}
             height={1000}
             alt="Story Image"
@@ -61,7 +61,7 @@ const ProductCard = (props) => {
 
         <button
           onClick={() => setPopup(true)}
-          className="border-2 border-black mt-4 py-1 px-3"
+          className="border-2 border-black mt-4 py-1 px-3 hover:bg-black hover:text-white transition-all duration-500"
         >
           <p className="text-sm md:text-base">詳細はこちら</p>
         </button>
@@ -98,7 +98,7 @@ const ProductCard = (props) => {
                 <div className="border-red-700 border-0 my-6 flex items-center">
                   <Image
                     className="w-[2.5rem] mr-2"
-                    src={`/LOGO_BLUE.png`}
+                    src={`/LOGO_${props.type_color}.png`}
                     width={3000}
                     height={1000}
                     alt="Story Image"
