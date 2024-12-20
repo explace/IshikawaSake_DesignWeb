@@ -161,9 +161,11 @@ const Products = () => {
           .filter((e) => e.class_list.includes("category-products"))
           .slice(0, 3)
           .map((post, index) => {
+            console.log("in toppage ", post.acf.image);
             return (
               <ProductCard
               key={index}
+              image={post.acf.image}
               jpname={post.acf.japanese_name_of_sake}
               amount={post.acf.amount}
               enname={post.acf.english_name_of_sake}

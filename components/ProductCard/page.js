@@ -12,7 +12,7 @@ const ProductCard = (props) => {
       <main className="border-0 border-blue-600 w-[16rem]">
         <Image
           className="w-full mb-8"
-          src="/SAKAE_SAKE_IMG_DUMMY.png"
+          src={`${props.image}`}
           width={1700}
           height={1000}
           alt="Background Image"
@@ -75,7 +75,7 @@ const ProductCard = (props) => {
               onClick={() => {
                 setPopup(false);
               }}
-              className="z-[25] right-4 bottom-6 absolute sm:top-[10rem] sm:right-[15vw] w-fit text-5xl sm:text-6xl cursor-pointer"
+              className="z-[25] h-fit right-4 bottom-6 absolute sm:top-[10rem] sm:right-[15vw] w-fit text-5xl sm:text-6xl cursor-pointer"
             >
               <MdOutlineCancel />
             </div>
@@ -85,7 +85,7 @@ const ProductCard = (props) => {
             >
               <Image
                 className="w-[20rem] md:w-[22rem] lg:w-[25rem] sm:mr-20"
-                src="/SAKAE_SAKE_IMG_DUMMY.png"
+                src={`${props.image}`}
                 width={1700}
                 height={1000}
                 alt="Background Image"
