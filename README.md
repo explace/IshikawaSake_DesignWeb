@@ -178,3 +178,14 @@ npm run dev
 ```
 Access it at ***http://localhost:3000***.
 
+# Procedures for updating the test page in VSCode
+1. git switch test = to switch to test branch(only first time)
+2. git pull = Download the difference
+3. npm run dev = Run in development mode
+4. Edit the file in your PC here
+5. git add . = Register the file you want to commit to the index.
+7. git commit -m "Comment what you updated here" = To update the file in the index.
+8. git push -u origin test = Push to the test branch
+
+# Procedures for reflecting the test page to main
+The video for this has been shared
