@@ -189,10 +189,3 @@ Access it at ***http://localhost:3000***.
 
 # Procedures for reflecting the test page to main
 The video for this has been shared
-
-# How to change text
-All the main code is in the "app" and "components" folder, files are named according to their name, For example: Code for product section in the TopPage is located inside "components" folder with name "Products" which have a "page.js" file and similarly the code for ProductPage is in "app" folder with the name of "ProductsPage".
-
-1. To find the text = you can go to that file or just search that text using the code editor search.
-2. To change the text size = every text is inside a "p" tag or "div" tag, and they each have a "className" where all the styling is done. For Example = to change the font size you can replace "text-3xl" with lower value like "text-2xl", this will make the text smaller.
-3. To make text bold or light = to make text bold, you can add "font-semibold" in the className and to make it lighter you have to remove it.
