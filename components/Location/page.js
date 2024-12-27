@@ -131,7 +131,7 @@ const Location = () => {
         ) : (
           <div className="flex border-0 border-red-400 w-[80vw] md:w-[60vw] lg:w-[40rem] ml-0 lg:ml-[10rem]">
             <p className="en-vertical-text md:mr-4 mr-2 text-sm lg:text-base">
-              ---- Message / History / Region
+              --- Message / History / Region
             </p>
             <p className="en-vertical-text mr-4 md:mr-8 text-sm lg:text-base">
               <Link href="/LocationPage">
