@@ -118,6 +118,7 @@ const Location = () => {
             </p>
 
             {/* Additional text with new font size */}
+            {/* another comment */}
             {/* <p className="vertical-text text-2xl lg:text-2xl mr-2">
               不思議な縁
             </p> */}
@@ -127,6 +128,7 @@ const Location = () => {
             <p className="vertical-text text-xl md:text-2xl mr-4">
               富士山からの恵みと
             </p>
+            
           </>
         ) : (
           <div className="flex border-0 border-red-400 w-[80vw] md:w-[60vw] lg:w-[40rem] ml-0 lg:ml-[10rem]">
