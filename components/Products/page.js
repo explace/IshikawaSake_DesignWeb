@@ -93,18 +93,32 @@ const Products = () => {
 
       <div className="border-0 border-red-500 flex justify-center relative w-[100%] mt-6 lg:mt-16 text-red-600">
         <p className="vertical-text text-base lg:text-2xl mr-0">
-          見飽きることはありません︒
+        お楽しみください。
         </p>
         <p className="vertical-text text-base lg:text-2xl mr-0">
-          毎日眺めていても
+        シーンに合わせて自由な飲み方で
         </p>
         <p className="vertical-text text-base lg:text-2xl mr-0">
-          東側から望む富士の稜線はたおやかで︑
+        旨み が堪能できます。
         </p>
-        <p className="vertical-text text-base lg:text-2xl mr-4">
-          富士山をつねに見上げる御殿場︒
+        <p className="vertical-text text-base lg:text-2xl mr-8">
+        冷酒でも熱燗でも、御厨榮蔵ならではの
         </p>
-        <p className="vertical-text text-base lg:text-2xl mr-0">酒造りを</p>
+        <p className="vertical-text text-base lg:text-2xl mr-0">
+        御殿場生まれの日本酒。
+        </p>
+        <p className="vertical-text text-base lg:text-2xl mr-0">
+        フルーティーな香りが特徴の酵母で醸した、
+        </p>
+        <p className="vertical-text text-base lg:text-2xl mr-0">
+        吟醸香 と呼ばれる
+        </p>
+        <p className="vertical-text text-base lg:text-2xl mr-0">
+        清涼な富士山の伏流水と選りすぐりの米に
+        </p>
+        <p className="vertical-text text-base lg:text-2xl mr-0">
+        こんこんと絶えず湧き出る
+        </p>
         {/* </p> */}
       </div>
 

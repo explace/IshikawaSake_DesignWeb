@@ -19,7 +19,7 @@ const ProductCard = (props) => {
         />
 
         {/* <div className="border-0 border-red-500 flex items-center"> */}
-        <p className="text-lg md:text-2xl font-semibold">{props.jpname}</p>
+        <p className="text-lg md:text-2xl">{props.jpname}</p>
         {/* <p className="ml-auto text-lg md:text-2xl">{props.volume}</p> */}
         {/* </div> */}
         <p className="text-sm md:text-lg">{props.enname}</p>
